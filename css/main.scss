@@ -35,7 +35,7 @@ $sidebar-back-color: #111;
 // Width of the content area
 $content-width:    800px;
 
-$on-palm:          600px;
+$on-palm:          700px;
 $on-laptop:        800px;
 
 
@@ -71,7 +71,7 @@ $on-laptop:        800px;
 	float:right;
 	background-color:$sidebar-back-color;
 	color:$text-color-light;
-	margin-right:10px;
+	margin:0px 10px 0px 10px;
 	width: 250px;
 	border-radius:0px 0px 10% 10%;
 	font-size:$sidebar-font-size;
@@ -87,6 +87,10 @@ $on-laptop:        800px;
 	@include media-query($on-palm) {
 		display:none;
 	}
+	a{
+		color:$text-color-light;
+		text-decoration:none;
+	}
 }
 .mobile-sidebar{
 	display:none;
@@ -100,6 +104,10 @@ $on-laptop:        800px;
 	}
 	li{
 		list-style:none;
+	}
+	a{
+		color:$text-color-light;
+		text-decoration:none;
 	}
 }
 .page-content{
