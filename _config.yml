@@ -1,0 +1,12 @@
+# Site settings
+title: Coder
+email: zkhan1093@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  Coder is a blog maintained and run by Zeeshan Khan, Here you will find posts related to technologies and coding
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "" # the base hostname & protocol for your site
+twitter_username: zkhan1093
+github_username:  zkhan93
+
+# Build settings
+markdown: kramdown

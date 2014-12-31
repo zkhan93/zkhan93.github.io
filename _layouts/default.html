@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+    <div class="sidebar">
+		<div class="wrapper">
+			{% include sidebar.html%}
+		</div>
+    </div>
+    <div class="page-content">
+      <div class="wrapper">
+		  
+        {{ content }}
+        
+      </div>
+      <div class="mobile-sidebar">
+		  <div class="wrapper">
+			  <h3 class="mobile-sidebar-head">All Articles</h3>
+			{% include sidebar.html%}
+		</div>
+		<hr/>
+      </div>
+    </div>
+	
+    {% include footer.html %}
+
+  </body>
+
+</html>
