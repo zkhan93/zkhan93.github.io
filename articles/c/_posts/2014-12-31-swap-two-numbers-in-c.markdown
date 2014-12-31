@@ -4,6 +4,7 @@ title: "Swap Two Numbers in C"
 date: 2014-12-18 04:26:00 -0530
 categories: c update
 author: "Zeeshan Khan"
+url: "/c/"
 ---
 
 The code below swap two numbers
