@@ -8,7 +8,7 @@ author: "Zeeshan Khan"
 
 The code below swap two numbers
 {% highlight c linenos %}
-
+# include<stdio.h>
 int swap(int* a,int *b){
   a=a+b;
   b=a-b;
