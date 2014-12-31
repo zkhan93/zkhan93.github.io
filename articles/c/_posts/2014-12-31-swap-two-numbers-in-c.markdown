@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Swap Two Numbers in C"
-date: 2014-12-18 04:26:00 -0530
+date: 2014-12-18 04:26:00 -0800
 categories: c update
 author: "Zeeshan Khan"
 url: "/c/"
