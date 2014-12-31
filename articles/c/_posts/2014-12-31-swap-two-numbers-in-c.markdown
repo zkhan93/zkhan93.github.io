@@ -5,7 +5,9 @@ date: 2014-12-18 04:26:00 -0530
 categories: c update
 author: "Zeeshan Khan"
 ---
-{% highlight c linenos%}
+
+The code below swap two numbers
+{% highlight c linenos %}
 
 int swap(int* a,int *b){
   a=a+b;
@@ -29,4 +31,4 @@ Enter two numbers
 12 16
 a=12, b=16
 a=16, b=12
-{% endhighligt %}
+{% endhighlight %}
