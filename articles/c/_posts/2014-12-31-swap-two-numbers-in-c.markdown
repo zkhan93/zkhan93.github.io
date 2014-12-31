@@ -24,7 +24,7 @@ int main(){
 {% endhighlight %}
 
 output of above code will be 
-{% heighlight c %}
+{% highlight c %}
 Enter two numbers
 12 16
 a=12, b=16
