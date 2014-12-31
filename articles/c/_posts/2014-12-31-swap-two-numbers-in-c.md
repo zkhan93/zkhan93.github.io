@@ -1,6 +1,9 @@
 ---
-layout: default
-title:Swap two numbers in c
+layout: post
+title: Swap Two Numbers in C
+date: 2014-12-18
+categories: c update
+author "Zeeshan Khan"
 ---
 {℅ highlight c℅}
 
