@@ -4,10 +4,11 @@ title:  "Add Two Integers in Java"
 date:   2014-12-28 20:04:04
 categories: Java Update
 author: "Zeeshan Khan"
+tags: java addition simple
 ---
 Following programe will add two Integer numbers for you.
 
-{% highlight java %}
+{% highlight java linenos %}
 # file Addition.java
 
 import java.io.*

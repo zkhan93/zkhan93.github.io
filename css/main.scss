@@ -116,3 +116,12 @@ $on-laptop:        800px;
 		padding-bottom:0px;
 	}
 }
+.tag-list{
+	text-align:left;
+	font-size:$small-font-size;
+	color:lighten($text-color, 40%);
+}
+.title-line{
+	font-style:normal;
+	font-size:$base-font-size;
+}

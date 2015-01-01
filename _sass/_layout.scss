@@ -13,11 +13,12 @@
 }
 
 .site-title {
+	#display: inline;
     font-size: 26px;
     line-height: 56px;
     letter-spacing: -1px;
     margin-bottom: 0;
-    float: left;
+    float:left;
     &,
     &:visited {
         color: $grey-color-light;
@@ -25,9 +26,9 @@
 }
 
 .site-nav {
-    float: right;
+    
     line-height: 56px;
-
+	width:100%;
     .menu-icon {
         display: none;
     }
@@ -37,20 +38,20 @@
         line-height: $base-line-height;
 
         // Gaps between nav items, but not on the first one
-        &:not(:first-child) {
-            margin-left: 20px;
-        }
+      //  &:not(:first-child) {
+            margin-right: 20px;
+       // }
     }
 
     @include media-query($on-palm) {
-        position: absolute;
-        top: 9px;
-        right: 30px;
+        position: relative;
+        #top: 9px;
+        #right: 30px;
         background-color: $header-back-color;
         border: 1px solid $header-back-color;
         
         border-radius: 5px;
-        text-align: right;
+        text-align: center;
 
         .menu-icon {
             display: block;
@@ -59,12 +60,11 @@
             height: 26px;
             line-height: 0;
             padding-top: 10px;
-            text-align: center;
-
+            
             > svg {
                 width: 18px;
                 height: 15px;
-
+                
                 path {
                     fill: $grey-color-light;
                 }
@@ -72,24 +72,28 @@
         }
 
         .trigger {
-            clear: both;
+            clear:both;
             display: none;
-            
+            width:100%;
         }
 
         &:hover .trigger {
             display: block;
             padding-bottom: 5px;
-            
+            float:none;
         }
 
         .page-link {
             display: block;
             padding: 5px 10px;
+            
         }
     }
 }
-
+.trigger {
+            float:right;
+           # display: inline;
+        }
 
 
 /**
