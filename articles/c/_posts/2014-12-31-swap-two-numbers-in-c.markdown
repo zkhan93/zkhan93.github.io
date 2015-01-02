@@ -5,6 +5,7 @@ date: 2014-12-30 04:26:00
 categories: C Update
 author: "Zeeshan Khan"
 tags: c swapping simple
+source_file: c/swap-two-numbers-in-c.c
 ---
 
 The code below swap two numbers
@@ -40,4 +41,4 @@ Enter two numbers
 before swapping a=10, b=34
 After swapping a=34, b=10
 {% endhighlight %}
-download source code [<i class="fa fa-code"></i>](/assets/codes/c/swap-two-numbers-in-c.c)
+

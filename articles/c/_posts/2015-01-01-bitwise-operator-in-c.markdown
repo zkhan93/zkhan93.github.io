@@ -5,6 +5,7 @@ date: 2015-01-01 04:26:00
 categories: C Update
 author: "Zeeshan Khan"
 tags: c bitwise AND OR NOT XOR
+source_file: c/bitwise-operations-in-c.c
 ---
 
 The code below demonstrate common bitwise operations in c
@@ -95,4 +96,3 @@ MENU
  0.Exit
 Enter choice: 0
 {% endhighlight %}
-download source code [<i class="fa fa-code"></i>](/assets/codes/c/bitwise-operations-in-c.c)

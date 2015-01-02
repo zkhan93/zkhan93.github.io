@@ -5,6 +5,7 @@ date:   2014-12-28 20:04:04
 categories: C Update
 author: "Zeeshan Khan"
 tags: c addition simple
+source_file: c/add-two-numbers-in-c.c
 ---
 Following is the code that will add two float or integer values in C
 
@@ -29,4 +30,3 @@ Enter two numbers
 12 34
 sum of 12.000000 and 34.000000 is 46.000000
 {% endhighlight %}
-download source code [<i class="fa fa-code"></i>](/assets/codes/c/add-two-numbers-in-c.c)
