@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Bitwise operation in C"
+title: "Bitwise operations in C"
 date: 2015-01-01 04:26:00
 categories: C Update
 author: "Zeeshan Khan"
