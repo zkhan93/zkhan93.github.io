@@ -26,6 +26,7 @@ int main(){
 The above code result in following output
 {% highlight c %}
 Enter two numbers
-10 14.5
-sum of 10 and 14.5 is 24.5
+12 34
+sum of 12.000000 and 34.000000 is 46.000000
 {% endhighlight %}
+download source code [<i class="fa fa-code"></i>](/assets/codes/c/add-two-numbers-in-c.c)

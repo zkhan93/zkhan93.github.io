@@ -12,9 +12,9 @@ The code below swap two numbers
 # include<stdio.h>
 int swap(int* a,int *b){
 	//the logical potion
-	a=a+b;
-	b=a-b;
-	a=a-b;
+	*a=*a+*b; //* is use to acess a value pointed by a pointer
+	*b=*a-*b;
+	*a=*a-*b;
 	return 0;
 }
 int main(){
@@ -36,7 +36,8 @@ int main(){
 output of above code will be 
 {% highlight c %}
 Enter two numbers
-12 16
-a=12, b=16
-a=16, b=12
+10 34
+before swapping a=10, b=34
+After swapping a=34, b=10
 {% endhighlight %}
+download source code [<i class="fa fa-code"></i>](/assets/codes/c/swap-two-numbers-in-c.c)
