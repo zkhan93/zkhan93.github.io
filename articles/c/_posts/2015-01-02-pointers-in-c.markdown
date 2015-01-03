@@ -7,6 +7,9 @@ tags: c  pointers moderate
 date: 2015-01-02 07:39:00
 source_file: c/pointers-in-c.c
 ---
+Pointers are variables that stores the address of a data value, the type of both pointer and the data type should be same,
+pointer od `void` types can hold address of any data type, but necessary casting should be done explicitly.
+
 The code below will demostrate how we can use pointers in C
 {% highlight c linenos %}
 # include<stdio.h>

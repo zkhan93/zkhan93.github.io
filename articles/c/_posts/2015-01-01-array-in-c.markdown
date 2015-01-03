@@ -7,6 +7,8 @@ tags: c  array simple
 date: 2015-01-01 11:04:00
 source_file: c/array-in-c.c
 ---
+Arrays are collection of similar data types values referenced by a single variable.
+
 The code below will demostrate how we can use arrays in C
 
 {% highlight c linenos %}

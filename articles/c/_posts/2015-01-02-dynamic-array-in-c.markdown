@@ -7,21 +7,23 @@ tags: c  array dynamic
 date: 2015-01-02 07:57:00
 source_file: c/dynamic-array-in-c.c
 ---
+Dynamic array is a array that has a fixed number of items on it, but the space required for data storage is alloted at runtime on data input.
+
 The code below will demostrate how we can use dynamic array in C
 {% highlight c linenos %}
 # include<stdio.h>
 # include<stdlib.h>
 int main(){
-	int *arr[10],i;
+	int *arr[10],i; //array will have 10 elements
  	printf("Enter 10 numbers\n");
 	for(i=0;i<10;i++){
-		arr[i]=(int*)malloc(sizeof(int));
+		arr[i]=(int*)malloc(sizeof(int)); //asking for space to store the input
 		scanf("%d",arr[i]);
 	}
 	printf("the array you entered is ");
 	for(i=0;i<10;i++){
 		printf("%d ",*arr[i]);
-		free(arr[i]);
+		free(arr[i]); //returning memory to system
 	}
 	printf("\n");
     	return 0;

@@ -82,7 +82,8 @@ $on-laptop:        800px;
 		list-style:none;
 	}
 	.date{
-	font-size:$small-sidebar-font-size;
+		font-size:$small-sidebar-font-size;
+		text-align:right;
 	}
 	@include media-query($on-palm) {
 		display:none;
@@ -96,11 +97,19 @@ $on-laptop:        800px;
 	display:none;
 	background-color:$sidebar-back-color;
 	color:$text-color-light;
+	font-size:$sidebar-font-size;
 	@include media-query($on-palm) {
 		display:block;
 	}
+	.category{
+		font-size:$large-sidebar-font-size;
+	}
 	.mobile-sidebar-head{
-	font-size:$large-font-size;
+		font-size:$large-font-size;
+	}
+	.date{
+		font-size:$small-sidebar-font-size;
+		text-align:center;
 	}
 	li{
 		list-style:none;
@@ -137,4 +146,9 @@ $on-laptop:        800px;
 	font-size:$small-font-size;
 	text-align:left;
 	margin-bottom:0px;
+}
+ul{
+	@include media-query($on-palm) {
+		list-style:none;
+	}
 }

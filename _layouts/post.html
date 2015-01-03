@@ -1,7 +1,6 @@
 ---
 layout: default
 ---
-
 <div class="post">
 
   <header class="post-header">
@@ -11,11 +10,14 @@ layout: default
 	
   <article class="post-content">
     {{ content }}
-    
+    {% if page.source_file%}
+        <p>download source code <a href="/assets/codes/{{page.source_file}}"><i class="fa fa-code"></i></a></p>
+        {% endif %}
 		<p class="tag-list">
 			
+				{% if page.tags%}<i class="fa fa-tags"></i> {%endif%}
 				{% for tag in page.tags%}
-					{% if tag %}<i class="fa fa-tag"></i> {{tag}} {% endif %}
+					{% if tag %}{{tag | downcase}} {%if forloop.last == false %},{% endif%}{% endif %}
 				{% endfor %}
 		</p>
   </article>

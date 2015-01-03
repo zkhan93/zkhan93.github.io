@@ -7,7 +7,13 @@ author: "Zeeshan Khan"
 tags: c bitwise AND OR NOT XOR
 source_file: c/bitwise-operations-in-c.c
 ---
-
+Bitwise operators in C are
+	
+* `&` AND Operator
+* `|` OR Operator
+* `~` NOT Operator
+* `^` XOR Operator
+	
 The code below demonstrate common bitwise operations in c
 {% highlight c linenos %}
 # include<stdio.h>
