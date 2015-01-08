@@ -7,7 +7,6 @@ class Addition{
 		a=Integer.parseInt(br.readLine());
 		System.out.println("Enter second integer");
 		b=Integer.parseInt(br.readLine());
-		
 		System.out.println("Sum of two integers is: "+(a+b));
 	}
 }

@@ -1,10 +1,11 @@
 ---
 layout: post
 title:  "Add Two Integers in Java"
-date:   2014-12-28 20:04:04
+date:   2014-12-28 8:04:04
 categories: Java Update
 author: "Zeeshan Khan"
 tags: java addition simple
+source_file: /java/add-two-numbers-in-java.java
 ---
 Following programe will add two Integer numbers for you.
 
@@ -37,4 +38,3 @@ Enter second integer
 123
 Sum of two integers is: 135
 {% endhighlight %}
-download source code [<i class="fa fa-code"></i>](/assets/codes/java/add-two-numbers-in-java.java)
