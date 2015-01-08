@@ -81,6 +81,9 @@ $on-laptop:        800px;
 	li{
 		list-style:none;
 	}
+	ul{
+		margin-left:10px;
+	}
 	.date{
 		font-size:$small-sidebar-font-size;
 		text-align:right;
@@ -113,6 +116,9 @@ $on-laptop:        800px;
 	}
 	li{
 		list-style:none;
+	}
+	ul{
+		margin-left:0px;
 	}
 	a{
 		color:$text-color-light;
