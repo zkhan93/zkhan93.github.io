@@ -1,0 +1,41 @@
+---
+layout: default
+title: Archive
+permalink: /archive/
+---
+<h1 class="post-title">Articles</h1>
+{% for post in site.posts  %}
+    {% capture this_year %} {{ post.date | date: "%Y" }} {% endcapture %}
+    {% capture next_year %} {{ post.previous.date | date: "%Y" }} {% endcapture %}
+
+    {% if forloop.first %}
+
+    <h1 >{{this_year}}</h1>
+    <hr class="archive-divider">
+    <ul class="archive-list">
+
+    {% endif %}
+
+    <li><a class="inline post-link" href="{{ post.url }}">{{ post.title }}</a></br>
+			{% if post.date %} <i class="fa fa-calendar"></i> {% endif  %}{{ post.date| date: "%d %B" }} </br>
+			
+			{% if post.tags %} <i class="fa fa-tags"></i> {% endif  %}{%for tag in post.tags %} {{tag}} {% if forloop.last == false %}, {% endif %}{% endfor %}
+    </li>
+	
+	
+	
+    {% if forloop.last %}
+
+    </ul>
+
+    {% else %}
+        {% if this_year != next_year %}
+
+        </ul >
+        <h1>{{next_year}}</h1>
+        <hr class="archive-divider">
+        <ul class="archive-list">
+
+        {% endif %}
+    {% endif %}
+{% endfor %}

@@ -105,6 +105,9 @@
     a{
 		color:$text-color-light;
     }
+    @include media-query($on-palm){
+		text-align:center;
+    }
 }
 
 .footer-heading {
@@ -199,7 +202,7 @@
 }
 
 .post-link {
-    display: block;
+    
     font-size: 24px;
 }
 

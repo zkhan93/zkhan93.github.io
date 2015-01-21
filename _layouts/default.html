@@ -5,14 +5,10 @@
 
   <body>
 
-    {% include header.html %}
-    <div class="sidebar">
-		<div class="wrapper">
-			{% include sidebar.html%}
-		</div>
-    </div>
-   
+    {% include header.html %} 
+  
     <div class="page-content">
+		
       <div class="wrapper">
 		  
         {{ content }}
@@ -29,13 +25,6 @@
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 	</div>
-      </div>
-      <div class="mobile-sidebar">
-		  <div class="wrapper">
-			  <h3 class="mobile-sidebar-head">All Articles</h3>
-			{% include sidebar.html%}
-		</div>
-		<hr/>
       </div>
       
     </div>
