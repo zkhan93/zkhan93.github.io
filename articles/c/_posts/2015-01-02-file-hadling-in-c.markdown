@@ -6,9 +6,14 @@ categories: c update
 tags: c  file I/O pointers moderate
 date: 2015-01-03 02:11:00
 source_file: c/file-handling-in-c.c
+excerpt_separator: <!--more-->
 ---
 
-The code below will demostrate how we can handle files in C
+The following program demostrate how we to perform read and write operations on files,
+first we will create a open `myfile.txt` in `w+` i.e., write plus mode that means if the file exist open it in write mode else create a new file and open it in write mode as well, and write some text to it and close it,
+ then we will try to open the same file in `r` i.e., read only mode and try to read what is in there.
+<!--more-->
+
 {% highlight c linenos %}
 # include<stdio.h>
 int main(void){

@@ -9,7 +9,7 @@ source_file: /java/Client.java,/java/Server.java
 excerpt_separator: <!--more-->
 ---
 
-The following code demostrate how we can implement simple client server architecture in java
+The following program demostrate how we can implement simple client server architecture in java
 Start `Server.java` in a terminal/command promt then open another command promt/terminal and start `Client.java` in it
 Server can handle new Clients on disconnection of previous one.
 

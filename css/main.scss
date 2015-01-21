@@ -66,6 +66,10 @@ $on-laptop:        800px;
 	border: 4px solid white;
 	border-radius:50%;
 	float: right;
+	@include media-query($on-palm){
+		float: none;
+	}
+	
 }
 .sidebar{
 	float:right;
