@@ -172,3 +172,26 @@ ul{
 .inline{
 	display:inline;
 }
+.main-div{
+position:relative;
+	display:block;
+	float:left;
+	width:30%;
+	text-align:center;
+	@include media-query($on-palm){
+		float:none;
+		text-align:center;
+		width:auto;
+	}
+}
+.main-home{
+color:black;
+text-align:center;
+a{
+	color:black;
+}
+}
+.main-div1{
+	border: 2px black;
+}
+
