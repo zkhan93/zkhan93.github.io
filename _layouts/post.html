@@ -11,7 +11,8 @@ layout: default
   <article class="post-content">
     {{ content }}
     {% if page.source_file%}
-        <p>download source code <a href="/assets/codes/{{page.source_file}}"><i class="fa fa-code"></i></a></p>
+    {% assign files= page.source_file | split:"," %}
+        <p>download source code {% for source in files %}<a href="/assets/codes{{source}}"><i class="fa fa-file-code-o"></i> {{source | split:"/" | last}}</a>{% if forloop.last == false%}, {% endif %} {% endfor %}</p>
         {% endif %}
 		<p class="tag-list">
 			
