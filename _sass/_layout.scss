@@ -42,7 +42,13 @@
             margin-right: 20px;
        // }
     }
-
+	a{
+		color:$text-color-light;
+		 &:hover {		
+			color: $text-color-link;
+		}
+	}
+	
     @include media-query($on-palm) {
         position: relative;
         #top: 9px;
@@ -75,6 +81,7 @@
             clear:both;
             display: none;
             width:100%;
+          
         }
 
         &:hover .trigger {
@@ -92,6 +99,7 @@
 .trigger {
             float:right;
            # display: inline;
+            
         }
 
 
@@ -104,6 +112,10 @@
     color:$grey-color-light;
     a{
 		color:$text-color-light;
+		 &:hover {
+			
+         color: $text-color-link;
+    }
     }
     @include media-query($on-palm){
 		text-align:center;
@@ -179,7 +191,7 @@
     padding: $spacing-unit 0;
     a{
     decoration:none;
-    color:$grey-color;
+    
     }
 }
 

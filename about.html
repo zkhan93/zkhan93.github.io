@@ -24,43 +24,58 @@ permalink: /about/
 		<i class="fa fa-linux fa-2x"></i> <b>Linux</b> - Decent knowlege and experience of the open source OS<br/><br/>
 		</p>
 		<h1>Hire Me?</h1>
-		<p>I am free to get hired and relocated anywhere in India, contact me on <br/><br/>E-mail me on <a href="mailto:zkhan1093@gmail.com"><b>zkhan1093@gmail.com</b></a> <br/>Call me on <b>+91-8932061116</b></p>
+		<p>I am free to get hired and relocated anywhere in India, contact me on <br/><br/>
+		E-mail me on <a href="mailto:zkhan1093@gmail.com"><b>zkhan1093@gmail.com</b></a> <br/>
+		Call me on <b>+91-8932061116</b></br>
+		
+		
+		{% if site.user_resume %}
+			<a href="/assets/files/{{site.user_resume}}">Download my resume <i class="fa fa-download fa-2x"></i></a> 
+			<div class="resume"><a href="/assets/files/{{site.user_resume}}">Resume <i class="fa fa-download fa-2x"></i></a> </div>
+		
+		{% endif %}
+		
+		</p>
+		
+	
 		<h1>I am available on</h1>
 		<p>
+			<a href="https://www.facebook.com/{{site.facebook_username}}">
 			<span class="fa-stack fa-lg">
   <i class="fa fa-circle fa-stack-2x"></i>
   <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
 </span>
-		<a href="https://www.facebook.com/zeeshankhan.1001">Facebook</a>
-		
+		Facebook</a>
+		<a href="https://twitter.com/{{site.twitter_username}}">
 		<span class="fa-stack fa-lg">
   <i class="fa fa-circle fa-stack-2x"></i>
   <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
 </span>
-		<a href="https://twitter.com/zkhan1093">Twitter</a>
-		
+		Twitter</a>
+		<a href="http://in.linkedin.com/in/{{site.linkedin_username}}">
 		<span class="fa-stack fa-lg">
   <i class="fa fa-circle fa-stack-2x"></i>
   <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
 </span>
-		 <a href="http://in.linkedin.com/in/zkhan93">Linkedin</a> 
-		 
+		 Linkedin</a> 
+		<a href="http://www.codechef.com/users/{{site.codechef_username}}"> 
 		<span class="fa-stack fa-lg">
   <i class="fa fa-circle fa-stack-2x"></i>
   <i class="fa fa-code fa-stack-1x fa-inverse"></i>
 </span>
-		<a href="http://www.codechef.com/users/zkhan1093">CodeChef</a>
-		
+		CodeChef</a>
+		<a href="http://www.hackerearth.com/users/{{site.hackerearth_username}}/">
 		<span class="fa-stack fa-lg">
   <i class="fa fa-circle fa-stack-2x"></i>
   <i class="fa fa-stack-1x fa-inverse">H</i>
 </span>
-		<a href="http://www.hackerearth.com/users/zkhan93/">HackerEarth</a> 
+		HackerEarth</a> 
 		
+		<a href="https://github.com/{{site.github_username}}">
 		<span class="fa-stack fa-lg">
   <i class="fa fa-circle fa-stack-2x"></i>
   <i class="fa fa-github fa-stack-1x fa-inverse"></i>
 </span>
-		<a href="https://github.com/zkhan93">Github</a><br/>
+		Github</a><br/>
 		</p>
 </div>

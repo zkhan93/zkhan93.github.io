@@ -18,9 +18,7 @@ $base-line-height: 2.0;
 
 $spacing-unit:     30px;
 
-$text-color:  #000;
-$text-color-light: #eee;
-$text-color-dark: #000;
+
 
 $background-color: #ddd;
 $brand-color:      #111;
@@ -28,6 +26,11 @@ $brand-color:      #111;
 $grey-color:       #888;
 $grey-color-light: lighten($grey-color, 30%);
 $grey-color-dark:  darken($grey-color, 25%);
+
+$text-color:  #000;
+$text-color-light: #eee;
+$text-color-dark: #000;
+$text-color-link: $grey-color;
 
 $footer-back-color: #111;
 $header-back-color: #111;
@@ -125,7 +128,7 @@ $on-laptop:        800px;
 		margin-left:0px;
 	}
 	a{
-		color:$text-color-light;
+		
 		text-decoration:none;
 	}
 }
@@ -185,11 +188,10 @@ position:relative;
 	}
 }
 .main-home{
-color:black;
-text-align:center;
-a{
-	color:black;
-}
+	disply:table;
+	margin:5px 10px 5px 10px;
+	text-align:center;
+	@extend %clearfix;
 }
 .main-div1{
 	border: 2px black;
@@ -201,4 +203,16 @@ a{
 }
 .error-page{
 	text-align:center;
+}
+.resume{
+	display:block;
+	position: fixed;
+	padding:10px;
+	right: 0;
+	top: 75%;
+	
+	background-color:green;
+	color:#FFFFFF;
+	border: 2px solid white;
+	
 }
