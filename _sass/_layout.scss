@@ -9,6 +9,10 @@
     position: relative;
     a{
 		color:$text-color-light;
+		
+		&:hover{
+			border:none;
+		}
     }
 }
 
@@ -113,9 +117,9 @@
     a{
 		color:$text-color-light;
 		 &:hover {
-			
-         color: $text-color-link;
-    }
+			color: $text-color-link;
+			border:none;
+		}
     }
     @include media-query($on-palm){
 		text-align:center;
