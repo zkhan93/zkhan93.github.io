@@ -171,7 +171,7 @@ ul{
 }
 .archive-divider{
 	border-top: dotted 1px;
-	boder-bottom:0px;
+	border-bottom:0px;
 }
 .inline{
 	display:inline;
@@ -189,7 +189,7 @@ position:relative;
 	}
 }
 .main-home{
-	disply:table;
+	display:table;
 	margin:5px 10px 5px 10px;
 	text-align:center;
 	@extend %clearfix;
