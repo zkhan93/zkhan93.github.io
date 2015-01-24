@@ -176,7 +176,7 @@ ul{
 	display:inline;
 }
 .main-div{
-position:relative;
+	position:relative;
 	display:block;
 	float:left;
 	width:30%;
@@ -255,19 +255,19 @@ position:relative;
 	}
 }
 .ribbon-start{
-	
 	padding:10px 0 10px 10px;
 	height:100%;
 	background-image:url("/assets/images/ribbon-start.png");
 	background-size: 100% 100%;
 	background-repeat:no-repeat;
 }
-.ribbon-end{
-	height:100%;
- padding:10px 10px 10px 0;
- background-image:url("/assets/images/ribbon-end.png");
- background-size: 100% 100%;
 
+.ribbon-end{
+	padding:10px 0px 10px 10px;
+	height:100%;
+	background-image:url("/assets/images/ribbon-end.png");
+	background-size: 100% 100%;
+	background-repeat:no-repeat;
 }
 
 //button
