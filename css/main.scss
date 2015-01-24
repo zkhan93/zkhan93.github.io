@@ -16,6 +16,14 @@ $small-font-size:  $base-font-size * 0.875;
 $large-font-size:  $base-font-size * 1.3;
 $base-line-height: 2.0;
 
+$twitter-color: #55acee;
+$facebook-color: #3b5998;
+$google-color:#dd4b39;
+$hackerearth-color: #323754;
+$codechef-color:#8a7967;
+$github-color:#999999;
+$linkedin-color:#0976b4;
+
 $spacing-unit:     30px;
 
 
@@ -191,10 +199,15 @@ ul{
 	display:table;
 	margin:5px 10px 5px 10px;
 	text-align:center;
+	a{
+	 &:hover{
+		border:none
+		}
+	}
 	@extend %clearfix;
 }
 .main-div1,.main-div2,.main-div3{
-
+	
 }
 .main-div1{
 	&:hover{ 
@@ -225,11 +238,54 @@ ul{
 	}
 }
 
+//sharing 
 .share{
-	span{
-		color:black;
+	&:hover{
+		border:none;
 	}
 }
+
+.share-twitter{
+	&:hover{
+		color:$twitter-color;
+	}
+}
+
+.share-facebook{
+	&:hover{
+		color:$facebook-color;
+	}
+}
+
+.share-google{
+	&:hover{
+		color:$google-color;
+	}
+}
+
+.share-linkedin{
+	&:hover{
+		color:$linkedin-color;
+	}
+}
+.share-hackerearth{
+	&:hover{
+		color:$hackerearth-color;
+	}
+}
+.share-codechef{
+	&:hover{
+		color:$codechef-color;
+	}
+}
+.share-github{
+	&:hover{
+		color:$github-color;
+	}
+}
+
+//error page
+
 .error-page{
 	text-align:center;
 }
@@ -243,16 +299,17 @@ ul{
 	top: 75%;
 	color:#FFFFFF;
 	z-index:12;
-}
-.ribbon-content{
-	padding:10px;
-	background-image:url("/assets/images/ribbon-content.png");
-	background-size: 100% auto;
 	a{
 	&:hover{
 		color:white;
 	}
 	}
+}
+.ribbon-content{
+	padding:10px;
+	background-image:url("/assets/images/ribbon-content.png");
+	background-size: 100% auto;
+	
 }
 .ribbon-start{
 	padding:10px 0 10px 10px;
@@ -263,11 +320,12 @@ ul{
 }
 
 .ribbon-end{
-	padding:10px 0px 10px 10px;
-	height:100%;
+	padding:10px 0;
 	background-image:url("/assets/images/ribbon-end.png");
-	background-size: 100% 100%;
-	background-repeat:no-repeat;
+	background-size: 100% auto;
+	i{
+		padding:10px;
+	}
 }
 
 //button
