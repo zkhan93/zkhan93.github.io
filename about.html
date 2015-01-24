@@ -31,7 +31,16 @@ permalink: /about/
 		
 		{% if site.user_resume %}
 			<a href="/assets/files/{{site.user_resume}}">Download my resume <i class="fa fa-download fa-2x"></i></a> 
-			<div class="resume"><a href="/assets/files/{{site.user_resume}}">Resume <i class="fa fa-download fa-2x"></i></a> </div>
+			<div class="resume">
+			<span class="ribbon-start"></span>
+			<span class="ribbon-content">
+			<a href="/assets/files/{{site.user_resume}}">Resume <i class="fa fa-download fa-lg"></i></a>
+			</span>
+			<span class="ribbon-end"></span>
+		
+	
+	</div>
+			
 		
 		{% endif %}
 		
