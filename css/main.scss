@@ -43,6 +43,11 @@ $text-color-link: $grey-color;
 $footer-back-color: #111;
 $header-back-color: #111;
 $sidebar-back-color: #111;
+
+$btn-green-color : #5CB85C;
+$btn-blue-color: #3b83c0;
+
+
 // Width of the content area
 $content-width:    800px;
 
@@ -207,7 +212,9 @@ ul{
 	@extend %clearfix;
 }
 .main-div1,.main-div2,.main-div3{
-	
+	a{
+		border:none;
+	}
 }
 .main-div1{
 	&:hover{ 
@@ -240,6 +247,8 @@ ul{
 
 //sharing 
 .share{
+	border:none;
+	padding:10px;
 	&:hover{
 		border:none;
 	}
@@ -248,6 +257,7 @@ ul{
 .share-twitter{
 	&:hover{
 		color:$twitter-color;
+		
 	}
 }
 
@@ -329,16 +339,32 @@ ul{
 }
 
 //button
-
-.button{
-	padding:5px;
-	background-color:#5CB85C;;
-	border: 1px solid #4CAE4C;
+.btn{
 	border-radius:4px;
 	color:white;
 	&:hover{
 		color:white;
-		background-color:#47A447;
-		border-color:#398439
+	}
+}
+.btn-small{
+	padding:5px;
+}
+.btn-big{
+	padding:10px;
+}
+.btn-more{
+	background-color: $btn-green-color;
+	border:1px solid $btn-green-color;
+	&:hover{
+		background-color:lighten($btn-green-color,10%);
+		border-color:lighten($btn-green-color,10%);
+	}
+}
+.btn-archive{
+	background-color:$btn-blue-color;
+	border:1px solid $btn-blue-color;
+	&:hover{
+		background-color:lighten($btn-blue-color,10%);
+		border-color:lighten($btn-blue-color,10%);
 	}
 }
