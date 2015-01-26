@@ -5,7 +5,7 @@ date: 2015-01-01 04:26:00
 categories: C Update
 author: "Zeeshan Khan"
 tags: c bitwise AND OR NOT XOR
-source_file: c/bitwise-operations-in-c.c
+source_file: /c/bitwise-operations-in-c.c
 ---
 Bitwise operators in C are
 	

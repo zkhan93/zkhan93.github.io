@@ -5,7 +5,7 @@ title: File Handling in C
 categories: c update
 tags: c  file I/O pointers moderate
 date: 2015-01-03 02:11:00
-source_file: c/file-handling-in-c.c
+source_file: /c/file-handling-in-c.c
 excerpt_separator: <!--more-->
 ---
 

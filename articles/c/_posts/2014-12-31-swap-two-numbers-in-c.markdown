@@ -5,7 +5,7 @@ date: 2014-12-30 04:26:00
 categories: C Update
 author: "Zeeshan Khan"
 tags: c swapping simple
-source_file: c/swap-two-numbers-in-c.c
+source_file: /c/swap-two-numbers-in-c.c
 ---
 
 The code below swap two numbers

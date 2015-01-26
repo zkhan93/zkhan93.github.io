@@ -5,7 +5,7 @@ title: Dynamic array in C
 categories: c update
 tags: c  array dynamic
 date: 2015-01-02 07:57:00
-source_file: c/dynamic-array-in-c.c
+source_file: /c/dynamic-array-in-c.c
 ---
 Dynamic array is a array that has a fixed number of items on it, but the space required for data storage is alloted at runtime on data input.
 

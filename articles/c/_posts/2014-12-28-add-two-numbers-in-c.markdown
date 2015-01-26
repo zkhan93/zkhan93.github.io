@@ -5,7 +5,7 @@ date:   2014-12-28 20:04:04
 categories: C Update
 author: "Zeeshan Khan"
 tags: c addition simple
-source_file: c/add-two-numbers-in-c.c
+source_file: /c/add-two-numbers-in-c.c
 ---
 Following is the code that will add two float or integer values in C
 
