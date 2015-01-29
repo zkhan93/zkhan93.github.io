@@ -23,5 +23,14 @@ layout: default
 		</p>
   </article>
   {% include share.html %}
+  <div class="post-np-div">
+		{% if page.previous %}
+			<a class="post-np previous" href="{{page.previous.url}}" title="Previous: {{page.previous.title}}"><span class="fa fa-stack fa-lg"> <i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i></span></a>
+		{% endif %}
+		{% if page.next %}
+			<a class="post-np next" href="{{page.next.url}}" title="Next: {{page.next.title}}"><span class="fa fa-stack fa-lg"> <i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i></span></a>
+		{% endif %}
+  </div>
+  
 {% include disqus.html %}
 </div>

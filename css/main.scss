@@ -368,3 +368,28 @@ ul{
 		border-color:lighten($btn-blue-color,10%);
 	}
 }
+
+
+//next previous post 
+.post-np-div{
+	overflow: hidden;
+	a{
+		&:hover{
+			padding:0;
+			color:$btn-blue-color;
+			border:none;
+			font-size:20px;
+		}
+		
+	}
+}
+.post-np{
+	border:none;
+	padding:11px 0 10px 0;
+}
+.next{
+	float:right;
+}
+.previous{
+	float:left;
+}
