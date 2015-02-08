@@ -13,7 +13,7 @@ The best way to scan input in java includes the use of `BufferedReader` class, a
 The following code demostrate the use of BufferedReader for scanning input of different type.
 
 {% highlight java linenos%}
-# file Scanning.java
+# file ScanInput.java
 import java.io.*;
 public class ScanInput{
 	public static void main(String args[]) throws IOException{
