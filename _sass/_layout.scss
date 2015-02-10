@@ -88,17 +88,20 @@
           
         }
 
-        &:hover .trigger {
-            display: block;
-            padding-bottom: 5px;
-            float:none;
-        }
+       
         .page-link {
             display: block;
             padding: 5px 10px;
             
         }
     }
+}
+.hover{
+	 &:hover .trigger {
+            display: block;
+            padding-bottom: 5px;
+            float:none;
+        }
 }
 .trigger {
             float:right;
