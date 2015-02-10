@@ -92,6 +92,7 @@ a {
     text-decoration: none;
     color: $text-color;
     border-bottom:1px dotted $text-color;
+    transition: color 0.5s ease;
     &:visited {
     }
     &:hover {

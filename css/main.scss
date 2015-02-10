@@ -219,7 +219,9 @@ ul{
 .main-div1,.main-div2,.main-div3{
 	a{
 		border:none;
+		
 	}
+	transition: color 0.5s ease;
 }
 .main-div1{
 	&:hover{ 
