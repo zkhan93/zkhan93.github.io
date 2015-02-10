@@ -97,10 +97,12 @@
     }
 }
 .hover{
+ @include media-query($on-palm) {
 	 &:hover .trigger {
             display: block;
             padding-bottom: 5px;
             float:none;
+        }
         }
 }
 .trigger {
