@@ -83,12 +83,14 @@ $on-laptop:        800px;
 	border-radius:50%;
 	float: right;
 	opacity: 0.7;
+	margin:5px;
+	transition: all 0.5s;
 	@include media-query($on-palm){
 		float: none;
-		
 	}
 	&:hover{
 		opacity: 1.0;
+		border-radius:25%;
 	}
 	
 }
@@ -221,7 +223,10 @@ ul{
 		border:none;
 		
 	}
-	transition: color 0.5s ease;
+	transition: all 0.5s ease;
+	&:hover{
+		font-size:1.1em;
+	}
 }
 .main-div1{
 	&:hover{ 
@@ -255,7 +260,6 @@ ul{
 //sharing 
 .share{
 	border:none;
-	padding:10px;
 	&:hover{
 		border:none;
 	}
@@ -312,8 +316,9 @@ ul{
 .resume{
 	display:block;
 	position: fixed;
+	transition: all 2s;
 	right: 0;
-	top: 75%;
+	bottom: 100px;
 	color:#FFFFFF;
 	z-index:12;
 	a{
@@ -392,7 +397,12 @@ ul{
 }
 .post-np{
 	border:none;
-	padding:11px 0 10px 0;
+	padding:11px 0 11px 0;
+	transition: all 0.5s;
+	&:hover{
+		padding:0px;
+		font-size:20px;
+	}
 }
 .next{
 	float:right;

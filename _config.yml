@@ -2,6 +2,7 @@
 title: Coders
 slogan: "Keep Learning.."
 email: zkhan1093@gmail.com
+host: 0.0.0.0
 description: > # this means to ignore newlines until "baseurl:"
   Coders is a blog maintained and run by Zeeshan Khan, Here you will find posts related to technologies and coding, requests and suggestions are encouraged and are heartily welcome
 baseurl: "" # the subpath of your site, e.g. /blog/
