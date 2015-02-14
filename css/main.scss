@@ -7,7 +7,7 @@
 
 // Our variables
 $base-font-family: 'Montserrat', sans-serif;
-$heading-font-family: 'Roboto', sans-serif;
+$heading-font-family: 'Montserrat', sans-serif;
 $base-font-size:   12px;
 $sidebar-font-size:   $base-font-size;
 $small-sidebar-font-size: $sidebar-font-size*0.8;
@@ -69,7 +69,10 @@ $on-laptop:        800px;
     }
 }
 
-
+@font-face {
+    font-family: BiloxiScript;
+    src: url(../assets/fonts/BiloxiScript.ttf);
+}
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
@@ -84,13 +87,14 @@ $on-laptop:        800px;
 	float: right;
 	opacity: 0.7;
 	margin:5px;
-	transition: all 0.5s;
+	transition: all 1s;
+	
 	@include media-query($on-palm){
 		float: none;
 	}
 	&:hover{
 		opacity: 1.0;
-		border-radius:25%;
+		transform: rotate(-10deg);
 	}
 	
 }
@@ -207,10 +211,15 @@ ul{
 		width:auto;
 	}
 }
+
 .main-home{
 	display:table;
 	margin:5px 10px 5px 10px;
 	text-align:center;
+	h1{
+		font-family: BiloxiScript;
+		font-weight:bold;
+	}
 	a{
 	 &:hover{
 		border:none
@@ -219,6 +228,7 @@ ul{
 	@extend %clearfix;
 }
 .main-div1,.main-div2,.main-div3{
+
 	a{
 		border:none;
 		
