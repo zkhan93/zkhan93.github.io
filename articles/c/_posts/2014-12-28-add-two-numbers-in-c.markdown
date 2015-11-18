@@ -9,7 +9,7 @@ source_file: /c/add-two-numbers-in-c.c
 ---
 Following is the code that will add two float or integer values in C
 
-{% highlight c linenos%}
+{% highlight c linenos %}
 #include<stdio.h> //include header files
 int main(){
 	//declaring variables to store values
