@@ -152,6 +152,22 @@ void freeNode(node* head){
         freeNode(head->next);
 }
 
+/**
+ * This function create a new node from memory pool,
+ * assign a value to the value variable in the node and return it's pointer;
+ * @parmeters
+ *      int value: the value to be assigned to the new node.
+ **/
+node* getNewNodeWithValue(int value){
+    //getting memory from free pool.
+    node* newNode=(node*)malloc(sizeof(node));
+    //assigning value to the node's value member
+    newNode->value=value;
+    //setting next pointer to null
+    newNode->next='\0';
+    return newNode;
+}
+
 int main(){
     //initially head points to null ie., list is empty
     node* head='\0';
@@ -161,10 +177,7 @@ int main(){
     //Adding 5 new nodes to the end of the list
     // result should be 1->2->3->4->5
     for(i=0;i<5;i++){
-        //getting memory from free pool.
-        tmpNode=(node*)malloc(sizeof(node));
-        //assigning value ti the node's value member
-        tmpNode->value=i+1;
+        tmpNode=getNewNodeWithValue(i+1);
         //adding this new node to the end of the list
         head=addNodeToEnd(head,tmpNode);
         //printing the list
@@ -174,24 +187,22 @@ int main(){
     //Adding next 5 values to the start of the list
     // result should be 10->9->8->7->6->1->2->3->4->5
     for(i=5;i<10;i++){
-        tmpNode=(node*)malloc(sizeof(node));
-        tmpNode->value=i+1;
+        tmpNode=getNewNodeWithValue(i+1);
         //adding this new node to the start of the list
         head=addNodeToStart(head,tmpNode);
+         //printing the list
         printList(head);
     }
     
     //Adding 11 after 6
     //result should be 10->9->8->7->6->11->1->2->3->4->5
-    tmpNode=(node*)malloc(sizeof(node));
-    tmpNode->value=11;
+    tmpNode=getNewNodeWithValue(11);
     head=addNodeAfterValue(head,tmpNode,6);
     printList(head);
     
     //Adding 12 befor 2
     //result should be 10->9->8->7->6->11->1->12->2->3->4->5
-    tmpNode=(node*)malloc(sizeof(node));
-    tmpNode->value=12;
+    tmpNode=getNewNodeWithValue(12);
     head=addNodeBeforeValue(head,tmpNode,2);
     printList(head);
     
@@ -201,4 +212,13 @@ int main(){
     return 0;
 }
 {% endhighlight %}
+
+So, we have 7 functions excluding `main()` let's have a breif introduction,
+* `printList(node*)` print the current list on console.
+* `addNodeToEnd(node*,node*)` add a node to end of list.
+* `addNodeToStart(node*,node*)` add a new node to the begining of list.
+* `addNodeAfterValue(node*,node*,int)` add a new node after a specific value.
+* `addNodeBeforeValue(node*,node*,int)` add a new node before a specific value.
+* `freeNode(node*)` free up the memory associated with this node and other linked nodes.
+* `getNewNodeWithValue(int)` get a new node with a specific value.
 
