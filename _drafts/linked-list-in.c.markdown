@@ -7,8 +7,8 @@ author: "Zeeshan Khan"
 tags: c linked list
 source_file: /c/linked-list-in-c.c
 ---
-Following is the code that will demostrate the operations on linked list
-
+Following is the code that will demostrate the operations on linked list, 
+although the code is self explanatory we will explain each portion seperately.
 {% highlight c linenos %}
 #include<stdio.h>
 #include<stdlib.h>
@@ -201,3 +201,4 @@ int main(){
     return 0;
 }
 {% endhighlight %}
+
