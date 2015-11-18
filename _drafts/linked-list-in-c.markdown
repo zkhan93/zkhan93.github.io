@@ -7,9 +7,12 @@ author: "Zeeshan Khan"
 tags: c linked list
 source_file: /c/linked-list-in-c.c
 ---
+
 Following is the code that will demostrate the operations on linked list, 
 although the code is self explanatory we will explain each portion seperately.
+
 {% highlight c linenos %}
+
 #include<stdio.h>
 #include<stdlib.h>
 /**
@@ -176,8 +179,8 @@ int main(){
     
     //Adding 5 new nodes to the end of the list
     // result should be 1->2->3->4->5
-    for(i=0;i<5;i++){
-        tmpNode=getNewNodeWithValue(i+1);
+    for(i=1;i<=5;i++){
+        tmpNode=getNewNodeWithValue(i);
         //adding this new node to the end of the list
         head=addNodeToEnd(head,tmpNode);
         //printing the list
@@ -186,8 +189,8 @@ int main(){
     
     //Adding next 5 values to the start of the list
     // result should be 10->9->8->7->6->1->2->3->4->5
-    for(i=5;i<10;i++){
-        tmpNode=getNewNodeWithValue(i+1);
+    for(i=6;i<=10;i++){
+        tmpNode=getNewNodeWithValue(i);
         //adding this new node to the start of the list
         head=addNodeToStart(head,tmpNode);
          //printing the list
@@ -214,11 +217,12 @@ int main(){
 {% endhighlight %}
 
 So, we have 7 functions excluding `main()` let's have a breif introduction,
-* `printList(node*)` print the current list on console.
-* `addNodeToEnd(node*,node*)` add a node to end of list.
-* `addNodeToStart(node*,node*)` add a new node to the begining of list.
-* `addNodeAfterValue(node*,node*,int)` add a new node after a specific value.
-* `addNodeBeforeValue(node*,node*,int)` add a new node before a specific value.
-* `freeNode(node*)` free up the memory associated with this node and other linked nodes.
-* `getNewNodeWithValue(int)` get a new node with a specific value.
+
+*   `printList(node*)` print the current list on console.
+*   `addNodeToEnd(node*,node*)` add a node to end of list.
+*   `addNodeToStart(node*,node*)` add a new node to the begining of list.
+*   `addNodeAfterValue(node*,node*,int)` add a new node after a specific value.
+*   `addNodeBeforeValue(node*,node*,int)` add a new node before a specific value.
+*   `freeNode(node*)` free up the memory associated with this node and other linked nodes.
+*   `getNewNodeWithValue(int)` get a new node with a specific value.
 
