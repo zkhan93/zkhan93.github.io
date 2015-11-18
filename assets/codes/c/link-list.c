@@ -13,8 +13,8 @@ typedef struct node{
  * value1->value2->value3...->valuen
  * eg. 1->2->3->4
  * if the list is empty it simply prints a message 'List is Empty'
- * @argument node* head:
- *      head or root of the linked list,
+ * @parmeters
+ *      node* head: head or root of the linked list,
  *      i.e., pointer pointing to the first item(more formally first node) in the linked list.
  *  
  **/
@@ -58,6 +58,7 @@ node* addNodeToEnd(node* head, node* newNode){
 
 /**
  * This function add a node to the start of the linked list
+ * @parameters
  **/
 node* addNodeToStart(node* head,node* newNode){
     if(head=='\0'){
@@ -73,7 +74,7 @@ node* addNodeToStart(node* head,node* newNode){
 
 /**
  * This function add a new node, after a specified value in the list
- * @paramters
+ * @parameters
  *      node* head: pointer of type node, pointing to the start of the list
  *      node* newNode: pointer of type node, pointing to the newly created node(i.e., the new node to be inserted)
  *      int value: value after which newNode has to be inserted
@@ -128,7 +129,9 @@ node* addNodeBeforeValue(node* head,node* newNode,int value){
 }
 
 /**
- * function to free up all the allocated memory.
+ * This function free up all the memory attached with specified node
+ * @parmeters
+ *      node* head: root of the list 
  **/
 void freeNode(node* head){
     if(head->next=='\0')
@@ -146,9 +149,13 @@ int main(){
     //Adding 5 new nodes to the end of the list
     // result should be 1->2->3->4->5
     for(i=0;i<5;i++){
+        //getting memory from free pool.
         tmpNode=(node*)malloc(sizeof(node));
+        //assigning value ti the node's value member
         tmpNode->value=i+1;
+        //adding this new node to the end of the list
         head=addNodeToEnd(head,tmpNode);
+        //printing the list
         printList(head);
     }
     
@@ -157,6 +164,7 @@ int main(){
     for(i=5;i<10;i++){
         tmpNode=(node*)malloc(sizeof(node));
         tmpNode->value=i+1;
+        //adding this new node to the start of the list
         head=addNodeToStart(head,tmpNode);
         printList(head);
     }
