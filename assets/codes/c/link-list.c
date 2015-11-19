@@ -164,8 +164,8 @@ int main(){
     
     //Adding 5 new nodes to the end of the list
     // result should be 1->2->3->4->5
-    for(i=0;i<5;i++){
-        tmpNode=getNewNodeWithValue(i+1);
+    for(i=1;i<=5;i++){
+        tmpNode=getNewNodeWithValue(i);
         //adding this new node to the end of the list
         head=addNodeToEnd(head,tmpNode);
         //printing the list
@@ -174,8 +174,8 @@ int main(){
     
     //Adding next 5 values to the start of the list
     // result should be 10->9->8->7->6->1->2->3->4->5
-    for(i=5;i<10;i++){
-        tmpNode=getNewNodeWithValue(i+1);
+    for(i=6;i<=10;i++){
+        tmpNode=getNewNodeWithValue(i);
         //adding this new node to the start of the list
         head=addNodeToStart(head,tmpNode);
          //printing the list
