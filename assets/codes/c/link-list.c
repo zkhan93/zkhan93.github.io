@@ -65,9 +65,8 @@ node* addNodeToStart(node* head,node* newNode){
         head=newNode;
     }
     else{
-        node* tmpNode=head;
+        newNode->next=head;
         head=newNode;
-        newNode->next=tmpNode;
     }
     return head;
 }
@@ -182,16 +181,36 @@ int main(){
         printList(head);
     }
     
-    //Adding 11 after 6
-    //result should be 10->9->8->7->6->11->1->2->3->4->5
+    //Adding 11 after 10
+    //result should be 10->11->9->8->7->6->1->2->3->4->5
     tmpNode=getNewNodeWithValue(11);
-    head=addNodeAfterValue(head,tmpNode,6);
+    head=addNodeAfterValue(head,tmpNode,10);
+    printList(head);
+    //Adding 12 after 5
+    //result should be 10->11->9->8->7->6->1->2->3->4->5->12
+    tmpNode=getNewNodeWithValue(12);
+    head=addNodeAfterValue(head,tmpNode,5);
+    printList(head);
+    //Adding 13 after 8
+    //result should be 10->11->9->8->13->7->6->1->2->3->4->5->12
+    tmpNode=getNewNodeWithValue(13);
+    head=addNodeAfterValue(head,tmpNode,8);
     printList(head);
     
-    //Adding 12 befor 2
-    //result should be 10->9->8->7->6->11->1->12->2->3->4->5
-    tmpNode=getNewNodeWithValue(12);
-    head=addNodeBeforeValue(head,tmpNode,2);
+    //Adding 14 before 10
+    //result should be 14->10->11->9->8->13->7->6->1->2->3->4->5->12
+    tmpNode=getNewNodeWithValue(14);
+    head=addNodeBeforeValue(head,tmpNode,10);
+    printList(head);
+    //Adding 15 before 12
+    //result should be 14->10->11->9->8->13->7->6->1->2->3->4->5->15->12
+    tmpNode=getNewNodeWithValue(15);
+    head=addNodeBeforeValue(head,tmpNode,12);
+    printList(head);
+    //Adding 16 before 13
+    //result should be 14->10->11->9->8->16->13->7->6->1->2->3->4->5->12
+    tmpNode=getNewNodeWithValue(16);
+    head=addNodeBeforeValue(head,tmpNode,13);
     printList(head);
     
     //free up all the allocated memory

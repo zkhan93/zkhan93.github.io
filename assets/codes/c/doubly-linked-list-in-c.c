@@ -172,7 +172,11 @@ void printList(node* head){
         printf("\n");
     }
 }
-
+/**
+ * fee up the allocated memory
+ * @parametes:
+ *      node* head: pointer to head or root of the list.
+ **/
 void freeList(node* head){
     if(head->next!='\0'){
         freeList(head->next);
