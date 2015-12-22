@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Linked List in C"
-date: 2015-11-18 15:24:00
+date: 2015-11-23 15:24:00
 categories: c update
 author: "Zeeshan Khan"
 tags: c linked list
