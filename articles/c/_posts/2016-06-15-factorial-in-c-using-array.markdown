@@ -5,7 +5,7 @@ date: 	2016-06-15 05:53:34
 categories: update c
 tags: c factorial
 title: Factorial in C using Charecter array
-source_file: /c/factorial-using-character-array.c
+source_file: /c/factorial-using-character-array-in-c.c
 ---
 
 Hey Guys, wondering why I am here once again with this "factorial" thing? You will get to know it in no time..just keep reading!<br/>
