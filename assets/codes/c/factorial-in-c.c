@@ -4,13 +4,13 @@
 
 # include<stdio.h>
 
-int factorial(int number){
-	int i,factorial=1;
+void factorial(int number){
+	int i;
+	long long int factorial=1;
 	for ( i = number ; i > 0 ; i-- ) 
 		factorial*=i;
 	//	Printing the factorial of the number	**/
-	printf("Factorial of %d = %d",number,factorial);
-	return 0;
+	printf("Factorial of %d = %lld",number,factorial);
 }
 
 int main(){

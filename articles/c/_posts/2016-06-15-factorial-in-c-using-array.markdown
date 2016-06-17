@@ -24,9 +24,9 @@ Continue then...
 7! = 5040<br/>
 8! = 40320
 
-Now let's look at 10! It is 3628800
+Now let's look at 21! It is 51090942171709440000
 
-Here comes the problem, in languages like C we need to keep an eye on the size of the variables. Even if we try storing the factorial in a `long` variable, it wont solve our problem.<br/>
+Here comes the problem, in languages like C we need to keep an eye on the size of the variables. Even if we try storing the factorial in a `long long int` variable, it wont solve our problem.<br/>
 So what's the solution? Think,think...<br/>
 Well , it's to use a character array. Let me show you how to do it, check out the code below:
 
@@ -83,8 +83,8 @@ int main(){
 
 The output wil be as :
 {% highlight c%}
-Enter a number : 10
-Factorial of 10 is : 3628800
+Enter a number : 21
+Factorial of 21 is : 51090942171709440000
 {% endhighlight%} 
 
 Let me explain you the working of the `factorial(int)`. As discussed earlier I have used character array `arr[]` for calculating the factorial, one digit at each index in reverse order.
@@ -92,35 +92,35 @@ Let me explain you the working of the `factorial(int)`. As discussed earlier I h
 First of all if the `number` is less than or equal to 0 we will simply return as there is no point in calculating its factorial.<br/>
 Next I have stored a '0' at all the indeces of `arr` in order to avoid any absurd value using the `for` loop.(You will get to know the reason later on)
 After that there is a `while` loop which I have used to store the `number` in the `arr` in the reverse order.<br/>
-Suppose the user wants the factorial of 10,then we will have the following values in our array:<br/>
-`arr[0] = 0, arr[1] = 1` 
+Suppose the user wants the factorial of 21,then we will have the following values in our array:<br/>
+`arr[0] = 1, arr[1] = 2` 
 Also we need to keep track of the `index` till where we have a valid value.<br/>
-Now we are going to calculate the factorial, i.e. 10 * 9 * 8 ....* 2 * 1
+Now we are going to calculate the factorial, i.e. 21 * 20 * 19 ....* 2 * 1
 
 ### The for loop 
 
-What I am gonna do is to loop through the `number`-1 (9) till 2. In this loop, I will multiply the number that is stored in the array to the loop variable (j) and store the result back in the character array(again digit wise and in reverse order).
-For instance, in the first iteration of `for` loop, what I have done is that I have multiplied 10(`arr`) by 9(`j`) and stored the result back in `arr[]`  , the values will be as:<br/>
-`arr[0] = 0, arr[1] = 9` (remember reverse order?)
+What I am gonna do is to loop through the `number`-1 (20) till 2. In this loop, I will multiply the number that is stored in the array to the loop variable (j) and store the result back in the character array(again digit wise and in reverse order).
+For instance, in the first iteration of `for` loop, what I have done is that I have multiplied 21(`arr`) by 20(`j`) and stored the result back in `arr[]`  , the values will be as:<br/>
+`arr[0] = 0, arr[1] = 2, arr[2] = 4,` (remember reverse order?)
 
-Now lets understand how this 10 became 90
+Now lets understand how this 12 became 024 (reverse of 420 (21*20))
 
 ### The do-while loop.	
 Look at the following line:<br/>
-`temp = arr[i] * j + carry;`	(0 * 9 + 0)	<br/>
-Here, temp is used to temporarily hold the value of the product of the last digit(0) and the iteration variable j(9).
-The result comes out to be 0. Then, <br/>
+`temp = arr[i] * j + carry;`	(1 * 20 + 0)	<br/>
+Here, `temp` is used to temporarily hold the value of the product of the last digit(1) and the iteration variable `j`(20).
+The result comes out to be 20.Next , <br/>
 `arr[i] = temp % 10` <br/>
 stores the last digit of `temp` variable in the first index of `arr`, i.e., 0 will be stored at `arr[0]`. <br/>
 `carry = temp / 10` <br/>
-stores the remainging digits of the value of `temp` variable. After this, we'll do an `i++` in order to keep record of number of digits that have been multiplied in this iteration.<br/>
+stores the remaining digits(2) of the value of `temp` variable,i.e., 2 will be stored in `carry`. After this, we'll do an `i++` (i becomes 1) in order to keep record of number of digits that have been multiplied in this iteration.<br/>
 `while(carry > 0 || i < index)`<br/>
- line checks if we have multiplied `j` with all the digits of the `arr` or not. Notice the `carry > 0` statement, it is to check whether there is any carry left or not.
-Coming out of the `while` at this time the values of `arr` will be as follows:<br/>
-`arr[0] = 0, arr[1] = 1` and `carry = 0`. Now since the `i` is less than index (`i = 1, index = 2`), control will again go into the `do-while` loop, this time `j` will be multiplied to `arr[1]`<br/>
-`temp = arr[i] * j + carry;`	(1 * 9 + 0)	<br/>
-This results in the value of temp = 9 Now, `arr[i] = temp % 10` results in arr[1] = 9 and  `carry = temp / 10` results in carry = 0. Now the loop condition becomes false as `i` is now equal to `index` and after the coming out of the `do-while` loop, we need to update the `index` as well and the values of `arr` will be as follows:	<br/>
-`arr[0] = 0, arr[1] = 9`
+ line checks if we have multiplied `j` with all the digits of the `arr` or not. Notice the `carry > 0` statement, it is to check whether there is any carry left or not. And since we have a carry '2' we'll again enter the while loop and this time,	<br/>
+ `temp = arr[i] * j + carry;` (2 * 20 + 2) stores 42 in temp. Hence, `arr[i] = temp % 10` will store 2 at `a[1]` and `carry = temp / 10` will store 4 in `carry` which, in the next iteration of while, will be stored at `a[2]`(try a dry run in your mind to picture how this wil happen).
+Therefore, coming out of the `do-while` loop at this time, the values of `arr` will be as follows:<br/>
+`arr[0] = 0, arr[1] = 2, arr[2] = 4` and `carry = 0`
+and at this point we'll update the value of `index` also.
+
 Likewise each value of `j`is multipied in the value stored in `arr`.	
 
 Lastly, after coming out of the `for` loop we have to print the number stored in the `arr`, but remember in the reverse order, starting from `index`-1 to 0.
