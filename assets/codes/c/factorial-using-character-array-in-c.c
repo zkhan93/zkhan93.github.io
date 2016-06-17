@@ -1,3 +1,7 @@
+/**
+* Author: Swati Kesarwani
+**/
+
 # include<stdio.h>
 
 int factorial(int number){

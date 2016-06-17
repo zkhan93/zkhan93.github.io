@@ -4,7 +4,7 @@ author: Swati Kesarwani
 date: 	2016-06-15 05:53:34
 categories: update c
 tags: c factorial
-title: Factorial in C using Charecter array
+title: Factorial in C using Character array
 source_file: /c/factorial-using-character-array-in-c.c
 ---
 
