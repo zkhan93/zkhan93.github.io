@@ -3,17 +3,13 @@
 ---
 @charset "utf-8";
 
-
-
 // Our variables
-$base-font-family: 'Montserrat', sans-serif;
-$heading-font-family: 'Montserrat', sans-serif;
-$base-font-size:   12px;
-$sidebar-font-size:   $base-font-size;
-$small-sidebar-font-size: $sidebar-font-size*0.8;
-$large-sidebar-font-size: $sidebar-font-size*1.2;
-$small-font-size:  $base-font-size * 0.875;
-$large-font-size:  $base-font-size * 1.3;
+$base-font-family: 'Open Sans', sans-serif;
+$heading-font-family: 'Open Sans', sans-serif;
+
+$base-font-size:   14px;
+$small-font-size:  $base-font-size * 0.928;
+$large-font-size:  $base-font-size * 1.857;
 $base-line-height: 2.0;
 
 $twitter-color: #55acee;
@@ -26,19 +22,19 @@ $linkedin-color:#0976b4;
 
 $spacing-unit:     30px;
 
-
-
-$background-color: #ddd;
+$background-color: #e6e6e6;
+$foreground-color: #fff;
 $brand-color:      #111;
 
 $grey-color:       #888;
 $grey-color-light: lighten($grey-color, 30%);
 $grey-color-dark:  darken($grey-color, 25%);
 
-$text-color:  #000;
-$text-color-light: #eee;
-$text-color-dark: #000;
-$text-color-link: $grey-color;
+$text-color:  #444;
+$text-color-heading:  #515151;
+$text-color-light: #6a6a6a;
+$text-color-dark: #444;
+$text-color-link: #21759b;
 
 $footer-back-color: #111;
 $header-back-color: #111;
@@ -48,14 +44,75 @@ $btn-green-color : #5CB85C;
 $btn-blue-color: #3b83c0;
 
 
-// Width of the content area
-$content-width:    800px;
+body{
+    background-color: $background-color;
+    font-family: $base-font-family;
+    color:$text-color;
+    font-size: $base-font-size;
+    .container{
+      background-color: $foreground-color;
+    }
+}
+#page{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+  padding: 0 2.857142857rem;
+}
+.heading{
+  font-weight: bold;
+  color:$text-color-heading;
+  font-size: $large-font-size;
+}
+.small{
+    font-size: $small-font-size;
+}
+.main-heading{
+  margin-top:10px;
+  margin-bottom:10px;
+}
+a{
+  color:$text-color-link;
+  &:hover{
+    color:darken($text-color-link,20%);
+  }
+  .heading{
+    color:$text-color;
+    &:hover{
+      color:$text-color-link;
+    }
+  }
+}
+.menu-container{
+  margin-top:4rem;
+  border-top: 1px solid #dedede;
+  border-bottom: 1px solid #dedede;
 
-$on-palm:          700px;
-$on-laptop:        800px;
-
-
-
+}
+.main-menu{
+  list-style: none;
+  display: flex;
+  margin: 0;
+  .menu-item{
+    padding-top:10px;
+    padding-bottom:10px;
+    float: left;
+    vertical-align: middle;
+    margin-right:20px;
+    text-transform: uppercase;
+    a{
+      color:$text-color-light;
+      text-decoration: none;
+      &:hover{
+        color:$text-color-dark;
+      }
+    }
+    .active{
+      color:$text-color-dark;
+      font-weight: bold;
+    }
+  }
+}
 // Using media queries with like this:
 // @include media-query($on-palm) {
 //     .wrapper {
@@ -63,6 +120,7 @@ $on-laptop:        800px;
 //         padding-left: $spacing-unit / 2;
 //     }
 // }
+/*
 @mixin media-query($device) {
     @media screen and (max-width: $device) {
         @content;
@@ -88,15 +146,15 @@ $on-laptop:        800px;
 	opacity: 0.7;
 	margin:5px;
 	transition: all 1s;
-	
+
 	@include media-query($on-palm){
 		float: none;
 	}
 	&:hover{
 		opacity: 1.0;
-		
+
 	}
-	
+
 }
 .sidebar{
 	float:right;
@@ -152,7 +210,7 @@ $on-laptop:        800px;
 		margin-left:0px;
 	}
 	a{
-		
+
 		text-decoration:none;
 	}
 }
@@ -231,16 +289,16 @@ ul{
 
 	a{
 		border:none;
-		
+
 	}
 	transition: all 0.5s ease;
 }
 .main-div1{
-	&:hover{ 
+	&:hover{
 		color:#49c171;
 		a{
 			color:#49c171;
-		
+
 		}
 	}
 }
@@ -264,7 +322,7 @@ ul{
 	}
 }
 
-//sharing 
+//sharing
 .share{
 	border:none;
 	&:hover{
@@ -275,7 +333,7 @@ ul{
 .share-twitter{
 	&:hover{
 		color:$twitter-color;
-		
+
 	}
 }
 
@@ -338,7 +396,7 @@ ul{
 	padding:10px;
 	background-image:url("/assets/images/ribbon-content.png");
 	background-size: 100% auto;
-	
+
 }
 .ribbon-start{
 	padding:10px 0 10px 10px;
@@ -389,17 +447,17 @@ ul{
 }
 
 
-//next previous post 
+//next previous post
 .post-np-div{
 	overflow: hidden;
 	a{
 		&:hover{
-			
+
 			color:$btn-blue-color;
 			border:none;
-			
+
 		}
-		
+
 	}
 }
 .post-np{
@@ -418,7 +476,7 @@ ul{
 
 .skill-icon{
 	display:block;
-	
+
 }
 .skill-div{
 	position:relative;
@@ -429,7 +487,7 @@ ul{
 	@include media-query($on-palm){
 		float:none;
 		display:inline;
-		
+
 	}
 }
 
@@ -440,3 +498,4 @@ ul{
 		margin:auto;
 	}
 }
+*/

@@ -1,7 +1,8 @@
 ---
 layout: page
-title: Projects
-permalink: /projects/
+title: Portfolio
+permalink: /portfolio/
+order: 1
 ---
 
 
@@ -11,7 +12,7 @@ permalink: /projects/
 
 The application is a simple, beautiful and Ad free news feed reader,
 
-The feed URL has to be set by user, along with news user may also set his/her Facebook Notification RSS URL which will get Facebook notifications in no time, 
+The feed URL has to be set by user, along with news user may also set his/her Facebook Notification RSS URL which will get Facebook notifications in no time,
 To keep it simple there is no background service running and eating you device RAM or Power, all you have to do is just open the application and press the refresh button the app will fetch the feeds an display them to you.
 It also saves the feeds locally so that you can see them later without refreshing it again, but to get the latest feeds you have to refresh it once again,
 
@@ -24,7 +25,7 @@ another feature is that you can set the maximum number of feeds to be stored loc
 </a>
 
 <hr>
-	
+
 <img src="https://raw.githubusercontent.com/zkhan93/SGI_app/master/res/drawable-xxhdpi/ic_launcher.png" title="SGI Android Application" class="project-image" />
 
 ###SGI - Android Application and Web Service

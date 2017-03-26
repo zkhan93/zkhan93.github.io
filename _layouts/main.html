@@ -4,31 +4,27 @@
   {% include head.html %}
 
   <body>
+    <!-- {% include header.html %} -->
+    <div class="container" id="page">
 
-    {% include header.html %}
-
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
-        <p class="adp">Advertisement</p>
-         <div class="ad">
-          	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-          <!-- blog-bottom-banner -->
-          <ins class="adsbygoogle"
-               style="display:block"
-               data-ad-client="ca-pub-8023468202540314"
-               data-ad-slot="1054108052"
-               data-ad-format="auto"></ins>
-          <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-          </script>
-	     </div>
+        <div class="main-heading">
+          <h2 class="heading">Zeeshan Khan</h2>
+          <p class="small">Software Engineer</p>
+          <div class="menu-container">
+          <ul class="main-menu">
+            {% assign sorted_pages = site.pages | sort:"order" %}
+            {% for page in sorted_pages %}
+      			  {% if page.title %}
+      			     <li class="menu-item"><a class="" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
+      			  {% endif %}
+      			{% endfor %}
+            <li class="menu-item"><a class="active" href="#">Laddu</a></li>
+          </ul>
+        </div>
       </div>
-       
-    </div>
 
-    {% include footer.html %}
-<script defer src="/js/search.js"></script>
+              <!--{{ content }}-->
+    </div>
   </body>
-	
+
 </html>
