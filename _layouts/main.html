@@ -1,30 +1,23 @@
 <!DOCTYPE html>
 <html>
-
   {% include head.html %}
-
   <body>
-    <!-- {% include header.html %} -->
     <div class="container" id="page">
-
-        <div class="main-heading">
-          <h2 class="heading">Zeeshan Khan</h2>
-          <p class="small">Software Engineer</p>
-          <div class="menu-container">
-          <ul class="main-menu">
-            {% assign sorted_pages = site.pages | sort:"order" %}
-            {% for page in sorted_pages %}
-      			  {% if page.title %}
-      			     <li class="menu-item"><a class="" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
-      			  {% endif %}
-      			{% endfor %}
-            <li class="menu-item"><a class="active" href="#">Laddu</a></li>
-          </ul>
-        </div>
-      </div>
-
-              <!--{{ content }}-->
+      {% include header.html %}
+      {{ content }}
+      <!-- {% include share.html %} -->
+      {% include footer.html %}
     </div>
+    <script>
+    $(document).ready(function(){
+        $('.main-menu-vertical').hide();
+      $('#menu-toggler').on('click',function(event){
+        console.log('tada');
+        $('.main-menu-vertical').toggle();
+        event.preventDefault();
+      })
+    })
+    </script>
   </body>
 
 </html>

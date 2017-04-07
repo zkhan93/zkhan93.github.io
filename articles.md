@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: main
 title: Articles
 permalink: /articles/
 order: 4

@@ -1,86 +1,26 @@
 <footer class="site-footer">
 
-  <div class="wrapper">
-
-    <h1 class="footer-heading">{{ site.title }}</h1>
+  <div class="container-fluid">
 
     <div class="footer-col-wrapper">
-      <div class="footer-col  footer-col-1">
-        <ul class="contact-list">
-          <li>{{ site.title }}</li>
-          <li><a href="mailto:{{ site.email }}"><i class="fa fa-envelope"></i> {{ site.email }}</a></li>
-        </ul>
-      </div>
 
       <div class="footer-col  footer-col-2">
-        <ul class="social-media-list">
+          <b>Follow on: </b>
           {% if site.github_username %}
-          <li>
-            <a href="https://github.com/{{ site.github_username }}">
-				<span class="fa fa-stack">
-					<i class="fa fa-circle-o fa-stack-2x"></i>
-					<i class="fa  fa-github fa-stack-1x"></i>
-              </span>
-              <span class="username">{{ site.github_username }}</span>
-            </a>
-          </li>
+            <a href="https://github.com/{{ site.github_username }}"><i class="fa  fa-github "></i> Github</a>
           {% endif %}
-
           {% if site.twitter_username %}
-          <li>
-            <a href="https://twitter.com/{{ site.twitter_username }}">
-              <span class="fa fa-stack">
-					<i class="fa fa-circle-o fa-stack-2x"></i>
-					<i class="fa  fa-twitter fa-stack-1x"></i>
-              </span>
-              <span class="username">{{ site.twitter_username }}</span>
-            </a>
-          </li>
+            <a href="https://twitter.com/{{ site.twitter_username }}"><i class="fa fa-twitter "></i> <span class="username"> Twitter</span></a>
           {% endif %}
           {% if site.facebook_username %}
-          <li>
-            <a href="https://facebook.com/{{ site.facebook_username }}">
-              <span class="fa fa-stack">
-					<i class="fa fa-circle-o fa-stack-2x"></i>
-					<i class="fa  fa-facebook fa-stack-1x"></i>
-              </span>
-              <span class="username">{{ site.facebook_username }}</span>
-            </a>
-          </li>
+            <a href="https://facebook.com/{{ site.facebook_username }}"><i class="fa  fa-facebook"></i>Facebook</a>
           {% endif %}
           {% if site.linkedin_username %}
-          <li>
-            <a href="https://linkedin.com/in/{{ site.linkedin_username }}">
-              <span class="fa fa-stack">
-					<i class="fa fa-circle-o fa-stack-2x"></i>
-					<i class="fa  fa-linkedin fa-stack-1x"></i>
-              </span>
-              <span class="username">{{ site.linkedin_username }}</span>
-            </a>
-          </li>
+            <a href="https://linkedin.com/in/{{ site.linkedin_username }}"><i class="fa  fa-linkedin"></i>LinkedIn</a>
           {% endif %}
-        </ul>
       </div>
 
-      <div class="footer-col  footer-col-3">
-		  <p class="text"><i class="fa fa-quote-left fa-3x"></i> {{ site.description }}</p>
-		   
-      </div>
-     
-      
     </div>
-<div >
-      &copy 2014 Coders All Rights Reserved <i class="fa fa-circle-o"></i> Powered by <a href="http://jekyllrb.com">Jekyll</a> <i class="fa fa-circle-o"></i> Hosted by <a href="http://pages.github.com/">Github Pages</a>
-      </div>
+    <p>&copy; 2014 Zeeshan Khan All Rights Reserved <i class="fa fa-circle-o"></i> Powered by <a href="http://jekyllrb.com">Jekyll</a> <i class="fa fa-circle-o"></i> Hosted by <a href="http://pages.github.com/">Github Pages</a></p>
   </div>
 </footer>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-58099786-1', 'auto');
-  ga('send', 'pageview');
-
-</script>

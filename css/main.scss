@@ -87,7 +87,6 @@ a{
   margin-top:4rem;
   border-top: 1px solid #dedede;
   border-bottom: 1px solid #dedede;
-
 }
 .main-menu{
   list-style: none;
@@ -112,6 +111,62 @@ a{
       font-weight: bold;
     }
   }
+}
+.main-menu-vertical{
+  display: block;
+  .menu-item{
+    float: none;
+    a{
+
+      &:hover{
+
+      }
+    }
+    .active{
+
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .menu-container{
+    margin-top:4rem;
+    border-top: 0px;
+    border-bottom: 0px;
+    text-align: center;
+  }
+  .main-heading{
+    text-align: center;
+  }
+  #page{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+  }
+}
+@media screen and (min-width: 769px){
+  .main-menu-vertical{
+    display: none;
+  }
+}
+.share-content{
+  border-top:1px solid #dedede;
+  padding-top: 10px;
+  margin-top:20px;
+}
+.share{
+  padding:5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  background-color: lighten(#ccc,12%);
+  // color: darken(#ccc,1%)
+}
+.site-footer{
+  border-top:1px solid #dedede;
+  padding-top: 10px;
+  margin-top:20px;
+  padding-bottom: 10px;
+  font-size: 0.8em;
 }
 // Using media queries with like this:
 // @include media-query($on-palm) {
