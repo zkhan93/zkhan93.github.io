@@ -16,8 +16,9 @@ Server can handle new Clients on disconnection of previous one.
 <!--more-->
 
 Code for Server
-{% highlight java linenos%}
-# file Server.java
+
+```java
+// file Server.java
 import java.io.*;
 import java.net.*;
 class Server{
@@ -59,11 +60,12 @@ class Server{
 	}
 }
 
-{% endhighlight%}
+```
 
 Code for client
-{% highlight java linenos%}
-# file Client.java
+
+```java
+// file Client.java
 import java.io.*;
 import java.net.*;
 class Client{
@@ -108,7 +110,7 @@ class Client{
 					e.printStackTrace();
 			}
 	}
-	
+
 	static class ListenToServer implements Runnable{
 		@Override
 		public void run(){
@@ -127,13 +129,14 @@ class Client{
 			System.out.println("Disconneted from server");
 		}
 	}
-	
+
 }
 
-{% endhighlight%}
+```
 
 Client output
-{% highlight java%}
+
+```java
 Connected to Server
 Hi Server
 Server said: Hi Server
@@ -143,10 +146,11 @@ okay bye
 Server said: okay bye
 terminate
 Disconneted from server
-{% endhighlight%}
+```
 
 Server output
-{% highlight java%}
+
+```java
 Server waiting for Client..
 Client Connected and configured.
 Eco msg: Hi Server
@@ -154,4 +158,4 @@ Eco msg: you just eco what I say
 Eco msg: okay bye
 Client quits..
 Server waiting for Client..
-{% endhighlight %}
+```

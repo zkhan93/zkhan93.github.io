@@ -2,29 +2,30 @@
 layout: post
 author: Zeeshan Khan
 date: 2015-01-24 11:37:21
-tags: update java 
+tags: update java
 categories: java update
 title: How To Run a Java Program
 ---
 
 To run a java program you must have one, so lets have a sample code which prints "Hello world!!" to console.
 
-###Source Code
+### Source Code
 
 If you have source code ready then ignore else create a new file `Hello.java` and copy the below code in it and save it.
 
 Source code
-{% highlight c linenos%}
-#file Hello.java
+
+```java
+// file Hello.java
 import java.io.*;
 class Hello{
-public static void main(String args[]){
- System.out.println("Hello World!!");
+  public static void main(String args[]){
+   System.out.println("Hello World!!");
+ }
 }
-}
-{% endhighlight%}
+```
 
-now you have your source code ready, 
+now you have your source code ready,
 
 ###Compile
 
@@ -36,6 +37,6 @@ If there is error in source code you will see error messages, resolve error and 
 
  To execute the program type `java <Class Name>` so in this case we have `java Hello`.
 
-{% highlight c%}
+```java
 Hello world!!
-{% endhighlight%}
+```

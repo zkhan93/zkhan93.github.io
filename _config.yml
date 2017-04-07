@@ -16,4 +16,8 @@ hackerearth_username: zkhan93
 user_resume: zeeshancv.pdf
 
 # Build settings
-markdown: kramdown
+markdown: redcarpet
+redcarpet:
+    extension:
+        - fenced_code_blocks
+highlighter: pygments

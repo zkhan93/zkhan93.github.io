@@ -8,14 +8,15 @@ date: 2015-01-08 6:35:36
 source_file: /java/arraylist-in-java.java
 ---
 
-`ArrayList` is a collection of data items that grows and shrinks depending on the number of data items present in it, 
+`ArrayList` is a collection of data items that grows and shrinks depending on the number of data items present in it,
 you can think it as a dynamic array or a link lists in C, whose size increases when we insert a data and decreases as delete some data from it.
 
 To insert a data item we use `add()` method and to delete we use `remove()` method as demostrated below in line 13 and 20 repectively.
 
 following code shows how we can use ArrayList in java
-{% highlight java linenos%}
-# file ArrayListDemo.java
+
+```java
+// file ArrayListDemo.java
 import java.io.*;
 import java.util.*;
 public class ArrayListDemo{
@@ -23,9 +24,9 @@ public class ArrayListDemo{
 		ArrayList<String> array_of_string=new ArrayList<String>();
 		String str;
 		int index;
-		BufferedReader br=new BufferedReader(new InputStreamReader(System.in)); 
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 		System.out.println("Enter data  to insert in arraylist");
-		//type "end" to stop 
+		//type "end" to stop
 		while((str=br.readLine()).equalsIgnoreCase("end")==false){ //loop ends when user types "end"
 			array_of_string.add(str); //adding data to arraylist
 			System.out.println("Inserted a data size of arrayList is "+array_of_string.size());
@@ -43,11 +44,11 @@ public class ArrayListDemo{
 		System.out.println("Array is now empty");
 	}
 }
-{%endhighlight%}
+```
 
-the output of above code will be 
+the output of above code will be
 
-{% highlight java linenos%}
+```java
 Enter data  to insert in arraylist
 hello
 Inserted a data size of arrayList is 1
@@ -82,4 +83,4 @@ Item at 1 deleted now array contains 1 elements
 0
 Item at 0 deleted now array contains 0 elements
 Array is now empty
-{%endhighlight%}
+```

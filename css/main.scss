@@ -10,7 +10,7 @@ $heading-font-family: 'Open Sans', sans-serif;
 $base-font-size:   14px;
 $small-font-size:  $base-font-size * 0.928;
 $large-font-size:  $base-font-size * 1.857;
-$base-line-height: 2.0;
+$base-line-height: 1.5;
 
 $twitter-color: #55acee;
 $facebook-color: #3b5998;
@@ -43,15 +43,47 @@ $sidebar-back-color: #111;
 $btn-green-color : #5CB85C;
 $btn-blue-color: #3b83c0;
 
-
+h1{
+    font-size: $base-font-size * 1.6 ;
+    line-height: $base-line-height * 1.6;
+}
+h2{
+    font-size: $base-font-size * 1.5;
+    line-height: $base-line-height * 1.4;
+}
+h3{
+    font-size: $base-font-size * 1.4;
+    line-height: $base-line-height * 1.2;
+}
+h4{
+    font-size: $base-font-size * 1.3;
+    line-height: $base-line-height * 1;
+}
+h5{
+    font-size: $base-font-size * 1.2;
+    line-height: $base-line-height * 0.8;
+}
+h6{
+    font-size: $base-font-size * 1.1;
+    line-height: $base-line-height * 0.6;
+}
+h1,h2,h3,h4,h5,h6{
+  // margin-top:20px;
+  // margin-bottom: 20px;
+  font-weight: bold;
+}
 body{
     background-color: $background-color;
     font-family: $base-font-family;
     color:$text-color;
     font-size: $base-font-size;
+    line-height: $base-line-height;
     .container{
       background-color: $foreground-color;
     }
+}
+p{
+  line-height: inherit;
 }
 #page{
   margin-top: 50px;
@@ -63,6 +95,7 @@ body{
   font-weight: bold;
   color:$text-color-heading;
   font-size: $large-font-size;
+  line-height: 0.6;
 }
 .small{
     font-size: $small-font-size;
@@ -167,6 +200,28 @@ a{
   margin-top:20px;
   padding-bottom: 10px;
   font-size: 0.8em;
+}
+ul {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+ol{
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+ul ul, ol ul {
+   list-style-type: circle;
+   list-style-position: inside;
+   margin-left: 15px;
+}
+ol ol, ul ol {
+   list-style-type: lower-latin;
+   list-style-position: inside;
+   margin-left: 15px;
+}
+.slick-slide{
+  margin-right: 10px;
+  margin-left: 10px;
 }
 // Using media queries with like this:
 // @include media-query($on-palm) {

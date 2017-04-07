@@ -9,8 +9,8 @@ source_file: /java/add-two-numbers-in-java.java
 ---
 Following programe will add two Integer numbers for you.
 
-{% highlight java linenos %}
-# file Addition.java
+```java
+// file Addition.java
 import java.io.*;
 class Addition{
 	public static void main(String args[]) throws IOException{
@@ -20,21 +20,22 @@ class Addition{
 		a=Integer.parseInt(br.readLine());
 		System.out.println("Enter second integer");
 		b=Integer.parseInt(br.readLine());
-		
+
 		System.out.println("Sum of two integers is: "+(a+b));
 	}
 }
-{% endhighlight %}
+```
 To run the above code navigate to the source code folder from cmd(Windows) or terminal(Linux) then
 type the following code to compile
 `javac <filename>.java`
 after sucessfully compiling, type `java Addition` to start the programe.
 
 The above programme will output the following result
-{% highlight java %}
+
+````java
 Enter first integer
 12
 Enter second integer
 123
 Sum of two integers is: 135
-{% endhighlight %}
+```
