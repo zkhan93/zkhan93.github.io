@@ -90,6 +90,25 @@ section{
   div.app, div.web{
     margin-bottom:50px;
   }
+  .header{
+    padding: 80px;
+    background-position: 90% 10%;
+    background-repeat: no-repeat;
+    margin-bottom: 30px;
+    color: white;
+    font-size:2em;
+    margin-right: -28.571px;
+    margin-left: -28.571px;
+    &.android{
+      background-image: url('/assets/images/android-header.png');
+      background-color: #009688;
+    }
+    &.web{
+      background-image: url('/assets/images/web-header.png');
+      background-color: #3F51B5;
+    }
+  }
+
 }
 #page{
   margin-top: 50px;
