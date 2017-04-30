@@ -23,8 +23,9 @@
   icon: https://raw.githubusercontent.com/zVolt/hisab-android/master/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
   description: Android application that solves splitting bills and money tracking difficulties in daily life by allowing users to create groups and log expenses
   screenshots:
-    - /assets/images/screenshots/echelon/1.png
-    - /assets/images/screenshots/echelon/2.png
+    - /assets/images/screenshots/hisab/1.png
+    - /assets/images/screenshots/hisab/2.png
+    - /assets/images/screenshots/hisab/3.png
   key_points:
     - Integrated Firebase real time database
     - Created Widget for home screen
@@ -44,8 +45,9 @@
     - Discoved own server in a network
     - Networking
   screenshots:
-    - /assets/images/screenshots/echelon/1.png
-    - /assets/images/screenshots/echelon/2.png
+    - /assets/images/screenshots/rkms/1.png
+    - /assets/images/screenshots/rkms/2.png
+    - /assets/images/screenshots/rkms/3.png
   skills:
     - Android SDK
     - Networking
@@ -54,7 +56,6 @@
   date: December 2015
   intro: This is an Android application that let you share text between two devices i.e., between two android smartphones or between your smartphone and PC in the network.
   description: This is an Android application that let you share text between two devices i.e., between two android smartphones or between your smartphone and PC in the network.
-  play_store_link: #
   icon: https://raw.githubusercontent.com/zkhan93/SharingText/master/res/drawable-xhdpi/ic_launcher.png
   key_points:
     - TCS and UDP connections
@@ -71,15 +72,15 @@
   date: Jan, 2015
   intro: RSS feed reader
   description: RSS feed reader
-  play_store_link: #
-  icon: https://raw.githubusercontent.com/zkhan93/EasyReading/master/res/drawable-xhdpi/ic_launcher.png
+  # play_store_link: #
+  # icon: https://raw.githubusercontent.com/zkhan93/EasyReading/master/res/drawable-xhdpi/ic_launcher.png
   key_points:
     - Integrated third party API
     - Configured SQLite3 database and image downloading and caching
     - Integrated Facebook API
-  screenshots:
-    - /assets/images/screenshots/echelon/1.png
-    - /assets/images/screenshots/echelon/2.png
+  # screenshots:
+  #   - /assets/images/screenshots/echelon/1.png
+  #   - /assets/images/screenshots/echelon/2.png
   skills:
     - Android SDK
     - API Integrations
@@ -88,7 +89,7 @@
   date: Jan, 2015
   intro: Increasing availibility of faculty members and their notes and other shared documents.
   description: Increasing availibility of faculty members and their notes and other shared documents.
-  play_store_link: #
+  # play_store_link: #
   icon: https://raw.githubusercontent.com/zVolt/connect-android/master/res/drawable-xxhdpi/ic_launcher.png
   key_points:
     - Provides instant messaging service using its own Java based web services

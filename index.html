@@ -10,10 +10,14 @@ order: 1
   {% for app in site.data.android_projects %}
         <div class="container-fluid app">
           <div class="col-sm-3 centered">
-            <img src="{{app.icon}}" title="{{app.name}}" class="project-image" />
+            {% if app.icon %}
+              <img src="{{app.icon}}" title="{{app.name}}" class="project-image" />
+            {% endif %}
             <h3>{{app.name}} <small>{{app.date}}</small></h3>
             <p>{{app.intro}}</p>
-            <a href="{{app.play_store_link}}"> <img alt="Get it on Google Play" src="https://developer.android.com/images/brand/en_generic_rgb_wo_45.png" /> </a>
+            {% if app.play_store_link %}
+              <a href="{{app.play_store_link}}"> <img alt="Get it on Google Play" src="https://developer.android.com/images/brand/en_generic_rgb_wo_45.png" /> </a>
+            {% endif %}
           </div>
           <div class="col-sm-6">
             <p>{{app.description}}</p>
@@ -23,20 +27,24 @@ order: 1
                     <li>{{point}}</li>
                   {% endfor %}
                 </ul>
-                <h5>Skills</h5>
-                {% for skill in app.skills %}
-                  <span class="label label-default">{{skill}}</span>
-                {% endfor %}
-            </div>
-            <div class="col-sm-3 col-sm-offset-0 col-xs-6 col-xs-offset-3">
-              <div class="slider">
-                  {% for screenshot in app.screenshots %}
-                  <div>
-                      <div href="#" class="thumbnail"> <img data-lazy="{{site.baseurl}}{{screenshot}}" alt="..."> </div>
-                  </div>
+                {% if app.skills %}
+                  <h5>Skills</h5>
+                  {% for skill in app.skills %}
+                    <span class="label label-default">{{skill}}</span>
                   {% endfor %}
-                </div>
+                {% endif %}
             </div>
+            {% if app.screenshots %}
+              <div class="col-sm-3 col-sm-offset-0 col-xs-6 col-xs-offset-3">
+                <div class="slider">
+                    {% for screenshot in app.screenshots %}
+                    <div>
+                        <div href="#" class="thumbnail"> <img data-lazy="{{site.baseurl}}{{screenshot}}" alt="..."> </div>
+                    </div>
+                    {% endfor %}
+                  </div>
+              </div>
+            {% endif %}
         </div>
     {% endfor %}
 </section>

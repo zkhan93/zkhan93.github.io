@@ -1,0 +1,141 @@
+name: Zeeshan Khan
+role: Android and Web Developer
+about: CS graduate from India who loves to code and usually codes in Java/Python, switches to JavaScript, HTML &amp; CSS when he renders a web page.
+languages:
+  -
+    name: Java
+    description: gained experience in java while developing android, and desktop apps
+    libs:
+      name: Libraries
+      list:
+        -
+          name: Retrofit
+        -
+          name: Butterknife
+  -
+    name: Python
+    description: Gained experience in Python while working on web framewords Django and Flask
+    libs:
+      name: Frameworks
+      list:
+        -
+          name: Django
+        -
+          name: Flask
+  -
+    name: HTML / CSS / JavaScript
+    description: gained knowlegde and experience in while developing websites and web applications.
+    libs:
+      name: Frontend Frameworks
+      list:
+        -
+          name: Vuejs
+        -
+          name: Bootstrap
+        -
+          name: FontAwesome
+tools:
+  -
+    name: Android Studio
+    type: label-success
+  -
+    name: Git
+    type: label-success
+  -
+    name: Bootstrap
+    type: label-primary
+    link: http://getbootstrap.com/
+  -
+    name: Bower
+    type: label-primary
+    link: https://bower.io/
+  -
+    name: Gradle
+    type: label-default
+  -
+    name: JavaFX
+    type: label-default
+
+
+contact-items:
+  -
+    icon: fa fa-phone
+    data: +91 8932 061 116
+  -
+    icon: fa fa-envelope
+    data: zkhan1093@gmail.com
+    link: mailto:zkhan1093@gmail.com
+  -
+    icon: fa fa-linkedin
+    data: linkedin.com/in/zkhan93
+    link: https://www.linkedin.com/in/zkhan93
+  -
+    icon: fa fa-github
+    data: github.com/zkhan93
+    link: https://github.com/zkhan93
+  -
+    icon: fa fa-map-marker
+    data: Lucknow, IN
+  -
+    icon: fa fa-calendar
+    data: Januray 10, 1993
+certification:
+  -
+    name: Oracle Certified Associate, Java SE 8 Programmer
+    issuer: Oracle
+    date: March 2017
+    link: https://drive.google.com/open?id=0B13i7WfUpVGoaDI4MjZlVnp4OU0
+  -
+    name: Android Developer Nanodegree
+    issuer: Udacity
+    date: April 2017
+    link: https://drive.google.com/open?id=0B13i7WfUpVGoem5DZDRnT0pScVE
+  -
+    name: Vuejs
+    issuer: Lynda.com
+    date: March 2017
+    link: https://drive.google.com/open?id=0B13i7WfUpVGoaVdsdEE3a3BONXM
+education:
+  -
+    name: Computer Science and Engineering (B.Tech)
+    school: Dr. A.P.J Abdul Kalam University (formally UPTU)
+    marks: 73.4%
+    date: 2011 - 2015
+  -
+    name: Intermediate
+    school: Central Board of Secondary Education
+    marks: 65.8%
+    date: 2009 - 2010
+  -
+    name: High School
+    school: Central Board of Secondary Education
+    marks: 71%
+    date: 2008 - 2009
+
+experience:
+  -
+    role: Web and Mobile Developer
+    company: TATA Consultancy Services Ltd.
+    date: August 2015 - Present
+    location: Lucknow, IN
+    description: Developed and configured a cloud-based application Dayforce HCM (Human Capital Management) for  US based clients
+  -
+    role: Java &amp; PL/SQL Trainee
+    company: TATA Consultancy Services Ltd.
+    date: May 2014 - September 2014
+    location: Lucknow, IN
+    description: Involved in converting Extract Transform Load (ETL) from SQL Server to JBoss for live projects. SQL procedures were taking database server’s time to evaluate and transform the data which has a direct impact on application response time, so we converted those SQL procedures to Java program
+
+acheivements:
+  -
+    name: Android Developer Appreciation
+    description: Received Appreciation certificate and trophy from TCS Delivery head for developing Android application for Innovation week 2017 at TCS Lucknow
+    date:  March 2017
+  -
+    name: Received Best Team award
+    description: Received Best Team award for working hard and meeting project deadlines.
+    date: Janurary 2016
+  -
+    name: IEEE Paper Presentation
+    description: Secured 2nd position for presenting on “ANDROID Evolving mobile platform” organized by SIET (EUREKA 2013)
+    date: Feb 2013

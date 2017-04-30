@@ -1,16 +1,158 @@
 ---
-layout: main
+layout: resume
 title: Resume
 permalink: /resume/
 order: 2
 ---
+<section id="resume">
+	<div class="row">
+	<div class="col-sm-5">
+		<div class="container-fluid">
+			<h3 class="title">// About me</h3>
+			<p>{{site.data.resume.about}}</p>
+		</div>
+	</div>
+		<div class="col-sm-3">
+			<div class="container-fluid">
+				<div class="centered tm-60">
+					<img class="img-responsive img-thumbnail img-circle" src="{{site.baseurl}}/assets/images/zeeshan.jpg">
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="container-fluid">
+				<h3 class="title">// Contact</h3>
+				<ul class="contact-list">
+					{% for contact in site.data.resume.contact-items %}
+					<li class="item">
+						<span class="{{contact.icon}} md-teal-500"></span> {% if contact.link %}<a href="{{contact.link}}" alt="{{contact.name}}" title="{{contact.name}}">{{contact.data}}</a>{% else %}{{contact.data}}{% endif %}
+					</li>
+					{% endfor %}
+			 </ul>
+	 		</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="container-fluid">
+			<h3 class="title">// Skills</h3>
 
+		{% if site.data.resume.languages %}
+			<div class="row">
+				{% for language in site.data.resume.languages %}
+					<div class="language-item col-sm-4">
+						<h4>{{language.name}}</h4>
+						<p>{{language.description}}<p>
+						{% if language.libs %}
+							<h5>{{language.libs.name}}</h5>
+							{% for lib in language.libs.list %}
+									<small>{{lib.name}}</small>{% if forloop.last == false %}, {%endif%}
+							{%endfor%}
+						{% endif %}
+					</div>
+				{%endfor%}
+			</div>
+		{% endif %}
+
+		{% if site.data.resume.tools %}
+			<h5>Tools</h5>
+			{% for tool in site.data.resume.tools %}
+					{% if tool.link %}
+						<a href="{{tool.link}}" title="{{tool.name}}" alt="{{tool.name}}"><span class="label {{tool.type}}">{{tool.name}}</span></a>
+					{% else %}
+						<span class="label {{tool.type}}">{{tool.name}}</span>
+					{% endif %}
+			{%endfor%}
+		{% endif %}
+	</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-8">
+			<div class="container-fluid">
+				<h3 class="title">// Experience</h3>
+				{% for experience in site.data.resume.experience %}
+					<div class="experience-item">
+						<div class="row">
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-xs-8">
+										<h4>{{experience.role}}
+										<small>{{experience.company}}</small></h4>
+									</div>
+									<div class="col-xs-4 text-right">
+										<h4><small>{{experience.date}}</small></h4>
+									</div>
+								</div>
+								<p>
+									{{experience.description}}
+								</p>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="container-fluid">
+				<h3 class="title">// Certification</h3>
+				{% for certification in site.data.resume.certification %}
+					<div class="certificate-item">
+						<div class="row">
+							<div class="col-xs-8">
+								<h4>{{certification.name}} <small>{{certification.issuer}}</small></h4>
+							</div>
+							<div class="col-xs-4 text-right">
+								<h4><small>{{certification.date}}</small></h4>
+							</div>
+						</div>
+						<small><a href="{{certification.link}}" title="{{certification.name}}" alt="{{certification.name}}">View Certificate</a></small>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-8">
+			<div class="container-fluid">
+				<h3 class="title">// Education</h3>
+				{% for education in site.data.resume.education %}
+					<div class="education-item">
+						<div class="row">
+							<div class="col-xs-8">
+								<h4>{{education.name}} <small>{{education.school}}</small></h4>
+							</div>
+							<div class="col-xs-4 text-right">
+								<h4><small>{{education.date}}</small></h4>
+							</div>
+						</div>
+						<p>{{education.marks}}</p>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="container-fluid">
+				<h3 class="title">// Achievement</h3>
+				{% for acheivement in site.data.resume.acheivements %}
+					<div class="acheivement-item">
+						<div class="row">
+							<div class="col-xs-8">
+								<h4>{{acheivement.name}}</h4>
+							</div>
+							<div class="col-xs-4 text-right">
+								<h4><small>{{acheivement.date}}</small></h4>
+							</div>
+						</div>
+						<p>{{acheivement.description}}</p>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</section>
+<!--
 <div class="home">
-	<img id="owner-image" src="{{site.baseurl}}/assets/images/zeeshan.jpg">
 
-	
-
-		<h1>Other Profiles</h1>
+		<h2>Other Profiles</h2>
 		<p>
 			<a class="share share-facebook" href="https://www.facebook.com/{{site.facebook_username}}">
 			<span class="fa-stack fa-lg ">
@@ -50,4 +192,4 @@ order: 2
 </span>
 		Github</a><br/>
 		</p>
-</div>
+</div> -->

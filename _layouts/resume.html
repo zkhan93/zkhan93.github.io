@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <body>
+    <div class="container" id="page">
+      {% include header_resume.html %}
+      {{ content }}
+      <!-- {% include share.html %} -->
+      {% include footer.html %}
+    </div>
+    <script>
+    $(document).ready(function(){
+        $('.main-menu-vertical').hide();
+      $('#menu-toggler').on('click',function(event){
+        console.log('tada');
+        $('.main-menu-vertical').toggle();
+        event.preventDefault();
+      })
+    })
+    </script>
+  </body>
+
+</html>
