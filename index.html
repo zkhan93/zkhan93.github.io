@@ -9,17 +9,27 @@ order: 1
   </div>
   {% for app in site.data.android_projects %}
         <div class="container-fluid app">
-          <div class="col-sm-3 centered">
+            <div class="row">
+                <div class="centered">
+                    <h3>{{app.name}} <small>{{app.date}}</small></h3>                
+                </div>
+            </div>
+            <div class="col-sm-3 centered">
             {% if app.icon %}
               <img src="{{app.icon}}" title="{{app.name}}" class="project-image" />
             {% endif %}
-            <h3>{{app.name}} <small>{{app.date}}</small></h3>
             <p>{{app.intro}}</p>
-            {% if app.play_store_link %}
-              <a href="{{app.play_store_link}}"> <img alt="Get it on Google Play" src="https://developer.android.com/images/brand/en_generic_rgb_wo_45.png" /> </a>
+            {% if app.repo %}
+                <a href="{{repo}}" alt="Github repo for {{app.name}}" title="Github repo for {{app.name}}"><img src="/assets/images/github.png" alt="github"/></a>
             {% endif %}
-          </div>
+            {% if app.play_store_link %}
+                <br/>
+                <br/>
+                <a href="{{app.play_store_link}}"> <img alt="Get it on Google Play" src="https://developer.android.com/images/brand/en_generic_rgb_wo_45.png" /> </a>
+            {% endif %}
+            </div>
           <div class="col-sm-6">
+            
             <p>{{app.description}}</p>
             <h4>Main Features</h4>
                 <ul>
@@ -33,6 +43,7 @@ order: 1
                     <span class="label label-default">{{skill}}</span>
                   {% endfor %}
                 {% endif %}
+                
             </div>
             {% if app.screenshots %}
               <div class="col-sm-3 col-sm-offset-0 col-xs-6 col-xs-offset-3">

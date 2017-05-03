@@ -1,26 +1,31 @@
 - name: Echelon
   date: March, 2017
-  intro: Android Application for hosting internal events with live leaderboards and notifying users
+  intro: Android app that authenticate a user and let him participate in a quiz event it also records the responses of participants in real-time.
   play_store_link: https://play.google.com/store/apps/details?id=com.app.iw
   icon: https://raw.githubusercontent.com/codeaters/echelon/master/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
-  description: Android Application for hosting internal events with live leaderboards and notifying users
+  repo: https://github.com/codeaters/echelon
+  description: Developed an App that leverage Firebase real-time database and Firebase authentication for hosting online quiz events, real-time data lets participants watch as they move up in the event's leaderboard.
   screenshots:
     - /assets/images/screenshots/echelon/1.png
     - /assets/images/screenshots/echelon/2.png
   key_points:
-    - Integrated Firebase real time database
-    - Realtime changes in leaderboards
-    - Colleted response from users in a restricted environment
+    - IMplemented user authentication
+    - Integrated Firebase real-time database
+    - Real-time changes in leader boards and score calculation
+    - Implemented timer to restrict attempts to a question is valid in given time frame.
   skills:
-    - Android
-    - Firebase
+    - Android Development
+    - Material UI design
+    - Firebase Realtime Database
+    - Firebase Authentication
     - Data Persistence
 
 - name: Hisab - Expense Manager
   date: September, 2016
-  intro: Android application that solves splitting bills and money tracking difficulties in daily life by allowing users to create groups and log expenses
+  intro: Android app that solves splitting bills and money tracking difficulties in daily life by allowing users to create groups and log expenses
   play_store_link: https://play.google.com/store/apps/details?id=io.github.zkhan93.hisab
   icon: https://raw.githubusercontent.com/zVolt/hisab-android/master/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+  repo: https://github.com/zVolt/hisab-android
   description: Android application that solves splitting bills and money tracking difficulties in daily life by allowing users to create groups and log expenses
   screenshots:
     - /assets/images/screenshots/hisab/1.png
@@ -36,27 +41,30 @@
 
 - name: Remote keyboard and Mouse
   date: June, 2016
-  intro: This is an Android application that enables a Android smartphone to be used as a wireless keyboard and mouse to the system connected in the same network
+  intro: Android app that enables a Android smartphone to be used as a wireless keyboard and/or mouse to a desktop/Laptop connected in the same network
   play_store_link: https://play.google.com/store/apps/details?id=io.github.zkhan93.lanmak
   icon: https://raw.githubusercontent.com/zVolt/rkm-android/master/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
-  description: This is an Android application that enables a Android smartphone to be used as a wireless keyboard and mouse to the system connected in the same network
+  repo: https://github.com/zVolt/rkm-android
+  description: Developed an app that is capable of searching a compatible server in a local network, connecting to which enables the hand held device to be used as a trackpad, mouse or keyboard. It also allows you to send common key combinations.
   key_points:
-    - TCS and UDP connections
-    - Discoved own server in a network
-    - Networking
+    - Implemented network server discovery using
+    - Designed a robust TCP connection models that persist across apps life cycle
+    - Communication in a network
   screenshots:
     - /assets/images/screenshots/rkms/1.png
     - /assets/images/screenshots/rkms/2.png
     - /assets/images/screenshots/rkms/3.png
   skills:
     - Android SDK
-    - Networking
+    - Socket and Network Programming
+    - Java
 
 - name: Sharing Text
   date: December 2015
-  intro: This is an Android application that let you share text between two devices i.e., between two android smartphones or between your smartphone and PC in the network.
-  description: This is an Android application that let you share text between two devices i.e., between two android smartphones or between your smartphone and PC in the network.
+  intro: Android app that let you share text between two devices
+  description: Developend an Android app that let you share text between two devices i.e., between two android smartphones or between your smartphone and PC in the network.
   icon: https://raw.githubusercontent.com/zkhan93/SharingText/master/res/drawable-xhdpi/ic_launcher.png
+  repo: https://github.com/zVolt/sharing_text-android
   key_points:
     - TCS and UDP connections
     - Networking, Server discovery in a network
@@ -73,7 +81,8 @@
   intro: RSS feed reader
   description: RSS feed reader
   # play_store_link: #
-  # icon: https://raw.githubusercontent.com/zkhan93/EasyReading/master/res/drawable-xhdpi/ic_launcher.png
+  icon: https://raw.githubusercontent.com/zVolt/easy-reading-android/master/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+  repo: https://github.com/zVolt/easy-reading-android
   key_points:
     - Integrated third party API
     - Configured SQLite3 database and image downloading and caching
