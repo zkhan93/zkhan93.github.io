@@ -7,7 +7,7 @@ description: > # this means to ignore newlines until "baseurl:"
   Coders is a blog maintained and run by Zeeshan Khan, Here you will find posts related to technologies and coding, requests and suggestions are encouraged and are heartily welcome
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://zkhan93.github.io" # the base hostname & protocol for your site
-#enforce_ssl: zkhan93.github.io
+enforce_ssl: zkhan93.github.io
 
 twitter_username: zkhan1093
 github_username:  zkhan93
@@ -36,4 +36,3 @@ kramdown:
         block:
           line_numbers: true
           start_line: 1
-
