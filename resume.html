@@ -4,7 +4,7 @@ title: Resume
 permalink: /resume/
 order: 2
 ---
-<section id="resume">
+<section id="resume" class="container-fluid">
 	<div class="row">
 	<div class="col-sm-5">
 		<div class="container-fluid">
@@ -68,6 +68,7 @@ order: 2
         </div>
 	</div>
 	<div class="row">
+		<div class="container-fluid">
 		<div class="col-sm-8">
 			<div class="container-fluid">
 				<h3 class="title">// Experience</h3>
@@ -104,7 +105,14 @@ order: 2
                                 <h4><small>{{education.date}}</small></h4>
                             </div>
                         </div>
-                        <p>{{education.marks}}</p>
+												<div class="barWrapper">
+													<!-- <span class="progressText"><B>HTML5</B></span> -->
+													<div class="progress">
+														<div class="progress-bar" role="progressbar" aria-valuenow="{{education.marks}}" aria-valuemin="0" aria-valuemax="100" >
+															<span class="popOver" data-toggle="tooltip" data-placement="top" title="{{education.marks}}%"> </span>
+														</div>
+													</div>
+												</div>
                     </div>
                 {% endfor %}
             </div>
@@ -144,6 +152,7 @@ order: 2
             </div>
 		</div>
 	</div>
+</div>
 </section>
 <!--
 <div class="home">

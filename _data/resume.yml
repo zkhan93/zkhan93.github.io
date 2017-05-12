@@ -109,17 +109,17 @@ education:
     -
         name: Computer Science and Engineering (B.Tech)
         school: Dr. A.P.J Abdul Kalam University (formally UPTU)
-        marks: 73.4%
+        marks: 73.4
         date: 2011 - 2015
     -
         name: Intermediate
         school: Central Board of Secondary Education
-        marks: 65.8%
+        marks: 65.8
         date: 2009 - 2010
     -
         name: High School
         school: Central Board of Secondary Education
-        marks: 71%
+        marks: 71
         date: 2008 - 2009
 
 experience:
