@@ -100,19 +100,13 @@ order: 2
                         <div class="row">
                             <div class="col-xs-8">
                                 <h4>{{education.name}} <small>{{education.school}}</small></h4>
+								<h5>{{education.marks}}</h5>
+								<small>{{education.about}}</small>
                             </div>
                             <div class="col-xs-4 text-right">
                                 <h4><small>{{education.date}}</small></h4>
                             </div>
                         </div>
-												<div class="barWrapper">
-													<!-- <span class="progressText"><B>HTML5</B></span> -->
-													<div class="progress">
-														<div class="progress-bar" role="progressbar" aria-valuenow="{{education.marks}}" aria-valuemin="0" aria-valuemax="100" >
-															<span class="popOver" data-toggle="tooltip" data-placement="top" title="{{education.marks}}%"> </span>
-														</div>
-													</div>
-												</div>
                     </div>
                 {% endfor %}
             </div>
@@ -151,50 +145,6 @@ order: 2
                 {% endfor %}
             </div>
 		</div>
-	
+
 </div>
 </section>
-<!--
-<div class="home">
-
-		<h2>Other Profiles</h2>
-		<p>
-			<a class="share share-facebook" href="https://www.facebook.com/{{site.facebook_username}}">
-			<span class="fa-stack fa-lg ">
-  <i class="fa fa-circle fa-stack-2x"></i>
-  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-</span>
-		Facebook</a>
-		<a class="share share-twitter" href="https://twitter.com/{{site.twitter_username}}">
-		<span class="fa-stack fa-lg ">
-  <i class="fa fa-circle fa-stack-2x"></i>
-  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-</span>
-		Twitter</a>
-		<a class="share share-linkedin" href="http://in.linkedin.com/in/{{site.linkedin_username}}">
-		<span class="fa-stack fa-lg share share-linkedin">
-  <i class="fa fa-circle fa-stack-2x"></i>
-  <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-</span>
-		 Linkedin</a>
-		<a class="share share-codechef" href="http://www.codechef.com/users/{{site.codechef_username}}">
-		<span class="fa-stack fa-lg">
-  <i class="fa fa-circle fa-stack-2x"></i>
-  <i class="fa fa-code fa-stack-1x fa-inverse"></i>
-</span>
-		CodeChef</a>
-		<a class="share share-hackerearth" href="http://www.hackerearth.com/users/{{site.hackerearth_username}}/">
-		<span class="fa-stack fa-lg">
-  <i class="fa fa-circle fa-stack-2x"></i>
-  <i class="fa fa-stack-1x fa-inverse">H</i>
-</span>
-		HackerEarth</a>
-
-		<a class="share share-github" href="https://github.com/{{site.github_username}}">
-		<span class="fa-stack fa-lg">
-  <i class="fa fa-circle fa-stack-2x"></i>
-  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-</span>
-		Github</a><br/>
-		</p>
-</div> -->

@@ -4,7 +4,7 @@ about: CS graduate from India who loves to code and usually codes in Java/Python
 languages:
     -
         name: Java
-        description: gained experience in java while developing android, and desktop apps
+        description: Gained experience in java while developing Android, and desktop apps
         libs:
             name: Libraries
             list:
@@ -43,18 +43,18 @@ tools:
         type: label-success
     -
         name: Bootstrap
-        type: label-primary
+        type: label-success
         link: http://getbootstrap.com/
     -
         name: Bower
-        type: label-primary
+        type: label-success
         link: https://bower.io/
     -
         name: Gradle
-        type: label-default
+        type: label-success
     -
         name: JavaFX
-        type: label-default
+        type: label-success
 
 
 contact-items:
@@ -107,19 +107,21 @@ certification:
         link: https://drive.google.com/open?id=0B13i7WfUpVGoWGdDSFpwYmV3NDA
 education:
     -
-        name: Computer Science and Engineering (B.Tech)
+        name: B.Tech in Computer Science and Engineering
         school: Dr. A.P.J Abdul Kalam University (formally UPTU)
-        marks: 73.4
+        marks: Secured 1st division
+        about: Compiler Design, Digital Logic Design, Programming and Web Technologies
         date: 2011 - 2015
     -
         name: Intermediate
         school: Central Board of Secondary Education
-        marks: 65.8
+        marks: 1st Division
+        about: Physics, Chemistry and Mathematics
         date: 2009 - 2010
     -
         name: High School
         school: Central Board of Secondary Education
-        marks: 71
+        marks: 1st Division
         date: 2008 - 2009
 
 experience:
