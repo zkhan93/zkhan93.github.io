@@ -52,19 +52,19 @@ h2{
     line-height: $base-line-height * 1.4;
 }
 h3{
-    font-size: $base-font-size * 1.4;
+    font-size: $base-font-size * 1.6;
     line-height: $base-line-height * 1.2;
 }
 h4{
-    font-size: $base-font-size * 1.1;
+    font-size: $base-font-size * 1.4;
     line-height: $base-line-height * 1;
 }
 h5{
-    font-size: $base-font-size * 0.8;
+    font-size: $base-font-size * 1.1;
     line-height: $base-line-height * 0.8;
 }
 h6{
-    font-size: $base-font-size * 0.6;
+    font-size: $base-font-size * 0.8;
     line-height: $base-line-height * 0.6;
 }
 h1,h2,h3,h4,h5,h6{
@@ -283,7 +283,7 @@ ol ol, ul ol {
     }
   }
 }
-.certificate-item, .experience-item, .education-item, .acheivement-item{
+.certificate-item, .experience-item, .education-item, .achievement-item{
   margin-bottom: 20px;
 }
 .project-image{
@@ -310,6 +310,26 @@ ol ol, ul ol {
   transition: width 1.5s ease-in-out;
 }
 
+
+.responsibilities{
+	list-style: none;
+	margin-bottom: 20px;
+	.responsibility{
+
+	}
+}
+
+.achievements{
+	list-style: none;
+	margin-bottom: 20px;
+	.achievement{
+
+	}
+}
+
+.mt-20{
+	margin-top:20px;
+}
 /* Rules for sizing the icon. */
 .material-icons.md-18 { font-size: 18px; }
 .material-icons.md-24 { font-size: 24px; }

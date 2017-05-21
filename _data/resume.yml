@@ -4,58 +4,75 @@ about: CS graduate from India who loves to code and usually codes in Java/Python
 languages:
     -
         name: Java
-        description: Gained experience in java while developing Android, and desktop apps
+        description: Gained experience in Java while developing Android and Desktop apps
         libs:
             name: Libraries
             list:
                 -
-                    name: Retrofit
+                    name: Android SDK
+                    type: label-success
+                    icon: fa fa-android
                 -
                     name: ButterKnife
+                    type: label-success
+                -
+                    name: JavaFX
+                    type: label-success
+                -
+                    name: GreenDAO ORM
+                    type: label-success
+                    icon: fa fa-database
+                -
+                    name: Retrofit
+                    type: label-success
+                -
+                    name: Git
+                    type: label-success
+                    icon: fa fa-github
+                -
+                    name: Gradle
+                    type: label-success
     -
         name: Python
         description: Gained experience in Python while working on web frameworks Django and Flask
         libs:
-            name: Frameworks
+            name: Libraries
             list:
                 -
                     name: Django
+                    type: label-primary
                 -
                     name: Flask
+                    type: label-primary
+                -
+                    name: Pillow
+                    type: label-primary
+                -
+                    name: Selenium
+                    type: label-primary
+                -
+                    name: urllib2
+                    type: label-primary
     -
         name: HTML / CSS / JavaScript
         description: Gained knowledge and experience in while developing websites and web applications.
         libs:
-            name: Frontend Frameworks
+            name: Frontend Frameworks and Tools
             list:
                 -
                     name: Vuejs
+                    type: label-warning
                 -
                     name: Bootstrap
+                    type: label-warning
+                    icon: fa fa-grid
                 -
                     name: FontAwesome
-tools:
-    -
-        name: Android Studio
-        type: label-success
-    -
-        name: Git
-        type: label-success
-    -
-        name: Bootstrap
-        type: label-success
-        link: http://getbootstrap.com/
-    -
-        name: Bower
-        type: label-success
-        link: https://bower.io/
-    -
-        name: Gradle
-        type: label-success
-    -
-        name: JavaFX
-        type: label-success
-
+                    type: label-warning
+                    icon: fa fa-font-awesome
+                -
+                    name: Bower
+                    type: label-warning
 
 contact-items:
     -
@@ -130,15 +147,24 @@ experience:
         company: TATA Consultancy Services Ltd.
         date: August 2015 - Present
         location: Lucknow, IN
-        description: Developed and configured an application to keep track of project and/or status of work assigned to employees, it also includes some basic analytical features.
+        responsibilities:
+            - Designed and Developed a web application to keep track of work assignments to team members
+            - Implemented user authentication and analytical features
+        achievements:
+            - Best Team award
+            - Android Developer award
+            - Application helped management to better utilize their resources and keep an eye on progress of work
     -
         role: Java &amp; PL/SQL Trainee
         company: TATA Consultancy Services Ltd.
         date: May 2014 - September 2014
         location: Lucknow, IN
-        description: Involved in converting Extract Transform Load (ETL) from SQL Server to JBoss for live projects. SQL procedures were taking database server’s time to evaluate and transform the data which has a direct impact on application response time, so we converted those SQL procedures to Java program
+        responsibilities:
+            - Developed application in Java for converting the process of Extract Transform Load (ETL) from SQL Server to JBoss.
+            - Converted SQL procedures to Java programms to reduce load from database and increase application response time.
+            - Reduced the total time in ETL procedure by 50%
 
-acheivements:
+achievements:
     -
         name: Android Developer Appreciation
         description: Received Appreciation certificate and trophy from TCS Delivery head for developing Android application for Innovation week 2017 at TCS Lucknow

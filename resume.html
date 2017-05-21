@@ -6,12 +6,12 @@ order: 2
 ---
 <section id="resume" class="container-fluid">
 	<div class="row">
-	<div class="col-sm-5">
-		<div class="container-fluid">
-			<h3 class="title">// About me</h3>
-			<p>{{site.data.resume.about}}</p>
+		<div class="col-sm-5">
+			<div class="container-fluid">
+				<h3 class="title">// About Me</h3>
+				<p>{{site.data.resume.about}}</p>
+			</div>
 		</div>
-	</div>
 		<div class="col-sm-3">
 			<div class="container-fluid">
 				<div class="centered tm-60">
@@ -36,39 +36,27 @@ order: 2
         <div class="col-sm-12">
             <div class="container-fluid">
                 <h3 class="title">// Skills</h3>
-
-            {% if site.data.resume.languages %}
-                <div class="row">
-                    {% for language in site.data.resume.languages %}
-                        <div class="language-item col-sm-4">
-                            <h4>{{language.name}}</h4>
-                            <p>{{language.description}}<p>
-                            {% if language.libs %}
-                                <h5>{{language.libs.name}}</h5>
-                                {% for lib in language.libs.list %}
-                                        <small>{{lib.name}}</small>{% if forloop.last == false %}, {%endif%}
-                                {%endfor%}
-                            {% endif %}
-                        </div>
-                    {%endfor%}
-                </div>
-            {% endif %}
-
-            {% if site.data.resume.tools %}
-                <h5>Tools</h5>
-                {% for tool in site.data.resume.tools %}
-                        {% if tool.link %}
-                            <a href="{{tool.link}}" title="{{tool.name}}" alt="{{tool.name}}"><span class="label {{tool.type}}">{{tool.name}}</span></a>
-                        {% else %}
-                            <span class="label {{tool.type}}">{{tool.name}}</span>
-                        {% endif %}
-                {%endfor%}
-            {% endif %}
+	            {% if site.data.resume.languages %}
+	                <div class="row">
+	                    {% for language in site.data.resume.languages %}
+	                        <div class="language-item col-sm-4">
+	                            <h4>{{language.name}}</h4>
+	                            <p>{{language.description}}<p>
+	                            {% if language.libs %}
+	                                <h6>{{language.libs.name}}</h6>
+	                                {% for lib in language.libs.list %}
+	                                        <!-- <small>{{lib.name}}</small>{% if forloop.last == false %}, {%endif%} -->
+											<span class="label {{lib.type}}" >{% if lib.icon %}<i class="{{lib.icon}}"></i> {% endif %}{{lib.name}}</span>
+	                                {%endfor%}
+	                            {% endif %}
+	                        </div>
+	                    {%endfor%}
+	                </div>
+	            {% endif %}
            </div>
         </div>
 	</div>
-	<div class="row">
-
+	<div class="row mt-20">
 		<div class="col-sm-8">
 			<div class="container-fluid">
 				<h3 class="title">// Experience</h3>
@@ -78,16 +66,29 @@ order: 2
 							<div class="container-fluid">
 								<div class="row">
 									<div class="col-xs-8">
-										<h4>{{experience.role}}
+										<h4>{{experience.role}} <br/>
 										<small>{{experience.company}}</small></h4>
 									</div>
 									<div class="col-xs-4 text-right">
 										<h4><small>{{experience.date}}</small></h4>
 									</div>
 								</div>
-								<p>
-									{{experience.description}}
-								</p>
+								{% if experience.responsibilities %}
+									<h5>Responsibilities</h5>
+									<ul class="responsibilities">
+										{% for responsibility in experience.responsibilities %}
+											<li class="responsibility">{{responsibility}}</li>
+										{% endfor %}
+									</ul>
+								{% endif %}
+								{% if experience.achievements %}
+									<h5>Achievements</h5>
+									<ul class="achievements">
+										{% for achievement in experience.achievements %}
+											<li class="achievement">{{achievement}}</li>
+										{% endfor %}
+									</ul>
+								{% endif %}
 							</div>
 						</div>
 					</div>
@@ -99,9 +100,9 @@ order: 2
                     <div class="education-item">
                         <div class="row">
                             <div class="col-xs-8">
-                                <h4>{{education.name}} <small>{{education.school}}</small></h4>
+                                <h4>{{education.name}} <br/><small>{{education.school}}</small></h4>
 								<h5>{{education.marks}}</h5>
-								<small>{{education.about}}</small>
+								<p>{{education.about}}</p>
                             </div>
                             <div class="col-xs-4 text-right">
                                 <h4><small>{{education.date}}</small></h4>
@@ -118,29 +119,31 @@ order: 2
 					<div class="certificate-item">
 						<div class="row">
 							<div class="col-xs-8">
-								<h4>{{certification.name}} <small>{{certification.issuer}}</small></h4>
+								<h5>{{certification.name}} </h5>
+								<small>
+									{{certification.issuer}} | <a href="{{certification.link}}" title="{{certification.name}}" alt="{{certification.name}}">View Certificate</a>
+								</small>
 							</div>
 							<div class="col-xs-4 text-right">
-								<h4><small>{{certification.date}}</small></h4>
+								<h5><small>{{certification.date}}</small></h5>
 							</div>
 						</div>
-						<small><a href="{{certification.link}}" title="{{certification.name}}" alt="{{certification.name}}">View Certificate</a></small>
 					</div>
 				{% endfor %}
 			</div>
             <div class="container-fluid">
                 <h3 class="title">// Achievement</h3>
-                {% for acheivement in site.data.resume.acheivements %}
-                    <div class="acheivement-item">
+                {% for achievement in site.data.resume.achievements %}
+                    <div class="achievement-item">
                         <div class="row">
                             <div class="col-xs-8">
-                                <h4>{{acheivement.name}}</h4>
+                                <h5>{{achievement.name}}</h5>
                             </div>
                             <div class="col-xs-4 text-right">
-                                <h4><small>{{acheivement.date}}</small></h4>
+                                <h5><small>{{achievement.date}}</small></h5>
                             </div>
                         </div>
-                        <p>{{acheivement.description}}</p>
+                        <p>{{achievement.description}}</p>
                     </div>
                 {% endfor %}
             </div>
