@@ -1,5 +1,5 @@
 name: Zeeshan Khan
-role: Android and Web Developer
+role: Python Developer
 about: CS graduate from India who loves to code and usually codes in Java/Python, switches to JavaScript, HTML &amp; CSS when he renders a web page.
 languages:
     -
@@ -92,7 +92,7 @@ contact-items:
         link: https://github.com/zkhan93
     -
         icon: fa fa-map-marker
-        data: Lucknow, IN
+        data: Bangaluru, IN
     -
         icon: fa fa-calendar
         data: January 10, 1993
@@ -143,9 +143,17 @@ education:
 
 experience:
     -
+        role: Application Developer
+        company: J.P Morgan Chase & Co.
+        date: August 2017 - Present
+        location: Bangalore, IN
+        responsibilities:
+            - Understanding the existing ecosystem and applications
+            - Modifying/Updating existing codebase written in Python to incorporate new requirements
+    -
         role: Web and Mobile Developer
         company: TATA Consultancy Services Ltd.
-        date: August 2015 - Present
+        date: August 2015 - July 2017
         location: Lucknow, IN
         responsibilities:
             - Designed and Developed a web application to keep track of work assignments to team members
