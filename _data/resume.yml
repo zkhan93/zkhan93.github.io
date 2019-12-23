@@ -142,15 +142,26 @@ education:
         date: 2008 - 2009
 
 experience:
+    - 
+        role: Senior Software Engineer
+        company: Amadeus Software Labs
+        date:
+            join: 2019-04-29
+        location: Bengaluru, IN
+        responsibilities:
+            - Involved in designing architecture for synchronizing Property Management Systems (PMS) and Global Distribution System (GDS)
+            - Developed back-end services in Python to handle high traffic travel bookings and queries
     -
         role: Application Developer
         company: J.P Morgan Chase & Co.
         date:
             join: 2017-08-01
+            leave: 2019-04-19
         location: Bengaluru, IN
         responsibilities:
-            - Understanding the existing ecosystem and applications
-            - Modifying/Updating existing codebase written in Python to incorporate new requirements
+            - Involved in designing and developing fast, scalable and reliable services to process post trade FIX messages
+            - Involved in developing tools to monitor the processing and error handling of FIX messages
+            - Used object database (built on top of PostgreSQL), event-driven environment, message queue (MQ), service discovery using zookeeper
     -
         role: Web and Mobile Developer
         company: TATA Consultancy Services Ltd.
@@ -159,12 +170,11 @@ experience:
             leave: 2017-07-01
         location: Lucknow, IN
         responsibilities:
-            - Designed and Developed a web application to keep track of work assignments to team members
-            - Implemented user authentication and analytical features
+            - Designed and developed a web application that managed project status and monitoring
+            - Developed tools in Python to smoothen the tracking progress of deliverables
+            - Involved in deployment of a cloud based application that managed Human Capital 
         achievements:
-            - Best Team award
             - Android Developer award
-            - Application helped management to better utilize their resources and keep an eye on progress of work
     -
         role: Java &amp; PL/SQL Trainee
         company: TATA Consultancy Services Ltd.
@@ -173,8 +183,7 @@ experience:
             leave: 2014-08-01
         location: Lucknow, IN
         responsibilities:
-            - Developed application in Java for converting the process of Extract Transform Load (ETL) from SQL Server to JBoss.
-            - Converted SQL procedures to Java programms to reduce load from database and increase application response time.
+            - Converted SQL (ETL) procedures to Java programms to reduce load from database and increase application response time.
             - Reduced the total time in ETL procedure by 50%
 
 achievements:
