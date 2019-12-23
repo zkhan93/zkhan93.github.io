@@ -4,7 +4,7 @@ about: CS graduate from India who loves to code and usually codes in Java/Python
 languages:
     -
         name: Java
-        description: Gained experience in Java while developing Android and Desktop apps
+        description: Gained experience in Java while developing hobby Android applications and desktop apps
         libs:
             name: Libraries
             list:
@@ -34,7 +34,7 @@ languages:
                     type: label-success
     -
         name: Python
-        description: Gained experience in Python while working on web frameworks Django and Flask
+        description: Gained experience in Python while building websites in Django, Processing post-trade FIX messages, and building services to handle travel booking queries.
         libs:
             name: Libraries
             list:
@@ -55,7 +55,7 @@ languages:
                     type: label-primary
     -
         name: HTML / CSS / JavaScript
-        description: Gained knowledge and experience in while developing websites and web applications.
+        description: Gained experience while developing websites and web applications.
         libs:
             name: Frontend Frameworks and Tools
             list:
