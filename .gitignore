@@ -8,3 +8,4 @@ _site
 !*.c
 !*.py
 !*.java
+.jekyll-cache/*

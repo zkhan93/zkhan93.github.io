@@ -25,6 +25,7 @@ highlighter: rouge
 #        - fenced_code_blocks
 
 kramdown:
+    input: GFM
     syntax_highlighter: rouge
     syntax_highlighter_opts:
         # Rouge Options › https://github.com/jneen/rouge#full-options
