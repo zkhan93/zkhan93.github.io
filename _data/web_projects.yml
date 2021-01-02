@@ -1,12 +1,8 @@
-- name: BRSSI
+- name: School Management System
   date: March, 2017
-  description: website and portal for student and members of an educational organization.
+  description: web portal to manage attendance and examinations, facility to create branch, students, faculties, classes and examination.
 
-- name: 786 Multi Services
+- name: Birthday
   date: March, 2017
-
-- name: Baangee Club
-  date: March, 2017
-
-- name: Birthday web
-  date: March, 2017
+  description: A website for close friends where you post images for a friend and collaborate thoughts around it with your friend circle, these posts will be made visible to users on their birthday.
+  demo_link: https://zeek-friends-birthday.herokuapp.com/

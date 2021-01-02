@@ -5,7 +5,7 @@ permalink: /
 order: 2
 ---
 <section id="resume" class="container-fluid">
-	<div class="row">
+	<div class="row mt-5">
 		<div class="col-sm-5">
 			<div class="container-fluid">
 				<h3 class="title">// About Me</h3>
@@ -15,7 +15,7 @@ order: 2
 		<div class="col-sm-3">
 			<div class="container-fluid">
 				<div class="centered tm-60">
-					<img class="img-responsive img-thumbnail img-circle" src="https://avatars3.githubusercontent.com/u/7071946">
+					<img class="img-responsive img-thumbnail rounded-circle" src="https://avatars3.githubusercontent.com/u/7071946">
 				</div>
 			</div>
 		</div>
@@ -43,10 +43,9 @@ order: 2
 	                            <h4>{{language.name}}</h4>
 	                            <p>{{language.description}}<p>
 	                            {% if language.libs %}
-	                                <h6>{{language.libs.name}}</h6>
 	                                {% for lib in language.libs.list %}
 	                                        <!-- <small>{{lib.name}}</small>{% if forloop.last == false %}, {%endif%} -->
-											<span class="label {{lib.type}}" >{% if lib.icon %}<i class="{{lib.icon}}"></i> {% endif %}{{lib.name}}</span>
+											<span class="badge badge-{{lib.type}}" >{% if lib.icon %}<i class="{{lib.icon}}"></i> {% endif %}{{lib.name}}</span>
 	                                {%endfor%}
 	                            {% endif %}
 	                        </div>
@@ -65,16 +64,16 @@ order: 2
 						<div class="row">
 							<div class="container-fluid">
 								<div class="row">
-									<div class="col-xs-8">
+									<div class="col-8">
 										<h4>{{experience.role}} <br/>
 										<small>{{experience.company}}</small></h4>
 									</div>
-									<div class="col-xs-4 text-right">
+									<div class="col-4 text-right">
 										<h4><small>{{experience.date.join | date: '%b %Y'}} - {{experience.date.leave |default: 'Present' | date: '%b %Y'}}</small></h4>
 									</div>
 								</div>
 								{% if experience.responsibilities %}
-									<h5>Responsibilities</h5>
+									<h5 class="mt-2">Responsibilities</h5>
 									<ul class="responsibilities">
 										{% for responsibility in experience.responsibilities %}
 											<li class="responsibility">{{responsibility}}</li>
@@ -99,12 +98,12 @@ order: 2
                 {% for education in site.data.resume.education %}
                     <div class="education-item">
                         <div class="row">
-                            <div class="col-xs-8">
+                            <div class="col-8">
                                 <h4>{{education.name}} <br/><small>{{education.school}}</small></h4>
 								<h5>{{education.marks}}</h5>
 								<p>{{education.about}}</p>
                             </div>
-                            <div class="col-xs-4 text-right">
+                            <div class="col-4 text-right">
                                 <h4><small>{{education.date}}</small></h4>
                             </div>
                         </div>
@@ -118,13 +117,13 @@ order: 2
 				{% for certification in site.data.resume.certification %}
 					<div class="certificate-item">
 						<div class="row">
-							<div class="col-xs-8">
+							<div class="col-8">
 								<h5>{{certification.name}} </h5>
 								<small>
 									{{certification.issuer}} | <a href="{{certification.link}}" title="{{certification.name}}" alt="{{certification.name}}">View Certificate</a>
 								</small>
 							</div>
-							<div class="col-xs-4 text-right">
+							<div class="col-4 text-right">
 								<h5><small>{{certification.date}}</small></h5>
 							</div>
 						</div>
@@ -136,10 +135,10 @@ order: 2
                 {% for achievement in site.data.resume.achievements %}
                     <div class="achievement-item">
                         <div class="row">
-                            <div class="col-xs-8">
+                            <div class="col-8">
                                 <h5>{{achievement.name}}</h5>
                             </div>
-                            <div class="col-xs-4 text-right">
+                            <div class="col-4 text-right">
                                 <h5><small>{{achievement.date}}</small></h5>
                             </div>
                         </div>

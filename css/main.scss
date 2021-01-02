@@ -45,32 +45,35 @@ $btn-blue-color: #3b83c0;
 
 h1{
     font-size: $base-font-size * 2.1 ;
-    line-height: $base-line-height * 1.6;
+    
 }
 h2{
     font-size: $base-font-size * 1.8;
-    line-height: $base-line-height * 1.4;
+    
 }
 h3{
     font-size: $base-font-size * 1.6;
-    line-height: $base-line-height * 1.2;
+    
 }
 h4{
     font-size: $base-font-size * 1.4;
-    line-height: $base-line-height * 1;
+    
 }
 h5{
     font-size: $base-font-size * 1.1;
-    line-height: $base-line-height * 0.8;
+    
 }
 h6{
     font-size: $base-font-size * 0.8;
-    line-height: $base-line-height * 0.6;
+    
 }
 h1,h2,h3,h4,h5,h6{
   // margin-top:20px;
   // margin-bottom: 20px;
   font-weight: bold;
+  small{
+    font-size: $base-font-size * 0.9;
+  }
 }
 body{
     background-color: $background-color;

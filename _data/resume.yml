@@ -1,78 +1,45 @@
 name: Zeeshan Khan
 role: Python Developer
-about: CS graduate from India who loves to code and usually codes in Java/Python, switches to JavaScript, HTML &amp; CSS when he renders a web page.
+about: 5+ years of experience in backend processing have experience in designing and developing software solutions
 languages:
     -
         name: Java
-        description: Gained experience in Java while developing hobby Android applications and desktop apps
+        description: Have some experience in Android app development, and basics of native Java UI 
         libs:
             name: Libraries
             list:
                 -
                     name: Android SDK
-                    type: label-success
+                    type: success
                     icon: fa fa-android
                 -
-                    name: ButterKnife
-                    type: label-success
-                -
                     name: JavaFX
-                    type: label-success
-                -
-                    name: GreenDAO ORM
-                    type: label-success
-                    icon: fa fa-database
-                -
-                    name: Retrofit
-                    type: label-success
-                -
-                    name: Git
-                    type: label-success
-                    icon: fa fa-github
-                -
-                    name: Gradle
-                    type: label-success
+                    type: success
     -
         name: Python
-        description: Gained experience in Python while building websites in Django, Processing post-trade FIX messages, and building services to handle travel booking queries.
+        description: 5+ years of experience in Python ecosystem, most of it is in backend processing and the rest in web development.
         libs:
-            name: Libraries
+            name: packages
             list:
                 -
                     name: Django
-                    type: label-primary
+                    type: primary
                 -
                     name: Flask
-                    type: label-primary
-                -
-                    name: Pillow
-                    type: label-primary
-                -
-                    name: Selenium
-                    type: label-primary
-                -
-                    name: urllib2
-                    type: label-primary
+                    type: primary
     -
         name: HTML / CSS / JavaScript
-        description: Gained experience while developing websites and web applications.
+        description: have fair knowledge in frontend related tech stack.
         libs:
             name: Frontend Frameworks and Tools
             list:
                 -
                     name: Vuejs
-                    type: label-warning
+                    type: warning
                 -
-                    name: Bootstrap
-                    type: label-warning
+                    name: jekyll
+                    type: warning
                     icon: fa fa-grid
-                -
-                    name: FontAwesome
-                    type: label-warning
-                    icon: fa fa-font-awesome
-                -
-                    name: Bower
-                    type: label-warning
 
 contact-items:
     -
@@ -93,9 +60,6 @@ contact-items:
     -
         icon: fa fa-map-marker
         data: Bengaluru, IN
-    -
-        icon: fa fa-calendar
-        data: January 10, 1993
 certification:
     -
         name: Oracle Certified Associate, Java SE 8 Programmer
@@ -134,12 +98,12 @@ education:
         school: Central Board of Secondary Education
         marks: 1st Division
         about: Physics, Chemistry and Mathematics
-        date: 2009 - 2010
+        date: 2010
     -
         name: High School
         school: Central Board of Secondary Education
         marks: 1st Division
-        date: 2008 - 2009
+        date: 2008
 
 experience:
     - 

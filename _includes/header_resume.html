@@ -1,12 +1,12 @@
-<div class="main-heading">
-  <div class="btn pull-right btn-default btn-sm visible-xs" href="#" id="menu-toggler"><i class="fa fa-bars"></i></div>
+<div class="main-heading pt-5">
+  <div class="btn pull-right btn-default btn-sm btn-sm d-sm-none" href="#" id="menu-toggler"><i class="fa fa-bars"></i></div>
   <br/>
   <div class="resume-heading centered">
     <h1 class="heading">{{site.data.resume.name}}</h1>
     <p class="small">{{site.data.resume.role}}</p>
   </div>
   <div class="menu-container">
-      <ul class="main-menu hidden-xs">
+      <ul class="main-menu d-none d-sm-flex">
         {% assign sorted_pages = site.pages | sort:"order" %}
         {% for p in sorted_pages %}
           {% if p.title %}

@@ -9,3 +9,5 @@ _site
 !*.py
 !*.java
 .jekyll-cache/*
+vendor/
+.vscode/
