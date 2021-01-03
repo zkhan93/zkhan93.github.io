@@ -17,7 +17,7 @@ First let's get familiar with some basic terminologies used in linked list.
 *   Allocated memory should be released after use, using `free()` function.
 
 
-Now let's look at the code below, although the code is self explanatory we will explain each portion seperately.
+Now let's look at the code below, although the code is self explanatory we will explain each portion separately.
 
 {% highlight c linenos %}
 
@@ -211,7 +211,7 @@ int main(){
     head=addNodeAfterValue(head,tmpNode,6);
     printList(head);
     
-    //Adding 12 befor 2
+    //Adding 12 before 2
     //result should be 10->9->8->7->6->11->1->12->2->3->4->5
     tmpNode=getNewNodeWithValue(12);
     head=addNodeBeforeValue(head,tmpNode,2);
@@ -228,7 +228,7 @@ So, we have 7 functions excluding `main()` let's have a breif introduction,
 
 *   `printList(node*)` print the current list on console.
 *   `addNodeToEnd(node*,node*)` add a node to end of list.
-*   `addNodeToStart(node*,node*)` add a new node to the begining of list.
+*   `addNodeToStart(node*,node*)` add a new node to the beginning of list.
 *   `addNodeAfterValue(node*,node*,int)` add a new node after a specific value.
 *   `addNodeBeforeValue(node*,node*,int)` add a new node before a specific value.
 *   `freeNode(node*)` free up the memory associated with this node and other linked nodes.
@@ -239,7 +239,7 @@ Function `main()`
 Let's start with the `main()`, we define two node type pointers `head` and `tmpNode`, `head` will point to the root node, let's leave `tmpNode` for now it will be used later.
 Initially the root node is `null` , now we are adding 5 new nodes (values 1 to 5) at the end of the list using `addNodeToEnd()`, we are printing the entire list after each operation,
 so that we can track the changes in the list, after that we are adding 5 more new nodes (values 6 to 10) at the start of the list using `addNodeToStart()` , again we are printing the entire list after each operation,
-at this point we will be having a linked list similar to `10->9->8->7->6->1->2->3->4->5`, now we try to add 3 new nodes using `addNodeAfterValue()`, nodes will be having values 11, 12 and 13, they will be added after 10, 5 and 8 repectively.
+at this point we will be having a linked list similar to `10->9->8->7->6->1->2->3->4->5`, now we try to add 3 new nodes using `addNodeAfterValue()`, nodes will be having values 11, 12 and 13, they will be added after 10, 5 and 8 respectively.
 at this point our link list will look like `10->11->9->8->13->7->6->1->2->3->4->5->12`, after this we will test `addNodeBeforeValue()` by adding 3 new nodes, nodes will be having values 14, 15 and 16, they will be added before 10, 12 and 13 respectively.
 
 Function `addNodeToEnd()`
@@ -252,7 +252,7 @@ we move forward by `tmpNode=tmpnode->next` till we reach the end of the list ie.
 Function `addNodeToStart()`
 ============================
 `addNodeToStart()` takes two arguments, first argument is a pointer to root node and second is pointer to new node,
-looking at the definition of `addNodeToEnd()` (63-73) we see that we first check `head` for `null`, if so then we simple make the the new node as the root node by `head=newNode`, otherwise `newNode` should point to root node i.e., `newNode->next=head` now `newNode` can be trated as the root node so `head=newNode`, finally returning the root node,
+looking at the definition of `addNodeToEnd()` (63-73) we see that we first check `head` for `null`, if so then we simple make the the new node as the root node by `head=newNode`, otherwise `newNode` should point to root node i.e., `newNode->next=head` now `newNode` can be treated as the root node so `head=newNode`, finally returning the root node,
 we can also skip the `null` check part so that our function look like
 {% highlight c linenos %}
 node* addNodeToStart(node* head, node* newNode){
@@ -285,4 +285,4 @@ on the other hand if the value of root node does not match with the desired valu
 or find the desired value in the node next to the current one `tmpnode->next->value==value` we do this to stay behind the node with desired value (equivalent while loop condition will be `while(tmpNode->next!='\0' && tmpnode->next->value!=value)`),
 after the loop ends we may be on the last node or before the desired node, so we check the value of next node with value i.e., `tmpNode->next->value==value` if this condition is true then we insert the new node before the current node, 
 this is accomplished by first making `newNode` to point whatever `tmpNode` is pointing at `newNode->next=tmpNode->next` then make the current node point to new node i.e., `tmpNode->next=newNode`, 
-we also use `found` variable to track whether the desired value exist in the list or not and printing a suitable message respectivly and finally return the root node.
+we also use `found` variable to track whether the desired value exist in the list or not and printing a suitable message respectively and finally return the root node.

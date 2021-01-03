@@ -2,7 +2,7 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 @charset "utf-8";
-
+@import "native.css";
 // Our variables
 $base-font-family: 'Open Sans', sans-serif;
 $heading-font-family: 'Open Sans', sans-serif;

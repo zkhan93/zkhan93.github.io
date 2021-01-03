@@ -7,26 +7,24 @@ tags: c  pointers moderate
 date: 2015-01-02 07:39:00
 source_file: /c/pointers-in-c.c
 ---
-Pointers are variables that stores the address of a data value, the type of both pointer and the data type should be same,
-pointer od `void` types can hold address of any data type, but necessary casting should be done explicitly.
+Pointers are variables that stores the reference (address) of a data value, datatype of pointers represent what kind of values they can hold reference of, however, a pointer of type `void` can hold reference of any datatype, but explicitly type casting is required to use them.
 
-The code below will demostrate how we can use pointers in C
+The code below will demonstrate how we can use pointers in C
 {% highlight c linenos %}
 # include<stdio.h>
 int main(){
-	int *pnum,num;
+	int *pnum, num;
 	printf("Enter a number\n");
-	scanf("%d",&num);
-	pnum=&num;
+	scanf("%d", &num);
+	pnum = &num;
 	// now you can modify the value from pnum as well as num.
-	*pnum+=10;
-	printf("new value of num=%d\n",num);
+	*pnum += 10;
+	printf("new value of num=%d\n", num);
 	return 0;
 }
 {% endhighlight %}
 
-The above code will produce the following output
-
+Output:
 {% highlight c %}
 Enter a number
 27

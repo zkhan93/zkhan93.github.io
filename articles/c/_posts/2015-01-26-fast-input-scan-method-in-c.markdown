@@ -8,13 +8,13 @@ title: Faster Scan Method in C
 source_file: /c/scan_fast.c,/c/test-file.txt
 ---
 
-Sometimes we need to scan input really fast like when we are participating in coding competitions like codechef or spoj where the time limit is very strict and inputs are large, we can save some time by adopting faster scanning methods.
+Sometimes we need to scan input really fast like when we are participating in coding competitions like codechef or SPOJ where the time limit is very strict and inputs are large, we can save some time by adopting faster scanning methods.
 
-We can acheive our gaol using `getchar_unlocked` funtion.
+We can achieve our gaol using `getchar_unlocked` function.
 
 code below scans 100000 integers and has two different methods one is `scan_normal()` this will scan integers using standard `scanf()` function and the other
  one is `scan_fast()` this scan integers using `getchar_unlocked` function, we will execute the program twice one for each 
- method mark the time taken for execution to evaluate the performace.
+ method mark the time taken for execution to evaluate the performance.
   
 {% highlight c linenos%}
 #include<stdio.h>

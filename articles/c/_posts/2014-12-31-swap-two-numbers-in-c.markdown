@@ -8,34 +8,29 @@ tags: c swapping simple
 source_file: /c/swap-two-numbers-in-c.c
 ---
 
-The code below swap two numbers
+Code below swaps two numbers without using a third variable
 {% highlight c linenos %}
 # include<stdio.h>
-int swap(int* a,int *b){
-	//the logical potion
-	*a=*a+*b; //* is use to acess a value pointed by a pointer
-	*b=*a-*b;
-	*a=*a-*b;
+int swap(int* a, int *b){
+    // swapping values using match trick
+	*a = *a + *b;
+	*b = *a - *b;
+	*a = *a - *b;
 	return 0;
 }
 int main(){
-	//declaring variables
-    int a,b;
-    //asking and scanning input
+    int a, b;
     printf("Enter two numbers");
-    scanf("%d %d",&a,&b);
-    //printing the initial values
-    printf("a=%d, b=%d",a,b);
-    //passing pointers to the functions
-    swap(&a,&b);
-    //printing the final values
-    printf("a=%d, b=%d",a,b);
+    scanf("%d %d", &a, &b);
+    printf("a=%d, b=%d", a, b);
+    swap(&a, &b);
+    printf("a=%d, b=%d", a, b);
     return 0;
 }
 {% endhighlight %}
 
-output of above code will be 
-{% highlight c %}
+Output:
+{% highlight text %}
 Enter two numbers
 10 34
 before swapping a=10, b=34

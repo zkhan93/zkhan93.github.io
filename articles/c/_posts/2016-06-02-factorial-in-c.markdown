@@ -44,7 +44,7 @@ Factorial of 5 = 120
 
 So, as you have seen the code simply takes up a integer and passes it to the `factorial()` function which in turns prints up the factorial of that number.
 
-`factorial()` is simply based on the technique of how we calculate fatorial on pen and paper as : 
+`factorial()` is simply based on the technique of how we calculate factorial on pen and paper as : 
 
 5! = 5 * 4* 3* 2* 1 = 120
 

@@ -29,7 +29,7 @@ now you have your source code ready,
 
 ###Compile
 
-Open a terminal or command prompt navigate to the directory where you source code resides using command `cd`, now to compile the souce code type `javac <Source File Name>` so in our case we will write `javac Hello.java` this will create .class files in the directory.
+Open a terminal or command prompt navigate to the directory where you source code resides using command `cd`, now to compile the source code type `javac <Source File Name>` so in our case we will write `javac Hello.java` this will create .class files in the directory.
 
 If there is error in source code you will see error messages, resolve error and repeat the compilation process unless there is no message from compiler.
 

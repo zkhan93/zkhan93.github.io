@@ -7,32 +7,35 @@ tags: c  array simple
 date: 2015-01-01 11:04:00
 source_file: /c/array-in-c.c
 ---
-Arrays are collection of similar data types values referenced by a single variable.
+Arrays in C are collection of values that have same data types.
 
-The code below will demostrate how we can use arrays in C
+The code below initializes and assigns values to an each position in an array
 
 {% highlight c linenos %}
 
 # include<stdio.h>
+
 int main(){
     int arr[10];
     int i;
+    
     printf("Enter 10 numbers\n");
     for(i=0;i<10;i++){
         scanf("%d",&arr[i]);
     }
+
     printf("the array you entered is\n");
     for(i=0;i<10;i++){
         printf("%d ",arr[i]);
     }
+    
     printf("\n");
     return 0;
 }
 
 {% endhighlight %}
 
-The above code will produce the following output
-
+Output:
 {% highlight c linenos%}
 Enter 10 numbers
 1

@@ -11,7 +11,7 @@ source_file: /java/arraylist-in-java.java
 `ArrayList` is a collection of data items that grows and shrinks depending on the number of data items present in it,
 you can think it as a dynamic array or a link lists in C, whose size increases when we insert a data and decreases as delete some data from it.
 
-To insert a data item we use `add()` method and to delete we use `remove()` method as demostrated below in line 13 and 20 repectively.
+To insert a data item we use `add()` method and to delete we use `remove()` method as demonstrated below in line 13 and 20 respectively.
 
 following code shows how we can use ArrayList in java
 

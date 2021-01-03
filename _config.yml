@@ -15,24 +15,3 @@ linkedin_username: zkhan93
 codechef_username: zkhan1093
 hackerearth_username: zkhan93
 
-# Build settings
-
-markdown: kramdown
-highlighter: rouge
-
-#redcarpet: #not supported bu github
-#    extension:
-#        - fenced_code_blocks
-
-kramdown:
-    input: GFM
-    syntax_highlighter: rouge
-    syntax_highlighter_opts:
-        # Rouge Options › https://github.com/jneen/rouge#full-options
-        css_class: 'highlight'
-        #line_numbers: true # bad idea, spans don't need linenos and would inherit this option
-        span:
-          line_numbers: false
-        block:
-          line_numbers: true
-          start_line: 1

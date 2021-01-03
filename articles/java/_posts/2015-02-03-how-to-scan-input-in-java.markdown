@@ -10,7 +10,7 @@ source_file: /java/ScanInput.java
 
 The best way to scan input in java includes the use of `BufferedReader` class, another method uses `Scanner` class but is slower, so here we will prefer BufferedReader.
 
-The following code demostrate the use of BufferedReader for scanning input of different type.
+The following code demonstrate the use of BufferedReader for scanning input of different type.
 
 ```java
 // file ScanInput.java

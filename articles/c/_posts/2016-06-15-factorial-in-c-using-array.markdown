@@ -90,7 +90,7 @@ Factorial of 21 is : 51090942171709440000
 Let me explain you the working of the `factorial(int)`. As discussed earlier I have used character array `arr[]` for calculating the factorial, one digit at each index in reverse order.
 
 First of all if the `number` is less than or equal to 0 we will simply return as there is no point in calculating its factorial.<br/>
-Next I have stored a '0' at all the indeces of `arr` in order to avoid any absurd value using the `for` loop.(You will get to know the reason later on)
+Next I have stored a '0' at all the indices of `arr` in order to avoid any absurd value using the `for` loop.(You will get to know the reason later on)
 After that there is a `while` loop which I have used to store the `number` in the `arr` in the reverse order.<br/>
 Suppose the user wants the factorial of 21,then we will have the following values in our array:<br/>
 `arr[0] = 1, arr[1] = 2` 
@@ -121,7 +121,7 @@ Therefore, coming out of the `do-while` loop at this time, the values of `arr` w
 `arr[0] = 0, arr[1] = 2, arr[2] = 4` and `carry = 0`
 and at this point we'll update the value of `index` also.
 
-Likewise each value of `j`is multipied in the value stored in `arr`.	
+Likewise each value of `j`is multiplied in the value stored in `arr`.	
 
 Lastly, after coming out of the `for` loop we have to print the number stored in the `arr`, but remember in the reverse order, starting from `index`-1 to 0.
 

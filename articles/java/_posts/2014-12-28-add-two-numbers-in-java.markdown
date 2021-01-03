@@ -7,7 +7,7 @@ author: "Zeeshan Khan"
 tags: java addition simple
 source_file: /java/add-two-numbers-in-java.java
 ---
-Following programe will add two Integer numbers for you.
+Following program will add two Integer numbers for you.
 
 ```java
 // file Addition.java

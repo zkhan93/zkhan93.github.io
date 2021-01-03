@@ -2,15 +2,15 @@
 layout: post
 author: Zeeshan Khan
 date: 2015-01-21 00:42:53
-tags: java client server networking mutithreading
+tags: java client server networking multi-threading
 categories: Update Java
 title: Client Server in Java
 source_file: /java/Client.java,/java/Server.java
 excerpt_separator: <!--more-->
 ---
 
-The following program demostrate how we can implement simple client server architecture in java
-Start `Server.java` in a terminal/command promt then open another command promt/terminal and start `Client.java` in it
+The following program demonstrate how we can implement simple client server architecture in java
+Start `Server.java` in a terminal/command prompt then open another command prompt/terminal and start `Client.java` in it
 Server can handle new Clients on disconnection of previous one.
 
 <!--more-->
@@ -126,7 +126,7 @@ class Client{
 			}catch(Exception e){
 				e.printStackTrace();
 			}
-			System.out.println("Disconneted from server");
+			System.out.println("Disconnected from server");
 		}
 	}
 
@@ -145,7 +145,7 @@ Server said: you just eco what I say
 okay bye
 Server said: okay bye
 terminate
-Disconneted from server
+Disconnected from server
 ```
 
 Server output
