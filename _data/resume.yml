@@ -70,7 +70,7 @@ certification:
         name: Android Developer Nanodegree
         issuer: Udacity
         date: April 2017
-        link: https://drive.google.com/open?id=0B13i7WfUpVGoem5DZDRnT0pScVE
+        link: https://graduation.udacity.com/confirm/XV4EAEEL
     -
         name: Vuejs
         issuer: Lynda.com
@@ -107,10 +107,19 @@ education:
 
 experience:
     - 
+        role: Software Engineer
+        company: Morgan Stanley
+        date:
+            join: 2021-03-21
+        location: Bengaluru, IN
+        responsibilities:
+            - Enhancing and Maintaining a Big Data platform for data loading, users can create data loading job by writing yaml configurations
+    - 
         role: Senior Software Engineer
         company: Amadeus Software Labs
         date:
             join: 2019-04-29
+            leave: 2021-03-19
         location: Bengaluru, IN
         responsibilities:
             - Involved in designing architecture for synchronizing Property Management Systems (PMS) and Global Distribution System (GDS)
