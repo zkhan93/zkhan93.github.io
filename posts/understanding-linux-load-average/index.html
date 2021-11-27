@@ -22,7 +22,6 @@ This blog post explains it beautifully what those three numbers mean ">
 <meta name=generator content="Hugo 0.89.4">
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
 </noscript><meta property="og:title" content="Understanding Linux load average">
 <meta property="og:description" content=">>> uptime 09:20:04 up 13:22, 5 users, load average: 0.11, 0.31, 0.42 Load average are those three number, its these to give and idea of how busy the system is.
 It shows load for last 1, 5 and 15 mins, A common misconception is that it just shows how busy the CPU is, however it also takes other IO operation into consideration.
@@ -39,8 +38,8 @@ This blog post explains it beautifully what those three numbers mean ">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://zkhan.in/posts/"},{"@type":"ListItem","position":2,"name":"Understanding Linux load average","item":"https://zkhan.in/posts/understanding-linux-load-average/"}]}</script>
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Understanding Linux load average","name":"Understanding Linux load average","description":"\u0026gt;\u0026gt;\u0026gt; uptime 09:20:04 up 13:22, 5 users, load average: 0.11, 0.31, 0.42 Load average are those three number, its these to give and idea of how busy the system is.\nIt shows load for last 1, 5 and 15 mins, A common misconception is that it just shows how busy the CPU is, however it also takes other IO operation into consideration.\nThis blog post explains it beautifully what those three numbers mean ","keywords":[],"articleBody":" uptime 09:20:04 up 13:22, 5 users, load average: 0.11, 0.31, 0.42 Load average are those three number, its these to give and idea of how busy the system is.\nIt shows load for last 1, 5 and 15 mins, A common misconception is that it just shows how busy the CPU is, however it also takes other IO operation into consideration.\nThis blog post explains it beautifully what those three numbers mean ","wordCount":"73","inLanguage":"en","datePublished":"2021-11-26T21:48:41+05:30","dateModified":"2021-11-26T21:48:41+05:30","author":{"@type":"Person","name":"Zeeshan Khan"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://zkhan.in/posts/understanding-linux-load-average/"},"publisher":{"@type":"Organization","name":"Zeeshan Khan","logo":{"@type":"ImageObject","url":"https://zkhan.in/favicon.ico"}}}</script>
 </head>
-<body id=top>
-<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<body class=dark id=top>
+<script>localStorage.getItem("pref-theme")==="light"&&document.body.classList.remove('dark')</script>
 <header class=header>
 <nav class=nav>
 <div class=logo>
@@ -54,11 +53,6 @@ This blog post explains it beautifully what those three numbers mean ">
 <li>
 <a href=https://zkhan.in/posts/ title=Blog>
 <span>Blog</span>
-</a>
-</li>
-<li>
-<a href=https://zkhan.in/projects/ title=Projects>
-<span>Projects</span>
 </a>
 </li>
 <li>

@@ -21,7 +21,6 @@ To insert a data item we use add() method and to delete we use remove() method a
 <meta name=generator content="Hugo 0.89.4">
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
 </noscript><meta property="og:title" content="ArrayList in java">
 <meta property="og:description" content="ArrayList is a collection of data items that grows and shrinks depending on the number of data items present in it, you can think it as a dynamic array or a link lists in C, whose size increases when we insert a data and decreases as delete some data from it.
 To insert a data item we use add() method and to delete we use remove() method as demonstrated below in line 13 and 20 respectively.">
@@ -36,8 +35,8 @@ To insert a data item we use add() method and to delete we use remove() method a
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://zkhan.in/posts/"},{"@type":"ListItem","position":2,"name":"ArrayList in java","item":"https://zkhan.in/posts/java/arraylist-in-java/"}]}</script>
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"ArrayList in java","name":"ArrayList in java","description":"ArrayList is a collection of data items that grows and shrinks depending on the number of data items present in it, you can think it as a dynamic array or a link lists in C, whose size increases when we insert a data and decreases as delete some data from it.\nTo insert a data item we use add() method and to delete we use remove() method as demonstrated below in line 13 and 20 respectively.","keywords":["arraylist","dynamic","java"],"articleBody":"ArrayList is a collection of data items that grows and shrinks depending on the number of data items present in it, you can think it as a dynamic array or a link lists in C, whose size increases when we insert a data and decreases as delete some data from it.\nTo insert a data item we use add() method and to delete we use remove() method as demonstrated below in line 13 and 20 respectively.\nfollowing code shows how we can use ArrayList in java\n// file ArrayListDemo.java import java.io.*; import java.util.*; public class ArrayListDemo{ public static void main(String args[]) throws IOException{ ArrayListString array_of_string=new ArrayListString(); String str; int index; BufferedReader br=new BufferedReader(new InputStreamReader(System.in)); System.out.println(\"Enter data to insert in arraylist\"); //type \"end\" to stop \twhile((str=br.readLine()).equalsIgnoreCase(\"end\")==false){ //loop ends when user types \"end\" \tarray_of_string.add(str); //adding data to arraylist \tSystem.out.println(\"Inserted a data size of arrayList is \"+array_of_string.size()); } System.out.println(\"\\n------------\\nEnter the index to delete data item\"); while(array_of_string.size()0){ index=Integer.parseInt(br.readLine()); if(index-1 \u0026\u0026 indexarray_of_string.size()){ array_of_string.remove(index); //deleting data from arraylist \tSystem.out.println(\"Item at \"+index+\" deleted now array contains \"+array_of_string.size()+\" elements\"); } else System.out.println(\"Enter a valid index\"); } System.out.println(\"Array is now empty\"); } } the output of above code will be\nEnter data to insert in arraylist hello Inserted a data size of arrayList is 1 hi Inserted a data size of arrayList is 2 anyone Inserted a data size of arrayList is 3 there? Inserted a data size of arrayList is 4 no one ? Inserted a data size of arrayList is 5 :( Inserted a data size of arrayList is 6 end ------------ Enter the index to delete data item 6 Enter a valid index 5 Item at 5 deleted now array contains 5 elements 4 Item at 4 deleted now array contains 4 elements 3 Item at 3 deleted now array contains 3 elements 3 Enter a valid index 2 Item at 2 deleted now array contains 2 elements 1 Item at 1 deleted now array contains 1 elements 0 Item at 0 deleted now array contains 0 elements Array is now empty ","wordCount":"336","inLanguage":"en","datePublished":"2015-01-08T06:35:36Z","dateModified":"2015-01-08T06:35:36Z","author":{"@type":"Person","name":"Zeeshan Khan"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://zkhan.in/posts/java/arraylist-in-java/"},"publisher":{"@type":"Organization","name":"Zeeshan Khan","logo":{"@type":"ImageObject","url":"https://zkhan.in/favicon.ico"}}}</script>
 </head>
-<body id=top>
-<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<body class=dark id=top>
+<script>localStorage.getItem("pref-theme")==="light"&&document.body.classList.remove('dark')</script>
 <header class=header>
 <nav class=nav>
 <div class=logo>
@@ -51,11 +50,6 @@ To insert a data item we use add() method and to delete we use remove() method a
 <li>
 <a href=https://zkhan.in/posts/ title=Blog>
 <span>Blog</span>
-</a>
-</li>
-<li>
-<a href=https://zkhan.in/projects/ title=Projects>
-<span>Projects</span>
 </a>
 </li>
 <li>

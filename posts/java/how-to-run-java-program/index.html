@@ -23,7 +23,6 @@ Source code
 <meta name=generator content="Hugo 0.89.4">
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
 </noscript><meta property="og:title" content="How To Run a Java Program">
 <meta property="og:description" content="To run a java program you must have one, so lets have a sample code which prints &ldquo;Hello world!!&rdquo; to console.
 Source Code If you have source code ready then ignore else create a new file Hello.java and copy the below code in it and save it.
@@ -42,8 +41,8 @@ Source code
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://zkhan.in/posts/"},{"@type":"ListItem","position":2,"name":"How To Run a Java Program","item":"https://zkhan.in/posts/java/how-to-run-java-program/"}]}</script>
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"How To Run a Java Program","name":"How To Run a Java Program","description":"To run a java program you must have one, so lets have a sample code which prints \u0026ldquo;Hello world!!\u0026rdquo; to console.\nSource Code If you have source code ready then ignore else create a new file Hello.java and copy the below code in it and save it.\nSource code\n// file Hello.java import java.io.*; class Hello{ public static void main(String args[]){ System.out.println(\u0026#34;Hello World!!\u0026#34;); } } now you have your source code ready,","keywords":["Java"],"articleBody":"To run a java program you must have one, so lets have a sample code which prints “Hello world!!” to console.\nSource Code If you have source code ready then ignore else create a new file Hello.java and copy the below code in it and save it.\nSource code\n// file Hello.java import java.io.*; class Hello{ public static void main(String args[]){ System.out.println(\"Hello World!!\"); } } now you have your source code ready,\n###Compile\nOpen a terminal or command prompt navigate to the directory where you source code resides using command cd, now to compile the source code type javac  so in our case we will write javac Hello.java this will create .class files in the directory.\nIf there is error in source code you will see error messages, resolve error and repeat the compilation process unless there is no message from compiler.\nExecute To execute the program type java  so in this case we have java Hello.\nHello world!! ","wordCount":"164","inLanguage":"en","datePublished":"2015-01-24T11:37:21Z","dateModified":"2015-01-24T11:37:21Z","author":{"@type":"Person","name":"Zeeshan Khan"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://zkhan.in/posts/java/how-to-run-java-program/"},"publisher":{"@type":"Organization","name":"Zeeshan Khan","logo":{"@type":"ImageObject","url":"https://zkhan.in/favicon.ico"}}}</script>
 </head>
-<body id=top>
-<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<body class=dark id=top>
+<script>localStorage.getItem("pref-theme")==="light"&&document.body.classList.remove('dark')</script>
 <header class=header>
 <nav class=nav>
 <div class=logo>
@@ -57,11 +56,6 @@ Source code
 <li>
 <a href=https://zkhan.in/posts/ title=Blog>
 <span>Blog</span>
-</a>
-</li>
-<li>
-<a href=https://zkhan.in/projects/ title=Projects>
-<span>Projects</span>
 </a>
 </li>
 <li>

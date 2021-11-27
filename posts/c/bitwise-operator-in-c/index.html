@@ -22,7 +22,6 @@
 <meta name=generator content="Hugo 0.89.4">
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
 </noscript><meta property="og:title" content="Bitwise operations in C">
 <meta property="og:description" content="Bitwise operators in C are
  & AND Operator | OR Operator ~ NOT Operator ^ XOR Operator  The code below demonstrate common bitwise operations in c
@@ -39,8 +38,8 @@
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://zkhan.in/posts/"},{"@type":"ListItem","position":2,"name":"Bitwise operations in C","item":"https://zkhan.in/posts/c/bitwise-operator-in-c/"}]}</script>
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Bitwise operations in C","name":"Bitwise operations in C","description":"Bitwise operators in C are\n \u0026amp; AND Operator | OR Operator ~ NOT Operator ^ XOR Operator  The code below demonstrate common bitwise operations in c\n# include\u0026lt;stdio.h\u0026gt; int main(){ int a, b, option, res; printf(\u0026#34;Enter a and b\\n\u0026#34;); scanf(\u0026#34;%d %d\u0026#34;, \u0026amp;a, \u0026amp;b); do{ printf(\u0026#34;MENU\\n1.AND\\n2.OR\\n3.NOT \\n4.XOR\\n0.Exit\\n\u0026#34;); printf(\u0026#34;Enter choice: \u0026#34;); scanf(\u0026#34;%d\u0026#34;, \u0026amp;option); switch(option){ case 1: res = a \u0026amp; b; printf(\u0026#34;%d AND %d = %d\\n\u0026#34;, a, b, res); break; case 2: res = a | b; printf(\u0026#34;%d OR %d = %d\\n\u0026#34;, a, b, res); break; case 3: res = ~a; printf(\u0026#34;NOT of %d = %d\\n\u0026#34;, a, res); res = ~b; printf(\u0026#34;NOT of %d = %d\\n\u0026#34;, b, res); break; case 4: res = a ^ b; printf(\u0026#34;%d XOR %d = %d\\n\u0026#34;, a, b, res); break; default: break; } printf(\u0026#34;\\n\u0026#34;); }while(option); return 0; } Output:","keywords":["c","bitwise operators"],"articleBody":"Bitwise operators in C are\n \u0026 AND Operator | OR Operator ~ NOT Operator ^ XOR Operator  The code below demonstrate common bitwise operations in c\n# include int main(){ int a, b, option, res; printf(\"Enter a and b\\n\"); scanf(\"%d %d\", \u0026a, \u0026b); do{ printf(\"MENU\\n1.AND\\n2.OR\\n3.NOT \\n4.XOR\\n0.Exit\\n\"); printf(\"Enter choice: \"); scanf(\"%d\", \u0026option); switch(option){ case 1: res = a \u0026 b; printf(\"%d AND %d = %d\\n\", a, b, res); break; case 2: res = a | b; printf(\"%d OR %d = %d\\n\", a, b, res); break; case 3: res = ~a; printf(\"NOT of %d = %d\\n\", a, res); res = ~b; printf(\"NOT of %d = %d\\n\", b, res); break; case 4: res = a ^ b; printf(\"%d XOR %d = %d\\n\", a, b, res); break; default: break; } printf(\"\\n\"); }while(option); return 0; } Output:\nEnter a and b 2 3 MENU 1.AND 2.OR 3.NOT 4.XOR 0.Exit Enter choice: 1 2 AND 3 = 2 MENU 1.AND 2.OR 3.NOT 4.XOR 0.Exit Enter choice: 2 2 OR 3 = 3 MENU 1.AND 2.OR 3.NOT 4.XOR 0.Exit Enter choice: 3 NOT of 2 = -3 NOT of 3 = -4 MENU 1.AND 2.OR 3.NOT 4.XOR 0.Exit Enter choice: 4 2 XOR 3 = 1 MENU 1.AND 2.OR 3.NOT 4.XOR 0.Exit Enter choice: 0 ","wordCount":"208","inLanguage":"en","datePublished":"2015-01-01T04:26:00Z","dateModified":"2015-01-01T04:26:00Z","author":{"@type":"Person","name":"Zeeshan Khan"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://zkhan.in/posts/c/bitwise-operator-in-c/"},"publisher":{"@type":"Organization","name":"Zeeshan Khan","logo":{"@type":"ImageObject","url":"https://zkhan.in/favicon.ico"}}}</script>
 </head>
-<body id=top>
-<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<body class=dark id=top>
+<script>localStorage.getItem("pref-theme")==="light"&&document.body.classList.remove('dark')</script>
 <header class=header>
 <nav class=nav>
 <div class=logo>
@@ -54,11 +53,6 @@
 <li>
 <a href=https://zkhan.in/posts/ title=Blog>
 <span>Blog</span>
-</a>
-</li>
-<li>
-<a href=https://zkhan.in/projects/ title=Projects>
-<span>Projects</span>
 </a>
 </li>
 <li>

@@ -21,7 +21,6 @@ We can create and open a file w+ (write plus) mode, this will open a file if it 
 <meta name=generator content="Hugo 0.89.4">
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
 </noscript><meta property="og:title" content="File Handling in C">
 <meta property="og:description" content="The following program demonstrate how we to perform read and write operations on files,
 We can create and open a file w+ (write plus) mode, this will open a file if it exists otherwise create a new file and open it in write mode">
@@ -36,8 +35,8 @@ We can create and open a file w+ (write plus) mode, this will open a file if it 
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://zkhan.in/posts/"},{"@type":"ListItem","position":2,"name":"File Handling in C","item":"https://zkhan.in/posts/c/file-hadling-in-c/"}]}</script>
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"File Handling in C","name":"File Handling in C","description":"The following program demonstrate how we to perform read and write operations on files,\nWe can create and open a file w+ (write plus) mode, this will open a file if it exists otherwise create a new file and open it in write mode\n","keywords":["c","file I/O","pointers"],"articleBody":"The following program demonstrate how we to perform read and write operations on files,\nWe can create and open a file w+ (write plus) mode, this will open a file if it exists otherwise create a new file and open it in write mode\n# include int main(void){ FILE *fp; char str[100]; // w+ create or open if exist in write mode \tfp = fopen(\"myfile.txt\", \"w+\"); fputs(\"hello world!!..this is a text\",fp); fclose(fp); fp = fopen(\"myfile.txt\", \"r\"); fgets(str, 100, fp); printf(\"file contain:\\n%s\\n\", str); fclose(fp); return 0; } Output:\nfile contain: hello world!!..this is a text ","wordCount":"94","inLanguage":"en","datePublished":"2015-01-03T02:11:00Z","dateModified":"2015-01-03T02:11:00Z","author":{"@type":"Person","name":"Zeeshan Khan"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://zkhan.in/posts/c/file-hadling-in-c/"},"publisher":{"@type":"Organization","name":"Zeeshan Khan","logo":{"@type":"ImageObject","url":"https://zkhan.in/favicon.ico"}}}</script>
 </head>
-<body id=top>
-<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<body class=dark id=top>
+<script>localStorage.getItem("pref-theme")==="light"&&document.body.classList.remove('dark')</script>
 <header class=header>
 <nav class=nav>
 <div class=logo>
@@ -51,11 +50,6 @@ We can create and open a file w+ (write plus) mode, this will open a file if it 
 <li>
 <a href=https://zkhan.in/posts/ title=Blog>
 <span>Blog</span>
-</a>
-</li>
-<li>
-<a href=https://zkhan.in/projects/ title=Projects>
-<span>Projects</span>
 </a>
 </li>
 <li>

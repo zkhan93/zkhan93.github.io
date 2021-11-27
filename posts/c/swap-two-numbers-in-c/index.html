@@ -22,7 +22,6 @@ Enter two numbers 10 34 before swapping a=10, b=34 After swapping a=34, b=10 ">
 <meta name=generator content="Hugo 0.89.4">
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
 </noscript><meta property="og:title" content="Swap Two Numbers in C">
 <meta property="og:description" content="Code below swaps two numbers without using a third variable
 # include<stdio.h> int swap(int* a, int *b){ // swapping values using match trick 	*a = *a + *b; *b = *a - *b; *a = *a - *b; return 0; } int main(){ int a, b; printf(&#34;Enter two numbers&#34;); scanf(&#34;%d %d&#34;, &a, &b); printf(&#34;a=%d, b=%d&#34;, a, b); swap(&a, &b); printf(&#34;a=%d, b=%d&#34;, a, b); return 0; } Output:
@@ -39,8 +38,8 @@ Enter two numbers 10 34 before swapping a=10, b=34 After swapping a=34, b=10 ">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://zkhan.in/posts/"},{"@type":"ListItem","position":2,"name":"Swap Two Numbers in C","item":"https://zkhan.in/posts/c/swap-two-numbers-in-c/"}]}</script>
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Swap Two Numbers in C","name":"Swap Two Numbers in C","description":"Code below swaps two numbers without using a third variable\n# include\u0026lt;stdio.h\u0026gt; int swap(int* a, int *b){ // swapping values using match trick \t*a = *a + *b; *b = *a - *b; *a = *a - *b; return 0; } int main(){ int a, b; printf(\u0026#34;Enter two numbers\u0026#34;); scanf(\u0026#34;%d %d\u0026#34;, \u0026amp;a, \u0026amp;b); printf(\u0026#34;a=%d, b=%d\u0026#34;, a, b); swap(\u0026amp;a, \u0026amp;b); printf(\u0026#34;a=%d, b=%d\u0026#34;, a, b); return 0; } Output:\nEnter two numbers 10 34 before swapping a=10, b=34 After swapping a=34, b=10 ","keywords":["c","swapping"],"articleBody":"Code below swaps two numbers without using a third variable\n# include int swap(int* a, int *b){ // swapping values using match trick \t*a = *a + *b; *b = *a - *b; *a = *a - *b; return 0; } int main(){ int a, b; printf(\"Enter two numbers\"); scanf(\"%d %d\", \u0026a, \u0026b); printf(\"a=%d, b=%d\", a, b); swap(\u0026a, \u0026b); printf(\"a=%d, b=%d\", a, b); return 0; } Output:\nEnter two numbers 10 34 before swapping a=10, b=34 After swapping a=34, b=10 ","wordCount":"80","inLanguage":"en","datePublished":"2014-12-30T04:26:00Z","dateModified":"2014-12-30T04:26:00Z","author":{"@type":"Person","name":"Zeeshan Khan"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://zkhan.in/posts/c/swap-two-numbers-in-c/"},"publisher":{"@type":"Organization","name":"Zeeshan Khan","logo":{"@type":"ImageObject","url":"https://zkhan.in/favicon.ico"}}}</script>
 </head>
-<body id=top>
-<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<body class=dark id=top>
+<script>localStorage.getItem("pref-theme")==="light"&&document.body.classList.remove('dark')</script>
 <header class=header>
 <nav class=nav>
 <div class=logo>
@@ -54,11 +53,6 @@ Enter two numbers 10 34 before swapping a=10, b=34 After swapping a=34, b=10 ">
 <li>
 <a href=https://zkhan.in/posts/ title=Blog>
 <span>Blog</span>
-</a>
-</li>
-<li>
-<a href=https://zkhan.in/projects/ title=Projects>
-<span>Projects</span>
 </a>
 </li>
 <li>

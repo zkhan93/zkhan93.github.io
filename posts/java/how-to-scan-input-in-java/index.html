@@ -22,7 +22,6 @@ The following code demonstrate the use of BufferedReader for scanning input of d
 <meta name=generator content="Hugo 0.89.4">
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
 </noscript><meta property="og:title" content="How To Scan Input In Java">
 <meta property="og:description" content="The best way to scan input in java includes the use of BufferedReader class, another method uses Scanner class but is slower, so here we will prefer BufferedReader.
 The following code demonstrate the use of BufferedReader for scanning input of different type.
@@ -39,8 +38,8 @@ The following code demonstrate the use of BufferedReader for scanning input of d
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://zkhan.in/posts/"},{"@type":"ListItem","position":2,"name":"How To Scan Input In Java","item":"https://zkhan.in/posts/java/how-to-scan-input-in-java/"}]}</script>
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"How To Scan Input In Java","name":"How To Scan Input In Java","description":"The best way to scan input in java includes the use of BufferedReader class, another method uses Scanner class but is slower, so here we will prefer BufferedReader.\nThe following code demonstrate the use of BufferedReader for scanning input of different type.\n// file ScanInput.java import java.io.*; public class ScanInput{ public static void main(String args[]) throws IOException{ BufferedReader br=new BufferedReader(new InputStreamReader(System.in)); System.out.print(\u0026#34;Enter a String: \u0026#34;); String msg=br.readLine(); System.out.print(\u0026#34;Enter a Integer: \u0026#34;); int integer=Integer.","keywords":["Java"],"articleBody":"The best way to scan input in java includes the use of BufferedReader class, another method uses Scanner class but is slower, so here we will prefer BufferedReader.\nThe following code demonstrate the use of BufferedReader for scanning input of different type.\n// file ScanInput.java import java.io.*; public class ScanInput{ public static void main(String args[]) throws IOException{ BufferedReader br=new BufferedReader(new InputStreamReader(System.in)); System.out.print(\"Enter a String: \"); String msg=br.readLine(); System.out.print(\"Enter a Integer: \"); int integer=Integer.parseInt(br.readLine()); System.out.print(\"Enter a Decimal Number: \"); Float float_number=Float.parseFloat(br.readLine()); System.out.println(\"String you entered is:\"+msg); System.out.println(\"Integer you entered is:\"+integer); System.out.println(\"Decimal Number you entered is:\"+float_number); } } output is\nEnter a String: Hello World!! Enter a Integer: 12345 Enter a Decimal Number: 123.345221 String you entered is:Hello World!! Integer you entered is:12345 Decimal Number you entered is:123.34522 ","wordCount":"125","inLanguage":"en","datePublished":"2015-02-03T10:14:51Z","dateModified":"2015-02-03T10:14:51Z","author":{"@type":"Person","name":"Zeeshan Khan"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://zkhan.in/posts/java/how-to-scan-input-in-java/"},"publisher":{"@type":"Organization","name":"Zeeshan Khan","logo":{"@type":"ImageObject","url":"https://zkhan.in/favicon.ico"}}}</script>
 </head>
-<body id=top>
-<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<body class=dark id=top>
+<script>localStorage.getItem("pref-theme")==="light"&&document.body.classList.remove('dark')</script>
 <header class=header>
 <nav class=nav>
 <div class=logo>
@@ -54,11 +53,6 @@ The following code demonstrate the use of BufferedReader for scanning input of d
 <li>
 <a href=https://zkhan.in/posts/ title=Blog>
 <span>Blog</span>
-</a>
-</li>
-<li>
-<a href=https://zkhan.in/projects/ title=Projects>
-<span>Projects</span>
 </a>
 </li>
 <li>
