@@ -1,0 +1,82 @@
+baseURL: https://zkhan.in/
+languageCode: en-us
+title: Zeeshan Khan
+theme: PaperMod
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+menu:
+  main:
+    - identifier: blog
+      name: Blog
+      url: /posts/
+      weight: 10
+    - identifier: categories
+      name: Categories
+      url: /categories/
+      weight: 20
+    - identifier: archive
+      name: Archive
+      url: /archives/
+      weight: 30
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 30
+
+params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  title: Zeeshan Khan
+  description: "A place for my thoughts"
+  keywords: [Blog, Linux, Android, Python, Java, C]
+  ShowReadingTime: true
+  ShowBreadCrumbs: true
+  disableScrollToTop: true
+  comments: true
+  author: Zeeshan Khan
+
+  homeInfoParams:
+    title: Hi there wave
+    Content: Can be Info, links, about...
+
+  socialIcons:
+    - name: twitter
+      url: "https://twitter.com/"
+    - name: stackoverflow
+      url: "https://stackoverflow.com"
+    - name: github
+      url: "https://github.com/"
+
+  profileMode:
+    enabled: true
+    title: "Zeeshan Khan" # optional default will be site title
+    subtitle: "Python | Web "
+    imageUrl: "/zeeshan.jpg" # optional
+    imageTitle: "Zeeshan Khan" # optional
+    imageWidth: 120 # custom size
+    imageHeight: 120 # custom size
+    buttons:
+      - name: LinkedIn
+        url: "/archive"
+      - name: Github
+        url: "https://github.com/"
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # is necessary
+
+# for search
+# https://fusejs.io/api/options.html
+fuseOpts:
+  isCaseSensitive: false
+  shouldSort: true
+  location: 0
+  distance: 1000
+  threshold: 0.4
+  minMatchCharLength: 0
+  keys: ["title", "permalink", "summary", "content"]
