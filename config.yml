@@ -15,44 +15,51 @@ menu:
       name: Blog
       url: /posts/
       weight: 10
-    - identifier: categories
-      name: Categories
-      url: /categories/
+    - identifier: projects
+      name: Projects
+      url: /projects/
       weight: 20
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 30
     - identifier: archive
       name: Archive
       url: /archives/
-      weight: 30
+      weight: 40
     - identifier: search
       name: Search
       url: /search/
-      weight: 30
+      weight: 50
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  title: Zeeshan Khan
+  author: Zeeshan Khan
+  image: "/me.jpg"
   description: "A place for my thoughts"
   keywords: [Blog, Linux, Android, Python, Java, C]
   ShowReadingTime: true
   ShowBreadCrumbs: true
+  hideFooter: true
   comments: true
-  author: Zeeshan Khan
-  image: "/me.jpg"
-
+  ShowShareButtons: true
+  ShowCodeCopyButtons: true
+  ShowPostNavLinks: true
   homeInfoParams:
-    title: Hi there wave
-    Content: Can be Info, links, about...
+    imageUrl: "/me.jpg"
+    title: Hello!
+    Content: This is where I dump my work so that I can find it later ;)
 
   socialIcons:
     - name: twitter
-      url: "https://twitter.com/"
-    - name: stackoverflow
-      url: "https://stackoverflow.com"
+      url: "https://twitter.com/zkhan1093"
+    - name: linkedin
+      url: "https://linkedin.com/in/zkhan93/"
     - name: github
-      url: "https://github.com/"
+      url: "https://github.com/zkhan93"
 
   profileMode:
-    enabled: true
+    enabled: false
     subtitle: "Python | Web "
     imageUrl: "/me.jpg"
     imageTitle: "Zeeshan Khan"
@@ -75,5 +82,3 @@ fuseOpts:
   threshold: 0.4
   minMatchCharLength: 0
   keys: ["title", "permalink", "summary", "content"]
-
-disqusShortname: coderzkhan
