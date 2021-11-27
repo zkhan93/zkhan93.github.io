@@ -24,7 +24,7 @@ I'll add a link to my favorites one here,
 
 you can search for more on [gnome-look](https://www.gnome-look.org/browse?cat=124&ord=latest) or [deviantart](https://www.deviantart.com/tag/conky)
 
-### My Customizations I have 
+### My Customizations
 I have 3 conky configs 
  - system monitor
  - quotes from github
