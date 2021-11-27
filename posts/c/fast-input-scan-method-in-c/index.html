@@ -37,7 +37,7 @@ code below scans 100000 integers and has two different methods one is scan_norma
 We can achieve our gaol using getchar_unlocked function.
 code below scans 100000 integers and has two different methods one is scan_normal() this will scan integers using standard scanf() function and the other one is scan_fast() this scan integers using getchar_unlocked function, we will execute the program twice one for each method mark the time taken for execution to evaluate the performance.">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://zkhan.in/posts/"},{"@type":"ListItem","position":2,"name":"Faster Input Scan Method in C","item":"https://zkhan.in/posts/c/fast-input-scan-method-in-c/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Faster Input Scan Method in C","name":"Faster Input Scan Method in C","description":"Sometimes we need to scan input really fast like when we are participating in coding competitions like codechef or SPOJ where the time limit is very strict and inputs are large, we can save some time by adopting faster scanning methods.\nWe can achieve our gaol using getchar_unlocked function.\ncode below scans 100000 integers and has two different methods one is scan_normal() this will scan integers using standard scanf() function and the other one is scan_fast() this scan integers using getchar_unlocked function, we will execute the program twice one for each method mark the time taken for execution to evaluate the performance.","keywords":["c","fast scan"],"articleBody":"Sometimes we need to scan input really fast like when we are participating in coding competitions like codechef or SPOJ where the time limit is very strict and inputs are large, we can save some time by adopting faster scanning methods.\nWe can achieve our gaol using getchar_unlocked function.\ncode below scans 100000 integers and has two different methods one is scan_normal() this will scan integers using standard scanf() function and the other one is scan_fast() this scan integers using getchar_unlocked function, we will execute the program twice one for each method mark the time taken for execution to evaluate the performance.\n{% highlight c linenos%} #include #define gc getchar_unlocked // gc for saving for getchar_unlocked int scan_fast(){ int n=0; char ch=gc(); while(ch ‘9’){ ch=gc(); // ignoring chars that are not digit } while(ch=‘0’ \u0026\u0026 chint scan_normal(){ int n; scanf(\"%d\",\u0026n); return n; }\nint main(){ int num=1000000; //we have 100000 integers to test while(num–){ //\tscan_normal(); // uncomment this for 1st execution //\tscan_fast(); // uncomment this for 2nd execution } return 0; }\n{% endhighlight%} for checking i am using linux time command to check the execution time and a file text-file.txt containing 100000 integers from 0 to 99999\ncommand is as follows\n{% highlight sh%} time ./scan_methods output using scan_normal {% highlight c%} real\t0m0.112s user\t0m0.101s sys\t0m0.012s {% endhighlight%}\noutput using scan_fast {% highlight c%} real\t0m0.040s user\t0m0.033s sys\t0m0.008s {% endhighlight%}\n","wordCount":"263","inLanguage":"en","datePublished":"2015-01-26T08:03:44Z","dateModified":"2015-01-26T08:03:44Z","author":{"@type":"Person","name":"Zeeshan Khan"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://zkhan.in/posts/c/fast-input-scan-method-in-c/"},"publisher":{"@type":"Organization","name":"Zeeshan Khan","logo":{"@type":"ImageObject","url":"https://zkhan.in/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Faster Input Scan Method in C","name":"Faster Input Scan Method in C","description":"Sometimes we need to scan input really fast like when we are participating in coding competitions like codechef or SPOJ where the time limit is very strict and inputs are large, we can save some time by adopting faster scanning methods.\nWe can achieve our gaol using getchar_unlocked function.\ncode below scans 100000 integers and has two different methods one is scan_normal() this will scan integers using standard scanf() function and the other one is scan_fast() this scan integers using getchar_unlocked function, we will execute the program twice one for each method mark the time taken for execution to evaluate the performance.","keywords":["c","fast scan"],"articleBody":"Sometimes we need to scan input really fast like when we are participating in coding competitions like codechef or SPOJ where the time limit is very strict and inputs are large, we can save some time by adopting faster scanning methods.\nWe can achieve our gaol using getchar_unlocked function.\ncode below scans 100000 integers and has two different methods one is scan_normal() this will scan integers using standard scanf() function and the other one is scan_fast() this scan integers using getchar_unlocked function, we will execute the program twice one for each method mark the time taken for execution to evaluate the performance.\n#include#define gc getchar_unlocked // gc for saving for getchar_unlocked int scan_fast(){ int n=0; char ch=gc(); while(ch  '0' \u0026\u0026 ch '9'){ ch=gc(); // ignoring chars that are not digit \t} while(ch='0' \u0026\u0026 ch'9'){ n=n*10+ch-'0'; // for each digit add it to n in proper place \tch=gc(); } return n; } int scan_normal(){ int n; scanf(\"%d\",\u0026n); return n; } int main(){ int num=1000000; //we have 100000 integers to test \twhile(num--){ //\tscan_normal(); // uncomment this for 1st execution \t//\tscan_fast(); // uncomment this for 2nd execution \t} return 0; } for checking i am using linux time command to check the execution time and a file text-file.txt containing 100000 integers from 0 to 99999\ncommand is as follows\ntime ./scan_methods output using scan_normal\nreal\t0m0.112s user\t0m0.101s sys\t0m0.012s output using scan_fast\nreal\t0m0.040s user\t0m0.033s sys\t0m0.008s ","wordCount":"241","inLanguage":"en","datePublished":"2015-01-26T08:03:44Z","dateModified":"2015-01-26T08:03:44Z","author":{"@type":"Person","name":"Zeeshan Khan"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://zkhan.in/posts/c/fast-input-scan-method-in-c/"},"publisher":{"@type":"Organization","name":"Zeeshan Khan","logo":{"@type":"ImageObject","url":"https://zkhan.in/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
@@ -89,52 +89,48 @@ Faster Input Scan Method in C
 <p>code below scans 100000 integers and has two different methods one is <code>scan_normal()</code> this will scan integers using standard <code>scanf()</code> function and the other
 one is <code>scan_fast()</code> this scan integers using <code>getchar_unlocked</code> function, we will execute the program twice one for each
 method mark the time taken for execution to evaluate the performance.</p>
-<p>{% highlight c linenos%}
-#include&lt;stdio.h>
-#define gc getchar_unlocked // gc for saving for getchar_unlocked
-int scan_fast(){
-int n=0;
-char ch=gc();
-while(ch &lt; &lsquo;0&rsquo; && ch >&lsquo;9&rsquo;){
-ch=gc(); // ignoring chars that are not digit
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c><span style=color:#75715e>#include</span><span style=color:#75715e>&lt;stdio.h&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#define gc getchar_unlocked </span><span style=color:#75715e>// gc for saving for getchar_unlocked
+</span><span style=color:#75715e></span><span style=color:#66d9ef>int</span> <span style=color:#a6e22e>scan_fast</span>(){
+	<span style=color:#66d9ef>int</span> n<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>;
+	<span style=color:#66d9ef>char</span> ch<span style=color:#f92672>=</span>gc();
+	<span style=color:#66d9ef>while</span>(ch <span style=color:#f92672>&lt;</span> <span style=color:#e6db74>&#39;0&#39;</span> <span style=color:#f92672>&amp;&amp;</span> ch <span style=color:#f92672>&gt;</span><span style=color:#e6db74>&#39;9&#39;</span>){
+		ch<span style=color:#f92672>=</span>gc(); <span style=color:#75715e>// ignoring chars that are not digit
+</span><span style=color:#75715e></span>	}
+	<span style=color:#66d9ef>while</span>(ch<span style=color:#f92672>&gt;=</span><span style=color:#e6db74>&#39;0&#39;</span> <span style=color:#f92672>&amp;&amp;</span> ch<span style=color:#f92672>&lt;=</span><span style=color:#e6db74>&#39;9&#39;</span>){
+		n<span style=color:#f92672>=</span>n<span style=color:#f92672>*</span><span style=color:#ae81ff>10</span><span style=color:#f92672>+</span>ch<span style=color:#f92672>-</span><span style=color:#e6db74>&#39;0&#39;</span>; <span style=color:#75715e>// for each digit add it to n in proper place
+</span><span style=color:#75715e></span>		ch<span style=color:#f92672>=</span>gc();
+	}
+	<span style=color:#66d9ef>return</span> n; 
 }
-while(ch>=&lsquo;0&rsquo; && ch&lt;=&lsquo;9&rsquo;){
-n=n*10+ch-&lsquo;0&rsquo;; // for each digit add it to n in proper place
-ch=gc();
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>scan_normal</span>(){
+	<span style=color:#66d9ef>int</span> n;
+	scanf(<span style=color:#e6db74>&#34;%d&#34;</span>,<span style=color:#f92672>&amp;</span>n);
+	<span style=color:#66d9ef>return</span> n;
 }
-return n;
-}</p>
-<p>int scan_normal(){
-int n;
-scanf("%d",&n);
-return n;
-}</p>
-<p>int main(){
-int num=1000000; //we have 100000 integers to test
-while(num&ndash;){
-// scan_normal(); // uncomment this for 1st execution
-// scan_fast(); // uncomment this for 2nd execution
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>(){
+	<span style=color:#66d9ef>int</span> num<span style=color:#f92672>=</span><span style=color:#ae81ff>1000000</span>; <span style=color:#75715e>//we have 100000 integers to test
+</span><span style=color:#75715e></span>	<span style=color:#66d9ef>while</span>(num<span style=color:#f92672>--</span>){
+	<span style=color:#75715e>//	scan_normal(); // uncomment this for 1st execution
+</span><span style=color:#75715e></span>	<span style=color:#75715e>//	scan_fast(); // uncomment this for 2nd execution
+</span><span style=color:#75715e></span>	}
+	<span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
 }
-return 0;
-}</p>
-<p>{% endhighlight%}
-for checking i am using linux <code>time</code> command to check the execution time and a file <code>text-file.txt</code> containing 100000 integers from 0 to 99999</p>
+
+</code></pre></div><p>for checking i am using linux <code>time</code> command to check the execution time and a file <code>text-file.txt</code> containing 100000 integers from 0 to 99999</p>
 <p>command is as follows</p>
-<p>{% highlight sh%}
-time ./scan_methods &lt; text-file.txt
-{% endhighlight%}</p>
-<p>output using <code>scan_normal</code>
-{% highlight c%}
-real 0m0.112s
-user 0m0.101s
-sys 0m0.012s
-{% endhighlight%}</p>
-<p>output using <code>scan_fast</code>
-{% highlight c%}
-real 0m0.040s
-user 0m0.033s
-sys 0m0.008s
-{% endhighlight%}</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>time ./scan_methods &lt; text-file.txt
+</code></pre></div><p>output using <code>scan_normal</code></p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text>real	0m0.112s
+user	0m0.101s
+sys	0m0.012s
+</code></pre></div><p>output using <code>scan_fast</code></p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>real	0m0.040s
+user	0m0.033s
+sys	0m0.008s
+</code></pre></div>
 </div>
 <footer class=post-footer>
 <ul class=post-tags>

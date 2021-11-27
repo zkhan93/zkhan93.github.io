@@ -34,7 +34,7 @@
 <meta name=twitter:description content="First let&rsquo;s get familiar with some basic terminologies used in linked list.
  A linked list is a type of array in which each elements points to the next element. Each element in the list is called a node The very first node of the list is called the root node or head of the list. Linked list is represented only by the root node i.e., we store only the pointer to the root node.">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://zkhan.in/posts/"},{"@type":"ListItem","position":2,"name":"Linked List in C","item":"https://zkhan.in/posts/c/linked-list-in-c/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Linked List in C","name":"Linked List in C","description":"First let\u0026rsquo;s get familiar with some basic terminologies used in linked list.\n A linked list is a type of array in which each elements points to the next element. Each element in the list is called a node The very first node of the list is called the root node or head of the list. Linked list is represented only by the root node i.e., we store only the pointer to the root node.","keywords":["c","linked list"],"articleBody":"First let’s get familiar with some basic terminologies used in linked list.\n A linked list is a type of array in which each elements points to the next element. Each element in the list is called a node The very first node of the list is called the root node or head of the list. Linked list is represented only by the root node i.e., we store only the pointer to the root node. Memory for each node is dynamically allocated using malloc() or calloc() function from stdlib.h header file. Allocated memory should be released after use, using free() function.  Now let’s look at the code below, although the code is self explanatory we will explain each portion separately.\n{% highlight c linenos %}\n#include #include /**\n Structure of one node of the Linked List */ typedef struct node{ int value; struct node next; }node;  /**\n This fucntion prints the whole linked list on console in the below format, value1-value2-value3…-valuen eg. 1-2-3-4 if the list is empty it simply prints a message ‘List is Empty’ @parmeters   node* head: head or root of the linked list,     i.e., pointer pointing to the first item(more formally first node) in the linked list.   if(head!='\\0'){ node* tmpNode=head; while(tmpNode!='\\0'){ printf(\"%d\",tmpNode-value); tmpNode=tmpNode-next; if(tmpNode!='\\0') printf(\"-\"); else printf(\"\\n\"); } } else printf(“List is Empty\\n”); }  /**\n This function add a node to the end of the linked list, i.e., the newNode will be the last node in the existing linked list, if the list is empty the newNode become the first node of the list @parmeters   node* head: pointer pointing to the start of the list (head or root node)     node* newNode: pointer pointing to the new node.    / node addNodeToEnd(node head, node* newNode){ if(head=='\\0'){ //newNode is the first node to the list head=newNode; } else{ node* tmpNode=head; while(tmpNode-next!='\\0'){ tmpNode=tmpNode-next; } tmpNode-next=newNode; } return head; }\n/**\n This function add a node to the start of the linked list @parameters / node addNodeToStart(node head,node* newNode){ if(head=='\\0'){ head=newNode; } else{ node* tmpNode=head; head=newNode; newNode-next=tmpNode; } return head; }  /**\n This function add a new node, after a specified value in the list @parameters   node* head: pointer of type node, pointing to the start of the list     node* newNode: pointer of type node, pointing to the newly created node(i.e., the new node to be inserted)     int value: value after which newNode has to be inserted    / node addNodeAfterValue(node head,node* newNode,int value){ int found=0; if(head!='\\0'){ node* tmpNode=head; while(tmpNode-next!='\\0' \u0026\u0026 tmpNode-value!=value){ tmpNode=tmpNode-next; } if(tmpNode-value==value){ newNode-next=tmpNode-next; tmpNode-next=newNode; found=1; } } if(!found) printf(“cannot find %d in the list\\n”,value); return head; }\n/**\n This function add a new node, before a specified value in the list. @parameters   node* head: pointer of type node, pointing to the start of the list     node* newNode: pointer of type node, pointing to the newly created node(i.e., the new node to be inserted)     int value: value before which newNode has to be inserted.    / node addNodeBeforeValue(node head,node* newNode,int value){ int found=0; if(head!='\\0'){ if(head-value==value){ head=addNodeToStart(head,newNode); found=1; } else{ node* tmpNode=head; while(tmpNode-next!='\\0' \u0026\u0026 tmpNode-next-value!=value){ tmpNode=tmpNode-next; } if(tmpNode-next-value==value){ newNode-next=tmpNode-next; tmpNode-next=newNode; found=1; } } } if(!found) printf(“cannot find %d in the list\\n”,value); return head; }\n/**\n This function free up all the memory attached with specified node @parmeters   node* head: root of the list    */ void freeNode(node head){ if(head-next=='\\0') free(head); else freeNode(head-next); }\n/**\n This function create a new node from memory pool, assign a value to the value variable in the node and return it’s pointer; @parmeters   int value: the value to be assigned to the new node.    / node getNewNodeWithValue(int value){ //getting memory from free pool. node newNode=(node*)malloc(sizeof(node)); //assigning value to the node’s value member newNode-value=value; //setting next pointer to null newNode-next='\\0'; return newNode; }\nint main(){ //initially head points to null ie., list is empty node* head='\\0'; node* tmpNode; int i=0;\n//Adding 5 new nodes to the end of the list // result should be 1-2-3-4-5 for(i=1;i9-8-7-6-1-2-3-4-5 for(i=6;i9-8-7-6-11-1-2-3-4-5 tmpNode=getNewNodeWithValue(11); head=addNodeAfterValue(head,tmpNode,6); printList(head); //Adding 12 before 2 //result should be 10-9-8-7-6-11-1-12-2-3-4-5 tmpNode=getNewNodeWithValue(12); head=addNodeBeforeValue(head,tmpNode,2); printList(head); //free up all the allocated memory freeNode(head); return 0;  } {% endhighlight %}\nSo, we have 7 functions excluding main() let’s have a breif introduction,\n printList(node*) print the current list on console. addNodeToEnd(node*,node*) add a node to end of list. addNodeToStart(node*,node*) add a new node to the beginning of list. addNodeAfterValue(node*,node*,int) add a new node after a specific value. addNodeBeforeValue(node*,node*,int) add a new node before a specific value. freeNode(node*) free up the memory associated with this node and other linked nodes. getNewNodeWithValue(int) get a new node with a specific value.  Function main() Let’s start with the main(), we define two node type pointers head and tmpNode, head will point to the root node, let’s leave tmpNode for now it will be used later. Initially the root node is null , now we are adding 5 new nodes (values 1 to 5) at the end of the list using addNodeToEnd(), we are printing the entire list after each operation, so that we can track the changes in the list, after that we are adding 5 more new nodes (values 6 to 10) at the start of the list using addNodeToStart() , again we are printing the entire list after each operation, at this point we will be having a linked list similar to 10-9-8-7-6-1-2-3-4-5, now we try to add 3 new nodes using addNodeAfterValue(), nodes will be having values 11, 12 and 13, they will be added after 10, 5 and 8 respectively. at this point our link list will look like 10-11-9-8-13-7-6-1-2-3-4-5-12, after this we will test addNodeBeforeValue() by adding 3 new nodes, nodes will be having values 14, 15 and 16, they will be added before 10, 12 and 13 respectively.\nFunction addNodeToEnd() addNodeToEnd() take two arguments, first argument is a pointer to root node and second is pointer to new node, let’s look at the definition of addNodeToEnd() (44-57) to understand the working, first we check head for null if so we simply make the new node as the root node by head=newNode, else we take a temporary pointer variable tmpNode initially pointing to root node, we move forward by tmpNode=tmpnode-next till we reach the end of the list ie., tmpNode-next=='\\0', at this point tmpNode will be pointing to the last node, now the last node should point to the new node we do this by tmpNode-next=newNode, finally we return the root node.\nFunction addNodeToStart() addNodeToStart() takes two arguments, first argument is a pointer to root node and second is pointer to new node, looking at the definition of addNodeToEnd() (63-73) we see that we first check head for null, if so then we simple make the the new node as the root node by head=newNode, otherwise newNode should point to root node i.e., newNode-next=head now newNode can be treated as the root node so head=newNode, finally returning the root node, we can also skip the null check part so that our function look like {% highlight c linenos %} node* addNodeToStart(node* head, node* newNode){ newNode-next=head; head=newNode; return head; } {% endhighlight %} either version of the function will do the job.\nFunction addNodeAfterValue() addNodeAfterValue() takes three arguments, first argument is a pointer to the root node, second is a pointer to new node and third argument is a value after which new node will be inserted, looking at the definition (81-97), here again we check head for null, if so we have nothing to do as the list is empty, else we take a temporary variable tmpNode, now we move forward till we reach at the end of the list i.e., tmpNode-next=='\\0' or find the desired value i.e., tmpNode-value==value (equivalent while loop condition will be while(tmpNode-next!='\\0' \u0026\u0026 tmpNode-value!=value)), after the loop we will check if the current node has the desired value or not because we have two conditions on which the loop terminates, if the value matches with the desired value then will make the newNode to point to whatever is pointed by the current node i.e., newNode-next=tmpNode-next, and then make the current node to point to the new node i.e., tmpNode-next=newNode. We use found variable to track that we found the value in list or not depending on which we print a suitable message and finally return the root node;\nFunction addNodeBeforeValue() addNodeBeforeValue() takes three arguments, first argument is a pointer to the root node, second is the pointer to new node and third argument is a value before which a new node will be inserted, looking at the definition (107-129), we first check head for null, if so we have nothing to do as the list is empty, otherwise we check head’s value by head-value==value if so then newNode must be added before the root/head node, we use our addNodeToStart() method for this i.e., head=addNodeToStart(head,nodeNode), on the other hand if the value of root node does not match with the desired value then we take a temporary variable tmpNode=head initially pointing to root node and move forward till we reach the end tmpNode-next=='\\0' or find the desired value in the node next to the current one tmpnode-next-value==value we do this to stay behind the node with desired value (equivalent while loop condition will be while(tmpNode-next!='\\0' \u0026\u0026 tmpnode-next-value!=value)), after the loop ends we may be on the last node or before the desired node, so we check the value of next node with value i.e., tmpNode-next-value==value if this condition is true then we insert the new node before the current node, this is accomplished by first making newNode to point whatever tmpNode is pointing at newNode-next=tmpNode-next then make the current node point to new node i.e., tmpNode-next=newNode, we also use found variable to track whether the desired value exist in the list or not and printing a suitable message respectively and finally return the root node.\n","wordCount":"1678","inLanguage":"en","datePublished":"2015-11-23T15:24:00Z","dateModified":"2015-11-23T15:24:00Z","author":{"@type":"Person","name":"Zeeshan Khan"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://zkhan.in/posts/c/linked-list-in-c/"},"publisher":{"@type":"Organization","name":"Zeeshan Khan","logo":{"@type":"ImageObject","url":"https://zkhan.in/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Linked List in C","name":"Linked List in C","description":"First let\u0026rsquo;s get familiar with some basic terminologies used in linked list.\n A linked list is a type of array in which each elements points to the next element. Each element in the list is called a node The very first node of the list is called the root node or head of the list. Linked list is represented only by the root node i.e., we store only the pointer to the root node.","keywords":["c","linked list"],"articleBody":"First let’s get familiar with some basic terminologies used in linked list.\n A linked list is a type of array in which each elements points to the next element. Each element in the list is called a node The very first node of the list is called the root node or head of the list. Linked list is represented only by the root node i.e., we store only the pointer to the root node. Memory for each node is dynamically allocated using malloc() or calloc() function from stdlib.h header file. Allocated memory should be released after use, using free() function.  Now let’s look at the code below, although the code is self explanatory we will explain each portion separately.\n#include#include/** * Structure of one node of the Linked List **/ typedef struct node{ int value; struct node* next; }node; /** * This fucntion prints the whole linked list on console in the below format, * value1-value2-value3...-valuen * eg. 1-2-3-4 * if the list is empty it simply prints a message 'List is Empty' * @parmeters * node* head: head or root of the linked list, * i.e., pointer pointing to the first item(more formally first node) in the linked list. * **/ void printList(node* head){ if(head!='\\0'){ node* tmpNode=head; while(tmpNode!='\\0'){ printf(\"%d\",tmpNode-value); tmpNode=tmpNode-next; if(tmpNode!='\\0') printf(\"-\"); else printf(\"\\n\"); } } else printf(\"List is Empty\\n\"); } /** * This function add a node to the end of the linked list, i.e., the newNode will be the last node in the existing linked list, * if the list is empty the newNode become the first node of the list * @parmeters * node* head: pointer pointing to the start of the list (head or root node) * node* newNode: pointer pointing to the new node. **/ node* addNodeToEnd(node* head, node* newNode){ if(head=='\\0'){ //newNode is the first node to the list  head=newNode; } else{ node* tmpNode=head; while(tmpNode-next!='\\0'){ tmpNode=tmpNode-next; } tmpNode-next=newNode; } return head; } /** * This function add a node to the start of the linked list * @parameters **/ node* addNodeToStart(node* head,node* newNode){ if(head=='\\0'){ head=newNode; } else{ node* tmpNode=head; head=newNode; newNode-next=tmpNode; } return head; } /** * This function add a new node, after a specified value in the list * @parameters * node* head: pointer of type node, pointing to the start of the list * node* newNode: pointer of type node, pointing to the newly created node(i.e., the new node to be inserted) * int value: value after which newNode has to be inserted **/ node* addNodeAfterValue(node* head,node* newNode,int value){ int found=0; if(head!='\\0'){ node* tmpNode=head; while(tmpNode-next!='\\0' \u0026\u0026 tmpNode-value!=value){ tmpNode=tmpNode-next; } if(tmpNode-value==value){ newNode-next=tmpNode-next; tmpNode-next=newNode; found=1; } } if(!found) printf(\"cannot find %d in the list\\n\",value); return head; } /** * This function add a new node, before a specified value in the list. * @parameters * node* head: pointer of type node, pointing to the start of the list * node* newNode: pointer of type node, pointing to the newly created node(i.e., the new node to be inserted) * int value: value before which newNode has to be inserted. **/ node* addNodeBeforeValue(node* head,node* newNode,int value){ int found=0; if(head!='\\0'){ if(head-value==value){ head=addNodeToStart(head,newNode); found=1; } else{ node* tmpNode=head; while(tmpNode-next!='\\0' \u0026\u0026 tmpNode-next-value!=value){ tmpNode=tmpNode-next; } if(tmpNode-next-value==value){ newNode-next=tmpNode-next; tmpNode-next=newNode; found=1; } } } if(!found) printf(\"cannot find %d in the list\\n\",value); return head; } /** * This function free up all the memory attached with specified node * @parmeters * node* head: root of the list **/ void freeNode(node* head){ if(head-next=='\\0') free(head); else freeNode(head-next); } /** * This function create a new node from memory pool, * assign a value to the value variable in the node and return it's pointer; * @parmeters * int value: the value to be assigned to the new node. **/ node* getNewNodeWithValue(int value){ //getting memory from free pool.  node* newNode=(node*)malloc(sizeof(node)); //assigning value to the node's value member  newNode-value=value; //setting next pointer to null  newNode-next='\\0'; return newNode; } int main(){ //initially head points to null ie., list is empty  node* head='\\0'; node* tmpNode; int i=0; //Adding 5 new nodes to the end of the list  // result should be 1-2-3-4-5  for(i=1;i5;i++){ tmpNode=getNewNodeWithValue(i); //adding this new node to the end of the list  head=addNodeToEnd(head,tmpNode); //printing the list  printList(head); } //Adding next 5 values to the start of the list  // result should be 10-9-8-7-6-1-2-3-4-5  for(i=6;i10;i++){ tmpNode=getNewNodeWithValue(i); //adding this new node to the start of the list  head=addNodeToStart(head,tmpNode); //printing the list  printList(head); } //Adding 11 after 6  //result should be 10-9-8-7-6-11-1-2-3-4-5  tmpNode=getNewNodeWithValue(11); head=addNodeAfterValue(head,tmpNode,6); printList(head); //Adding 12 before 2  //result should be 10-9-8-7-6-11-1-12-2-3-4-5  tmpNode=getNewNodeWithValue(12); head=addNodeBeforeValue(head,tmpNode,2); printList(head); //free up all the allocated memory  freeNode(head); return 0; } So, we have 7 functions excluding main() let’s have a breif introduction,\n printList(node*) print the current list on console. addNodeToEnd(node*,node*) add a node to end of list. addNodeToStart(node*,node*) add a new node to the beginning of list. addNodeAfterValue(node*,node*,int) add a new node after a specific value. addNodeBeforeValue(node*,node*,int) add a new node before a specific value. freeNode(node*) free up the memory associated with this node and other linked nodes. getNewNodeWithValue(int) get a new node with a specific value.  Function main() Let’s start with the main(), we define two node type pointers head and tmpNode, head will point to the root node, let’s leave tmpNode for now it will be used later. Initially the root node is null , now we are adding 5 new nodes (values 1 to 5) at the end of the list using addNodeToEnd(), we are printing the entire list after each operation, so that we can track the changes in the list, after that we are adding 5 more new nodes (values 6 to 10) at the start of the list using addNodeToStart() , again we are printing the entire list after each operation, at this point we will be having a linked list similar to 10-9-8-7-6-1-2-3-4-5, now we try to add 3 new nodes using addNodeAfterValue(), nodes will be having values 11, 12 and 13, they will be added after 10, 5 and 8 respectively. at this point our link list will look like 10-11-9-8-13-7-6-1-2-3-4-5-12, after this we will test addNodeBeforeValue() by adding 3 new nodes, nodes will be having values 14, 15 and 16, they will be added before 10, 12 and 13 respectively.\nFunction addNodeToEnd() addNodeToEnd() take two arguments, first argument is a pointer to root node and second is pointer to new node, let’s look at the definition of addNodeToEnd() (44-57) to understand the working, first we check head for null if so we simply make the new node as the root node by head=newNode, else we take a temporary pointer variable tmpNode initially pointing to root node, we move forward by tmpNode=tmpnode-next till we reach the end of the list ie., tmpNode-next=='\\0', at this point tmpNode will be pointing to the last node, now the last node should point to the new node we do this by tmpNode-next=newNode, finally we return the root node.\nFunction addNodeToStart() addNodeToStart() takes two arguments, first argument is a pointer to root node and second is pointer to new node, looking at the definition of addNodeToEnd() (63-73) we see that we first check head for null, if so then we simple make the the new node as the root node by head=newNode, otherwise newNode should point to root node i.e., newNode-next=head now newNode can be treated as the root node so head=newNode, finally returning the root node, we can also skip the null check part so that our function look like\nnode* addNodeToStart(node* head, node* newNode){ newNode-next=head; head=newNode; return head; } either version of the function will do the job.\nFunction addNodeAfterValue() addNodeAfterValue() takes three arguments, first argument is a pointer to the root node, second is a pointer to new node and third argument is a value after which new node will be inserted, looking at the definition (81-97), here again we check head for null, if so we have nothing to do as the list is empty, else we take a temporary variable tmpNode, now we move forward till we reach at the end of the list i.e., tmpNode-next=='\\0' or find the desired value i.e., tmpNode-value==value (equivalent while loop condition will be while(tmpNode-next!='\\0' \u0026\u0026 tmpNode-value!=value)), after the loop we will check if the current node has the desired value or not because we have two conditions on which the loop terminates, if the value matches with the desired value then will make the newNode to point to whatever is pointed by the current node i.e., newNode-next=tmpNode-next, and then make the current node to point to the new node i.e., tmpNode-next=newNode. We use found variable to track that we found the value in list or not depending on which we print a suitable message and finally return the root node;\nFunction addNodeBeforeValue() addNodeBeforeValue() takes three arguments, first argument is a pointer to the root node, second is the pointer to new node and third argument is a value before which a new node will be inserted, looking at the definition (107-129), we first check head for null, if so we have nothing to do as the list is empty, otherwise we check head’s value by head-value==value if so then newNode must be added before the root/head node, we use our addNodeToStart() method for this i.e., head=addNodeToStart(head,nodeNode), on the other hand if the value of root node does not match with the desired value then we take a temporary variable tmpNode=head initially pointing to root node and move forward till we reach the end tmpNode-next=='\\0' or find the desired value in the node next to the current one tmpnode-next-value==value we do this to stay behind the node with desired value (equivalent while loop condition will be while(tmpNode-next!='\\0' \u0026\u0026 tmpnode-next-value!=value)), after the loop ends we may be on the last node or before the desired node, so we check the value of next node with value i.e., tmpNode-next-value==value if this condition is true then we insert the new node before the current node, this is accomplished by first making newNode to point whatever tmpNode is pointing at newNode-next=tmpNode-next then make the current node point to new node i.e., tmpNode-next=newNode, we also use found variable to track whether the desired value exist in the list or not and printing a suitable message respectively and finally return the root node.\n","wordCount":"1697","inLanguage":"en","datePublished":"2015-11-23T15:24:00Z","dateModified":"2015-11-23T15:24:00Z","author":{"@type":"Person","name":"Zeeshan Khan"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://zkhan.in/posts/c/linked-list-in-c/"},"publisher":{"@type":"Organization","name":"Zeeshan Khan","logo":{"@type":"ImageObject","url":"https://zkhan.in/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
@@ -91,251 +91,209 @@ Linked List in C
 <li>Allocated memory should be released after use, using <code>free()</code> function.</li>
 </ul>
 <p>Now let&rsquo;s look at the code below, although the code is self explanatory we will explain each portion separately.</p>
-<p>{% highlight c linenos %}</p>
-<p>#include&lt;stdio.h>
-#include&lt;stdlib.h>
-/**</p>
-<ul>
-<li>Structure of one node of the Linked List
-*<em>/
-typedef struct node{
-int value;
-struct node</em> next;
-}node;</li>
-</ul>
-<p>/**</p>
-<ul>
-<li>This fucntion prints the whole linked list on console in the below format,</li>
-<li>value1->value2->value3&mldr;->valuen</li>
-<li>eg. 1->2->3->4</li>
-<li>if the list is empty it simply prints a message &lsquo;List is Empty&rsquo;</li>
-<li>@parmeters</li>
-<li>
-<pre><code> node* head: head or root of the linked list,
-</code></pre>
-</li>
-<li>
-<pre><code> i.e., pointer pointing to the first item(more formally first node) in the linked list.
-</code></pre>
-</li>
-<li>if(head!='\0'){
-node* tmpNode=head;
-while(tmpNode!='\0'){
-printf("%d",tmpNode->value);
-tmpNode=tmpNode->next;
-if(tmpNode!='\0')
-printf("->");
-else
-printf("\n");
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c>
+<span style=color:#75715e>#include</span><span style=color:#75715e>&lt;stdio.h&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span><span style=color:#75715e>&lt;stdlib.h&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span><span style=color:#75715e>/**
+</span><span style=color:#75715e> * Structure of one node of the Linked List
+</span><span style=color:#75715e> **/</span>
+<span style=color:#66d9ef>typedef</span> <span style=color:#66d9ef>struct</span> node{
+    <span style=color:#66d9ef>int</span> value;
+    <span style=color:#66d9ef>struct</span> node<span style=color:#f92672>*</span> next;
+}node;
+
+<span style=color:#75715e>/**
+</span><span style=color:#75715e> * This fucntion prints the whole linked list on console in the below format,
+</span><span style=color:#75715e> * value1-&gt;value2-&gt;value3...-&gt;valuen
+</span><span style=color:#75715e> * eg. 1-&gt;2-&gt;3-&gt;4
+</span><span style=color:#75715e> * if the list is empty it simply prints a message &#39;List is Empty&#39;
+</span><span style=color:#75715e> * @parmeters
+</span><span style=color:#75715e> *      node* head: head or root of the linked list,
+</span><span style=color:#75715e> *      i.e., pointer pointing to the first item(more formally first node) in the linked list.
+</span><span style=color:#75715e> *  
+</span><span style=color:#75715e> **/</span>
+<span style=color:#66d9ef>void</span> <span style=color:#a6e22e>printList</span>(node<span style=color:#f92672>*</span> head){
+    <span style=color:#66d9ef>if</span>(head<span style=color:#f92672>!=</span><span style=color:#e6db74>&#39;\0&#39;</span>){
+        node<span style=color:#f92672>*</span> tmpNode<span style=color:#f92672>=</span>head; 
+        <span style=color:#66d9ef>while</span>(tmpNode<span style=color:#f92672>!=</span><span style=color:#e6db74>&#39;\0&#39;</span>){
+            printf(<span style=color:#e6db74>&#34;%d&#34;</span>,tmpNode<span style=color:#f92672>-&gt;</span>value);
+            tmpNode<span style=color:#f92672>=</span>tmpNode<span style=color:#f92672>-&gt;</span>next;
+            <span style=color:#66d9ef>if</span>(tmpNode<span style=color:#f92672>!=</span><span style=color:#e6db74>&#39;\0&#39;</span>)
+                printf(<span style=color:#e6db74>&#34;-&gt;&#34;</span>);
+            <span style=color:#66d9ef>else</span>
+                printf(<span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>);
+        }
+    }
+    <span style=color:#66d9ef>else</span>
+        printf(<span style=color:#e6db74>&#34;List is Empty</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>);
 }
+
+<span style=color:#75715e>/**
+</span><span style=color:#75715e> * This function add a node to the end of the linked list, i.e., the newNode will be the last node in the existing linked list,
+</span><span style=color:#75715e> * if the list is empty the newNode become the first node of the list
+</span><span style=color:#75715e> * @parmeters
+</span><span style=color:#75715e> *      node* head: pointer pointing to the start of the list (head or root node)
+</span><span style=color:#75715e> *      node* newNode: pointer pointing to the new node.
+</span><span style=color:#75715e> **/</span>
+node<span style=color:#f92672>*</span> <span style=color:#a6e22e>addNodeToEnd</span>(node<span style=color:#f92672>*</span> head, node<span style=color:#f92672>*</span> newNode){
+    <span style=color:#66d9ef>if</span>(head<span style=color:#f92672>==</span><span style=color:#e6db74>&#39;\0&#39;</span>){
+        <span style=color:#75715e>//newNode is the first node to the list
+</span><span style=color:#75715e></span>        head<span style=color:#f92672>=</span>newNode;
+    }
+    <span style=color:#66d9ef>else</span>{
+        node<span style=color:#f92672>*</span> tmpNode<span style=color:#f92672>=</span>head;
+        <span style=color:#66d9ef>while</span>(tmpNode<span style=color:#f92672>-&gt;</span>next<span style=color:#f92672>!=</span><span style=color:#e6db74>&#39;\0&#39;</span>){
+            tmpNode<span style=color:#f92672>=</span>tmpNode<span style=color:#f92672>-&gt;</span>next;
+        }
+        tmpNode<span style=color:#f92672>-&gt;</span>next<span style=color:#f92672>=</span>newNode;
+    }
+    <span style=color:#66d9ef>return</span> head;
 }
-else
-printf(&ldquo;List is Empty\n&rdquo;);
-}</li>
-</ul>
-<p>/**</p>
-<ul>
-<li>This function add a node to the end of the linked list, i.e., the newNode will be the last node in the existing linked list,</li>
-<li>if the list is empty the newNode become the first node of the list</li>
-<li>@parmeters</li>
-<li>
-<pre><code> node* head: pointer pointing to the start of the list (head or root node)
-</code></pre>
-</li>
-<li>
-<pre><code> node* newNode: pointer pointing to the new node.
-</code></pre>
-</li>
-</ul>
-<p><em><em>/
-node</em> addNodeToEnd(node</em> head, node* newNode){
-if(head=='\0'){
-//newNode is the first node to the list
-head=newNode;
+
+<span style=color:#75715e>/**
+</span><span style=color:#75715e> * This function add a node to the start of the linked list
+</span><span style=color:#75715e> * @parameters
+</span><span style=color:#75715e> **/</span>
+node<span style=color:#f92672>*</span> <span style=color:#a6e22e>addNodeToStart</span>(node<span style=color:#f92672>*</span> head,node<span style=color:#f92672>*</span> newNode){
+    <span style=color:#66d9ef>if</span>(head<span style=color:#f92672>==</span><span style=color:#e6db74>&#39;\0&#39;</span>){
+        head<span style=color:#f92672>=</span>newNode;
+    }
+    <span style=color:#66d9ef>else</span>{
+        node<span style=color:#f92672>*</span> tmpNode<span style=color:#f92672>=</span>head;
+        head<span style=color:#f92672>=</span>newNode;
+        newNode<span style=color:#f92672>-&gt;</span>next<span style=color:#f92672>=</span>tmpNode;
+    }
+    <span style=color:#66d9ef>return</span> head;
 }
-else{
-node* tmpNode=head;
-while(tmpNode->next!='\0'){
-tmpNode=tmpNode->next;
+
+<span style=color:#75715e>/**
+</span><span style=color:#75715e> * This function add a new node, after a specified value in the list
+</span><span style=color:#75715e> * @parameters
+</span><span style=color:#75715e> *      node* head: pointer of type node, pointing to the start of the list
+</span><span style=color:#75715e> *      node* newNode: pointer of type node, pointing to the newly created node(i.e., the new node to be inserted)
+</span><span style=color:#75715e> *      int value: value after which newNode has to be inserted
+</span><span style=color:#75715e> **/</span>
+node<span style=color:#f92672>*</span> <span style=color:#a6e22e>addNodeAfterValue</span>(node<span style=color:#f92672>*</span> head,node<span style=color:#f92672>*</span> newNode,<span style=color:#66d9ef>int</span> value){
+    <span style=color:#66d9ef>int</span> found<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>;
+    <span style=color:#66d9ef>if</span>(head<span style=color:#f92672>!=</span><span style=color:#e6db74>&#39;\0&#39;</span>){
+        node<span style=color:#f92672>*</span> tmpNode<span style=color:#f92672>=</span>head;
+        <span style=color:#66d9ef>while</span>(tmpNode<span style=color:#f92672>-&gt;</span>next<span style=color:#f92672>!=</span><span style=color:#e6db74>&#39;\0&#39;</span> <span style=color:#f92672>&amp;&amp;</span> tmpNode<span style=color:#f92672>-&gt;</span>value<span style=color:#f92672>!=</span>value){
+            tmpNode<span style=color:#f92672>=</span>tmpNode<span style=color:#f92672>-&gt;</span>next;
+        }
+        <span style=color:#66d9ef>if</span>(tmpNode<span style=color:#f92672>-&gt;</span>value<span style=color:#f92672>==</span>value){
+            newNode<span style=color:#f92672>-&gt;</span>next<span style=color:#f92672>=</span>tmpNode<span style=color:#f92672>-&gt;</span>next;
+            tmpNode<span style=color:#f92672>-&gt;</span>next<span style=color:#f92672>=</span>newNode;
+            found<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>;
+        }
+    }
+    <span style=color:#66d9ef>if</span>(<span style=color:#f92672>!</span>found)
+        printf(<span style=color:#e6db74>&#34;cannot find %d in the list</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>,value);
+    <span style=color:#66d9ef>return</span> head;
 }
-tmpNode->next=newNode;
+
+<span style=color:#75715e>/**
+</span><span style=color:#75715e> * This function add a new node, before a specified value in the list.
+</span><span style=color:#75715e> * @parameters
+</span><span style=color:#75715e> *      node* head: pointer of type node, pointing to the start of the list
+</span><span style=color:#75715e> *      node* newNode: pointer of type node, pointing to the newly created node(i.e., the new node to be inserted)
+</span><span style=color:#75715e> *      int value: value before which newNode has to be inserted.
+</span><span style=color:#75715e> **/</span> 
+node<span style=color:#f92672>*</span> <span style=color:#a6e22e>addNodeBeforeValue</span>(node<span style=color:#f92672>*</span> head,node<span style=color:#f92672>*</span> newNode,<span style=color:#66d9ef>int</span> value){
+    <span style=color:#66d9ef>int</span> found<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>;
+    <span style=color:#66d9ef>if</span>(head<span style=color:#f92672>!=</span><span style=color:#e6db74>&#39;\0&#39;</span>){
+        <span style=color:#66d9ef>if</span>(head<span style=color:#f92672>-&gt;</span>value<span style=color:#f92672>==</span>value){
+            head<span style=color:#f92672>=</span>addNodeToStart(head,newNode);
+            found<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>;
+        }
+        <span style=color:#66d9ef>else</span>{
+            node<span style=color:#f92672>*</span> tmpNode<span style=color:#f92672>=</span>head;
+            <span style=color:#66d9ef>while</span>(tmpNode<span style=color:#f92672>-&gt;</span>next<span style=color:#f92672>!=</span><span style=color:#e6db74>&#39;\0&#39;</span> <span style=color:#f92672>&amp;&amp;</span> tmpNode<span style=color:#f92672>-&gt;</span>next<span style=color:#f92672>-&gt;</span>value<span style=color:#f92672>!=</span>value){
+                tmpNode<span style=color:#f92672>=</span>tmpNode<span style=color:#f92672>-&gt;</span>next;
+            }
+            <span style=color:#66d9ef>if</span>(tmpNode<span style=color:#f92672>-&gt;</span>next<span style=color:#f92672>-&gt;</span>value<span style=color:#f92672>==</span>value){
+                newNode<span style=color:#f92672>-&gt;</span>next<span style=color:#f92672>=</span>tmpNode<span style=color:#f92672>-&gt;</span>next;
+                tmpNode<span style=color:#f92672>-&gt;</span>next<span style=color:#f92672>=</span>newNode;
+                found<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>;
+            }
+        }
+    }
+    <span style=color:#66d9ef>if</span>(<span style=color:#f92672>!</span>found)
+        printf(<span style=color:#e6db74>&#34;cannot find %d in the list</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>,value);
+    <span style=color:#66d9ef>return</span> head;
 }
-return head;
-}</p>
-<p>/**</p>
-<ul>
-<li>This function add a node to the start of the linked list</li>
-<li>@parameters
-<em><em>/
-node</em> addNodeToStart(node</em> head,node* newNode){
-if(head=='\0'){
-head=newNode;
+
+<span style=color:#75715e>/**
+</span><span style=color:#75715e> * This function free up all the memory attached with specified node
+</span><span style=color:#75715e> * @parmeters
+</span><span style=color:#75715e> *      node* head: root of the list 
+</span><span style=color:#75715e> **/</span>
+<span style=color:#66d9ef>void</span> <span style=color:#a6e22e>freeNode</span>(node<span style=color:#f92672>*</span> head){
+    <span style=color:#66d9ef>if</span>(head<span style=color:#f92672>-&gt;</span>next<span style=color:#f92672>==</span><span style=color:#e6db74>&#39;\0&#39;</span>)
+        free(head);
+    <span style=color:#66d9ef>else</span>
+        freeNode(head<span style=color:#f92672>-&gt;</span>next);
 }
-else{
-node* tmpNode=head;
-head=newNode;
-newNode->next=tmpNode;
+
+<span style=color:#75715e>/**
+</span><span style=color:#75715e> * This function create a new node from memory pool,
+</span><span style=color:#75715e> * assign a value to the value variable in the node and return it&#39;s pointer;
+</span><span style=color:#75715e> * @parmeters
+</span><span style=color:#75715e> *      int value: the value to be assigned to the new node.
+</span><span style=color:#75715e> **/</span>
+node<span style=color:#f92672>*</span> <span style=color:#a6e22e>getNewNodeWithValue</span>(<span style=color:#66d9ef>int</span> value){
+    <span style=color:#75715e>//getting memory from free pool.
+</span><span style=color:#75715e></span>    node<span style=color:#f92672>*</span> newNode<span style=color:#f92672>=</span>(node<span style=color:#f92672>*</span>)malloc(<span style=color:#66d9ef>sizeof</span>(node));
+    <span style=color:#75715e>//assigning value to the node&#39;s value member
+</span><span style=color:#75715e></span>    newNode<span style=color:#f92672>-&gt;</span>value<span style=color:#f92672>=</span>value;
+    <span style=color:#75715e>//setting next pointer to null
+</span><span style=color:#75715e></span>    newNode<span style=color:#f92672>-&gt;</span>next<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;\0&#39;</span>;
+    <span style=color:#66d9ef>return</span> newNode;
 }
-return head;
-}</li>
-</ul>
-<p>/**</p>
-<ul>
-<li>This function add a new node, after a specified value in the list</li>
-<li>@parameters</li>
-<li>
-<pre><code> node* head: pointer of type node, pointing to the start of the list
-</code></pre>
-</li>
-<li>
-<pre><code> node* newNode: pointer of type node, pointing to the newly created node(i.e., the new node to be inserted)
-</code></pre>
-</li>
-<li>
-<pre><code> int value: value after which newNode has to be inserted
-</code></pre>
-</li>
-</ul>
-<p><em><em>/
-node</em> addNodeAfterValue(node</em> head,node* newNode,int value){
-int found=0;
-if(head!='\0'){
-node* tmpNode=head;
-while(tmpNode->next!='\0' && tmpNode->value!=value){
-tmpNode=tmpNode->next;
-}
-if(tmpNode->value==value){
-newNode->next=tmpNode->next;
-tmpNode->next=newNode;
-found=1;
-}
-}
-if(!found)
-printf(&ldquo;cannot find %d in the list\n&rdquo;,value);
-return head;
-}</p>
-<p>/**</p>
-<ul>
-<li>This function add a new node, before a specified value in the list.</li>
-<li>@parameters</li>
-<li>
-<pre><code> node* head: pointer of type node, pointing to the start of the list
-</code></pre>
-</li>
-<li>
-<pre><code> node* newNode: pointer of type node, pointing to the newly created node(i.e., the new node to be inserted)
-</code></pre>
-</li>
-<li>
-<pre><code> int value: value before which newNode has to be inserted.
-</code></pre>
-</li>
-</ul>
-<p><em><em>/
-node</em> addNodeBeforeValue(node</em> head,node* newNode,int value){
-int found=0;
-if(head!='\0'){
-if(head->value==value){
-head=addNodeToStart(head,newNode);
-found=1;
-}
-else{
-node* tmpNode=head;
-while(tmpNode->next!='\0' && tmpNode->next->value!=value){
-tmpNode=tmpNode->next;
-}
-if(tmpNode->next->value==value){
-newNode->next=tmpNode->next;
-tmpNode->next=newNode;
-found=1;
-}
-}
-}
-if(!found)
-printf(&ldquo;cannot find %d in the list\n&rdquo;,value);
-return head;
-}</p>
-<p>/**</p>
-<ul>
-<li>This function free up all the memory attached with specified node</li>
-<li>@parmeters</li>
-<li>
-<pre><code> node* head: root of the list 
-</code></pre>
-</li>
-</ul>
-<p>*<em>/
-void freeNode(node</em> head){
-if(head->next=='\0')
-free(head);
-else
-freeNode(head->next);
-}</p>
-<p>/**</p>
-<ul>
-<li>This function create a new node from memory pool,</li>
-<li>assign a value to the value variable in the node and return it&rsquo;s pointer;</li>
-<li>@parmeters</li>
-<li>
-<pre><code> int value: the value to be assigned to the new node.
-</code></pre>
-</li>
-</ul>
-<p><em><em>/
-node</em> getNewNodeWithValue(int value){
-//getting memory from free pool.
-node</em> newNode=(node*)malloc(sizeof(node));
-//assigning value to the node&rsquo;s value member
-newNode->value=value;
-//setting next pointer to null
-newNode->next='\0';
-return newNode;
-}</p>
-<p>int main(){
-//initially head points to null ie., list is empty
-node* head='\0';
-node* tmpNode;
-int i=0;</p>
-<pre><code>//Adding 5 new nodes to the end of the list
-// result should be 1-&gt;2-&gt;3-&gt;4-&gt;5
-for(i=1;i&lt;=5;i++){
-    tmpNode=getNewNodeWithValue(i);
-    //adding this new node to the end of the list
-    head=addNodeToEnd(head,tmpNode);
-    //printing the list
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>(){
+    <span style=color:#75715e>//initially head points to null ie., list is empty
+</span><span style=color:#75715e></span>    node<span style=color:#f92672>*</span> head<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;\0&#39;</span>;
+    node<span style=color:#f92672>*</span> tmpNode;
+    <span style=color:#66d9ef>int</span> i<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>;
+    
+    <span style=color:#75715e>//Adding 5 new nodes to the end of the list
+</span><span style=color:#75715e></span>    <span style=color:#75715e>// result should be 1-&gt;2-&gt;3-&gt;4-&gt;5
+</span><span style=color:#75715e></span>    <span style=color:#66d9ef>for</span>(i<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>;i<span style=color:#f92672>&lt;=</span><span style=color:#ae81ff>5</span>;i<span style=color:#f92672>++</span>){
+        tmpNode<span style=color:#f92672>=</span>getNewNodeWithValue(i);
+        <span style=color:#75715e>//adding this new node to the end of the list
+</span><span style=color:#75715e></span>        head<span style=color:#f92672>=</span>addNodeToEnd(head,tmpNode);
+        <span style=color:#75715e>//printing the list
+</span><span style=color:#75715e></span>        printList(head);
+    }
+    
+    <span style=color:#75715e>//Adding next 5 values to the start of the list
+</span><span style=color:#75715e></span>    <span style=color:#75715e>// result should be 10-&gt;9-&gt;8-&gt;7-&gt;6-&gt;1-&gt;2-&gt;3-&gt;4-&gt;5
+</span><span style=color:#75715e></span>    <span style=color:#66d9ef>for</span>(i<span style=color:#f92672>=</span><span style=color:#ae81ff>6</span>;i<span style=color:#f92672>&lt;=</span><span style=color:#ae81ff>10</span>;i<span style=color:#f92672>++</span>){
+        tmpNode<span style=color:#f92672>=</span>getNewNodeWithValue(i);
+        <span style=color:#75715e>//adding this new node to the start of the list
+</span><span style=color:#75715e></span>        head<span style=color:#f92672>=</span>addNodeToStart(head,tmpNode);
+         <span style=color:#75715e>//printing the list
+</span><span style=color:#75715e></span>        printList(head);
+    }
+    
+    <span style=color:#75715e>//Adding 11 after 6
+</span><span style=color:#75715e></span>    <span style=color:#75715e>//result should be 10-&gt;9-&gt;8-&gt;7-&gt;6-&gt;11-&gt;1-&gt;2-&gt;3-&gt;4-&gt;5
+</span><span style=color:#75715e></span>    tmpNode<span style=color:#f92672>=</span>getNewNodeWithValue(<span style=color:#ae81ff>11</span>);
+    head<span style=color:#f92672>=</span>addNodeAfterValue(head,tmpNode,<span style=color:#ae81ff>6</span>);
     printList(head);
-}
-
-//Adding next 5 values to the start of the list
-// result should be 10-&gt;9-&gt;8-&gt;7-&gt;6-&gt;1-&gt;2-&gt;3-&gt;4-&gt;5
-for(i=6;i&lt;=10;i++){
-    tmpNode=getNewNodeWithValue(i);
-    //adding this new node to the start of the list
-    head=addNodeToStart(head,tmpNode);
-     //printing the list
+    
+    <span style=color:#75715e>//Adding 12 before 2
+</span><span style=color:#75715e></span>    <span style=color:#75715e>//result should be 10-&gt;9-&gt;8-&gt;7-&gt;6-&gt;11-&gt;1-&gt;12-&gt;2-&gt;3-&gt;4-&gt;5
+</span><span style=color:#75715e></span>    tmpNode<span style=color:#f92672>=</span>getNewNodeWithValue(<span style=color:#ae81ff>12</span>);
+    head<span style=color:#f92672>=</span>addNodeBeforeValue(head,tmpNode,<span style=color:#ae81ff>2</span>);
     printList(head);
+    
+    <span style=color:#75715e>//free up all the allocated memory
+</span><span style=color:#75715e></span>    freeNode(head);
+    
+    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
 }
-
-//Adding 11 after 6
-//result should be 10-&gt;9-&gt;8-&gt;7-&gt;6-&gt;11-&gt;1-&gt;2-&gt;3-&gt;4-&gt;5
-tmpNode=getNewNodeWithValue(11);
-head=addNodeAfterValue(head,tmpNode,6);
-printList(head);
-
-//Adding 12 before 2
-//result should be 10-&gt;9-&gt;8-&gt;7-&gt;6-&gt;11-&gt;1-&gt;12-&gt;2-&gt;3-&gt;4-&gt;5
-tmpNode=getNewNodeWithValue(12);
-head=addNodeBeforeValue(head,tmpNode,2);
-printList(head);
-
-//free up all the allocated memory
-freeNode(head);
-
-return 0;
-</code></pre>
-<p>}
-{% endhighlight %}</p>
-<p>So, we have 7 functions excluding <code>main()</code> let&rsquo;s have a breif introduction,</p>
+</code></pre></div><p>So, we have 7 functions excluding <code>main()</code> let&rsquo;s have a breif introduction,</p>
 <ul>
 <li><code>printList(node*)</code> print the current list on console.</li>
 <li><code>addNodeToEnd(node*,node*)</code> add a node to end of list.</li>
@@ -358,15 +316,13 @@ we move forward by <code>tmpNode=tmpnode->next</code> till we reach the end of t
 <h1 id=function-addnodetostart>Function <code>addNodeToStart()</code><a hidden class=anchor aria-hidden=true href=#function-addnodetostart>#</a></h1>
 <p><code>addNodeToStart()</code> takes two arguments, first argument is a pointer to root node and second is pointer to new node,
 looking at the definition of <code>addNodeToEnd()</code> (63-73) we see that we first check <code>head</code> for <code>null</code>, if so then we simple make the the new node as the root node by <code>head=newNode</code>, otherwise <code>newNode</code> should point to root node i.e., <code>newNode->next=head</code> now <code>newNode</code> can be treated as the root node so <code>head=newNode</code>, finally returning the root node,
-we can also skip the <code>null</code> check part so that our function look like
-{% highlight c linenos %}
-node* addNodeToStart(node* head, node* newNode){
-newNode->next=head;
-head=newNode;
-return head;
+we can also skip the <code>null</code> check part so that our function look like</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c>node<span style=color:#f92672>*</span> <span style=color:#a6e22e>addNodeToStart</span>(node<span style=color:#f92672>*</span> head, node<span style=color:#f92672>*</span> newNode){
+    newNode<span style=color:#f92672>-&gt;</span>next<span style=color:#f92672>=</span>head;
+    head<span style=color:#f92672>=</span>newNode;
+    <span style=color:#66d9ef>return</span> head;
 }
-{% endhighlight %}
-either version of the function will do the job.</p>
+</code></pre></div><p>either version of the function will do the job.</p>
 <h1 id=function-addnodeaftervalue>Function <code>addNodeAfterValue()</code><a hidden class=anchor aria-hidden=true href=#function-addnodeaftervalue>#</a></h1>
 <p><code>addNodeAfterValue()</code> takes three arguments, first argument is a pointer to the root node, second is a pointer to new node and third argument is a value after which new node will be inserted,
 looking at the definition (81-97), here again we check <code>head</code> for <code>null</code>, if so we have nothing to do as the list is empty,

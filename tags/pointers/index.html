@@ -88,8 +88,8 @@ We can create and open a file w+ (write plus) mode, this will open a file if it 
 </header>
 <section class=entry-content>
 <p>Pointers are variables that stores the reference (address) of a data value, datatype of pointers represent what kind of values they can hold reference of, however, a pointer of type void can hold reference of any datatype, but explicitly type casting is required to use them.
-The code below will demonstrate how we can use pointers in C {% highlight c linenos %}
-include&lt;stdio.h> int main(){ int *pnum, num; printf(“Enter a number\n”); scanf("%d", &num); pnum = # // now you can modify the value from pnum as well as num....</p>
+The code below will demonstrate how we can use pointers in C
+# include&lt;stdio.h> int main(){ int *pnum, num; printf("Enter a number\n"); scanf("%d", &num); pnum = &amp;num; // now you can modify the value from pnum as well as num....</p>
 </section>
 <footer class=entry-footer><span title="2015-01-02 07:39:00 +0000 UTC">January 2, 2015</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Zeeshan Khan</footer>
 <a class=entry-link aria-label="post link to Pointers in C" href=https://zkhan.in/posts/c/pointers-in-c/></a>
