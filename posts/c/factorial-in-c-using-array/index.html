@@ -1,0 +1,219 @@
+<!doctype html><html lang=en dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>Factorial in C using Character array | Zeeshan Khan</title>
+<meta name=keywords content="c,factorial">
+<meta name=description content="Hey Guys, wondering why I am here once again with this &ldquo;factorial&rdquo; thing? You will get to know it in no time..just keep reading!Let&rsquo;s calculate some of the factorials:
+1! = 12! = 23! = 64! = 245! = 1206! = 720
+well there is no problem, isn&rsquo;t it?Continue then&mldr;
+7! = 50408! = 40320
+Now let&rsquo;s look at 21! It is 51090942171709440000
+Here comes the problem, in languages like C we need to keep an eye on the size of the variables.">
+<meta name=author content="Swati Kesarwani">
+<link rel=canonical href=https://zkhan.in/posts/c/factorial-in-c-using-array/>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
+<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://zkhan.in/favicon.ico>
+<link rel=icon type=image/png sizes=16x16 href=https://zkhan.in/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=https://zkhan.in/favicon-32x32.png>
+<link rel=apple-touch-icon href=https://zkhan.in/apple-touch-icon.png>
+<link rel=mask-icon href=https://zkhan.in/safari-pinned-tab.svg>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<meta name=generator content="Hugo 0.89.4">
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript><meta property="og:title" content="Factorial in C using Character array">
+<meta property="og:description" content="Hey Guys, wondering why I am here once again with this &ldquo;factorial&rdquo; thing? You will get to know it in no time..just keep reading!Let&rsquo;s calculate some of the factorials:
+1! = 12! = 23! = 64! = 245! = 1206! = 720
+well there is no problem, isn&rsquo;t it?Continue then&mldr;
+7! = 50408! = 40320
+Now let&rsquo;s look at 21! It is 51090942171709440000
+Here comes the problem, in languages like C we need to keep an eye on the size of the variables.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zkhan.in/posts/c/factorial-in-c-using-array/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2016-06-15T05:53:34+00:00">
+<meta property="article:modified_time" content="2016-06-15T05:53:34+00:00"><meta property="og:site_name" content="Zeeshan Khan">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Factorial in C using Character array">
+<meta name=twitter:description content="Hey Guys, wondering why I am here once again with this &ldquo;factorial&rdquo; thing? You will get to know it in no time..just keep reading!Let&rsquo;s calculate some of the factorials:
+1! = 12! = 23! = 64! = 245! = 1206! = 720
+well there is no problem, isn&rsquo;t it?Continue then&mldr;
+7! = 50408! = 40320
+Now let&rsquo;s look at 21! It is 51090942171709440000
+Here comes the problem, in languages like C we need to keep an eye on the size of the variables.">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://zkhan.in/posts/"},{"@type":"ListItem","position":2,"name":"Factorial in C using Character array","item":"https://zkhan.in/posts/c/factorial-in-c-using-array/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Factorial in C using Character array","name":"Factorial in C using Character array","description":"Hey Guys, wondering why I am here once again with this \u0026ldquo;factorial\u0026rdquo; thing? You will get to know it in no time..just keep reading!Let\u0026rsquo;s calculate some of the factorials:\n1! = 12! = 23! = 64! = 245! = 1206! = 720\nwell there is no problem, isn\u0026rsquo;t it?Continue then\u0026hellip;\n7! = 50408! = 40320\nNow let\u0026rsquo;s look at 21! It is 51090942171709440000\nHere comes the problem, in languages like C we need to keep an eye on the size of the variables.","keywords":["c","factorial"],"articleBody":"Hey Guys, wondering why I am here once again with this “factorial” thing? You will get to know it in no time..just keep reading!Let’s calculate some of the factorials:\n1! = 12! = 23! = 64! = 245! = 1206! = 720\nwell there is no problem, isn’t it?Continue then…\n7! = 50408! = 40320\nNow let’s look at 21! It is 51090942171709440000\nHere comes the problem, in languages like C we need to keep an eye on the size of the variables. Even if we try storing the factorial in a long long int variable, it wont solve our problem.So what’s the solution? Think,think…Well , it’s to use a character array. Let me show you how to do it, check out the code below:\n{% highlight c linenos%}\ninclude int factorial(int number){ int j = 0;\t/* Used as loop variable\t/ int i = 0;\t/ Used for filling the array\t/ int index = 0;\t/ To keep track of the index of the array\t/ int temp = 0;\t/ Temporary variable used to hold diff values\t/ int carry = 0;\t/\tUsed to hold carry\t/ char arr[200];\t/\tUsed to store factorial\t/ if (number Putting the number in the character array / while (temp != 0){ arr[i++] = temp % 10; temp /= 10; } index = i; for ( j = number - 1 ; j  1 ; j– ) {\ti = 0; do { temp = arr[i] * j + carry; arr[i] = temp % 10;\tcarry = temp / 10; i++; } while(carry  0 || i Printing array in reverse order\t*/ printf(“Factorial of %d is : “,number); for (i =index - 1 ; i = 0 ; i–) printf(\"%d”,arr[i]); return 0; }\nint main(){ /*\tDeclaring variables\t/ int num; /\tAsking and scanning input\t/ printf(“Enter a number : “); scanf(\"%d”,\u0026num); /\tPassing number to the function\t*/ factorial(num); return 0; } {% endhighlight%}\nThe output wil be as : {% highlight c%} Enter a number : 21 Factorial of 21 is : 51090942171709440000 {% endhighlight%}\nLet me explain you the working of the factorial(int). As discussed earlier I have used character array arr[] for calculating the factorial, one digit at each index in reverse order.\nFirst of all if the number is less than or equal to 0 we will simply return as there is no point in calculating its factorial.Next I have stored a ‘0’ at all the indices of arr in order to avoid any absurd value using the for loop.(You will get to know the reason later on) After that there is a while loop which I have used to store the number in the arr in the reverse order.Suppose the user wants the factorial of 21,then we will have the following values in our array:arr[0] = 1, arr[1] = 2 Also we need to keep track of the index till where we have a valid value.Now we are going to calculate the factorial, i.e. 21 * 20 * 19 ….* 2 * 1\nThe for loop What I am gonna do is to loop through the number-1 (20) till 2. In this loop, I will multiply the number that is stored in the array to the loop variable (j) and store the result back in the character array(again digit wise and in reverse order). For instance, in the first iteration of for loop, what I have done is that I have multiplied 21(arr) by 20(j) and stored the result back in arr[] , the values will be as:arr[0] = 0, arr[1] = 2, arr[2] = 4, (remember reverse order?)\nNow lets understand how this 12 became 024 (reverse of 420 (21*20))\nThe do-while loop. Look at the following line:temp = arr[i] * j + carry;\t(1 * 20 + 0)\tHere, temp is used to temporarily hold the value of the product of the last digit(1) and the iteration variable j(20). The result comes out to be 20.Next , arr[i] = temp % 10 stores the last digit of temp variable in the first index of arr, i.e., 0 will be stored at arr[0]. carry = temp / 10 stores the remaining digits(2) of the value of temp variable,i.e., 2 will be stored in carry. After this, we’ll do an i++ (i becomes 1) in order to keep record of number of digits that have been multiplied in this iteration.while(carry  0 || i line checks if we have multiplied j with all the digits of the arr or not. Notice the carry  0 statement, it is to check whether there is any carry left or not. And since we have a carry ‘2’ we’ll again enter the while loop and this time,\ttemp = arr[i] * j + carry; (2 * 20 + 2) stores 42 in temp. Hence, arr[i] = temp % 10 will store 2 at a[1] and carry = temp / 10 will store 4 in carry which, in the next iteration of while, will be stored at a[2](try a dry run in your mind to picture how this wil happen). Therefore, coming out of the do-while loop at this time, the values of arr will be as follows:arr[0] = 0, arr[1] = 2, arr[2] = 4 and carry = 0 and at this point we’ll update the value of index also.\nLikewise each value of jis multiplied in the value stored in arr.\nLastly, after coming out of the for loop we have to print the number stored in the arr, but remember in the reverse order, starting from index-1 to 0.\nAnd that’s it, now you can calculate factorial of any number, and if you want you can even increase the size of arr and now, even more bigger numbers. Easy it was..isn’t it?\n","wordCount":"1003","inLanguage":"en","datePublished":"2016-06-15T05:53:34Z","dateModified":"2016-06-15T05:53:34Z","author":{"@type":"Person","name":"Swati Kesarwani"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://zkhan.in/posts/c/factorial-in-c-using-array/"},"publisher":{"@type":"Organization","name":"Zeeshan Khan","logo":{"@type":"ImageObject","url":"https://zkhan.in/favicon.ico"}}}</script>
+</head>
+<body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://zkhan.in/ accesskey=h title="Zeeshan Khan (Alt + H)">Zeeshan Khan</a>
+<span class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</span>
+</div>
+<ul id=menu>
+<li>
+<a href=https://zkhan.in/posts/ title=Blog>
+<span>Blog</span>
+</a>
+</li>
+<li>
+<a href=https://zkhan.in/categories/ title=Categories>
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a href=https://zkhan.in/archives/ title=Archive>
+<span>Archive</span>
+</a>
+</li>
+<li>
+<a href=https://zkhan.in/search/ title="Search (Alt + /)" accesskey=/>
+<span>Search</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<article class=post-single>
+<header class=post-header>
+<div class=breadcrumbs><a href=https://zkhan.in/>Home</a>&nbsp;»&nbsp;<a href=https://zkhan.in/posts/>Posts</a></div>
+<h1 class=post-title>
+Factorial in C using Character array
+</h1>
+<div class=post-meta><span title="2016-06-15 05:53:34 +0000 UTC">June 15, 2016</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Swati Kesarwani
+</div>
+</header>
+<div class=post-content><p>Hey Guys, wondering why I am here once again with this &ldquo;factorial&rdquo; thing? You will get to know it in no time..just keep reading!
+Let&rsquo;s calculate some of the factorials:</p>
+<p>1! = 1
+2! = 2
+3! = 6
+4! = 24
+5! = 120
+6! = 720</p>
+<p>well there is no problem, isn&rsquo;t it?
+Continue then&mldr;</p>
+<p>7! = 5040
+8! = 40320</p>
+<p>Now let&rsquo;s look at 21! It is 51090942171709440000</p>
+<p>Here comes the problem, in languages like C we need to keep an eye on the size of the variables. Even if we try storing the factorial in a <code>long long int</code> variable, it wont solve our problem.
+So what&rsquo;s the solution? Think,think&mldr;
+Well , it&rsquo;s to use a character array. Let me show you how to do it, check out the code below:</p>
+<p>{% highlight c linenos%}</p>
+<h1 id=includestdioh>include&lt;stdio.h><a hidden class=anchor aria-hidden=true href=#includestdioh>#</a></h1>
+<p>int factorial(int number){
+int j = 0; /* Used as loop variable <em>/
+int i = 0; /</em> Used for filling the array <em>/
+int index = 0; /</em> To keep track of the index of the array <em>/
+int temp = 0; /</em> Temporary variable used to hold diff values <em>/
+int carry = 0; /</em> Used to hold carry <em>/
+char arr[200]; /</em> Used to store factorial <em>/
+if (number &lt;= 0)
+return 1;
+for(i = 0 ; i &lt; 200 ; i++)
+arr[i] = 0;
+i = 0;
+temp = number;
+/</em> Putting the number in the character array <em>/
+while (temp != 0){
+arr[i++] = temp % 10;
+temp /= 10;
+}
+index = i;
+for ( j = number - 1 ; j > 1 ; j&ndash; ) {
+i = 0;
+do {
+temp = arr[i] * j + carry;
+arr[i] = temp % 10;
+carry = temp / 10;
+i++;
+} while(carry > 0 || i &lt; index);
+index = i;
+}
+/</em> Printing array in reverse order */
+printf(&ldquo;Factorial of %d is : &ldquo;,number);
+for (i =index - 1 ; i >= 0 ; i&ndash;)
+printf("%d&rdquo;,arr[i]);
+return 0;
+}</p>
+<p>int main(){
+/* Declaring variables <em>/
+int num;
+/</em> Asking and scanning input <em>/
+printf(&ldquo;Enter a number : &ldquo;);
+scanf("%d&rdquo;,&num);
+/</em> Passing number to the function */
+factorial(num);
+return 0;
+}
+{% endhighlight%}</p>
+<p>The output wil be as :
+{% highlight c%}
+Enter a number : 21
+Factorial of 21 is : 51090942171709440000
+{% endhighlight%}</p>
+<p>Let me explain you the working of the <code>factorial(int)</code>. As discussed earlier I have used character array <code>arr[]</code> for calculating the factorial, one digit at each index in reverse order.</p>
+<p>First of all if the <code>number</code> is less than or equal to 0 we will simply return as there is no point in calculating its factorial.
+Next I have stored a &lsquo;0&rsquo; at all the indices of <code>arr</code> in order to avoid any absurd value using the <code>for</code> loop.(You will get to know the reason later on)
+After that there is a <code>while</code> loop which I have used to store the <code>number</code> in the <code>arr</code> in the reverse order.
+Suppose the user wants the factorial of 21,then we will have the following values in our array:
+<code>arr[0] = 1, arr[1] = 2</code>
+Also we need to keep track of the <code>index</code> till where we have a valid value.
+Now we are going to calculate the factorial, i.e. 21 * 20 * 19 &mldr;.* 2 * 1</p>
+<h3 id=the-for-loop>The for loop<a hidden class=anchor aria-hidden=true href=#the-for-loop>#</a></h3>
+<p>What I am gonna do is to loop through the <code>number</code>-1 (20) till 2. In this loop, I will multiply the number that is stored in the array to the loop variable (j) and store the result back in the character array(again digit wise and in reverse order).
+For instance, in the first iteration of <code>for</code> loop, what I have done is that I have multiplied 21(<code>arr</code>) by 20(<code>j</code>) and stored the result back in <code>arr[]</code> , the values will be as:
+<code>arr[0] = 0, arr[1] = 2, arr[2] = 4,</code> (remember reverse order?)</p>
+<p>Now lets understand how this 12 became 024 (reverse of 420 (21*20))</p>
+<h3 id=the-do-while-loop>The do-while loop.<a hidden class=anchor aria-hidden=true href=#the-do-while-loop>#</a></h3>
+<p>Look at the following line:
+<code>temp = arr[i] * j + carry;</code> (1 * 20 + 0)
+Here, <code>temp</code> is used to temporarily hold the value of the product of the last digit(1) and the iteration variable <code>j</code>(20).
+The result comes out to be 20.Next ,
+<code>arr[i] = temp % 10</code>
+stores the last digit of <code>temp</code> variable in the first index of <code>arr</code>, i.e., 0 will be stored at <code>arr[0]</code>.
+<code>carry = temp / 10</code>
+stores the remaining digits(2) of the value of <code>temp</code> variable,i.e., 2 will be stored in <code>carry</code>. After this, we&rsquo;ll do an <code>i++</code> (i becomes 1) in order to keep record of number of digits that have been multiplied in this iteration.
+<code>while(carry > 0 || i &lt; index)</code>
+line checks if we have multiplied <code>j</code> with all the digits of the <code>arr</code> or not. Notice the <code>carry > 0</code> statement, it is to check whether there is any carry left or not. And since we have a carry &lsquo;2&rsquo; we&rsquo;ll again enter the while loop and this time,
+<code>temp = arr[i] * j + carry;</code> (2 * 20 + 2) stores 42 in temp. Hence, <code>arr[i] = temp % 10</code> will store 2 at <code>a[1]</code> and <code>carry = temp / 10</code> will store 4 in <code>carry</code> which, in the next iteration of while, will be stored at <code>a[2]</code>(try a dry run in your mind to picture how this wil happen).
+Therefore, coming out of the <code>do-while</code> loop at this time, the values of <code>arr</code> will be as follows:
+<code>arr[0] = 0, arr[1] = 2, arr[2] = 4</code> and <code>carry = 0</code>
+and at this point we&rsquo;ll update the value of <code>index</code> also.</p>
+<p>Likewise each value of <code>j</code>is multiplied in the value stored in <code>arr</code>.</p>
+<p>Lastly, after coming out of the <code>for</code> loop we have to print the number stored in the <code>arr</code>, but remember in the reverse order, starting from <code>index</code>-1 to 0.</p>
+<p>And that&rsquo;s it, now you can calculate factorial of any number, and if you want you can even increase the size of <code>arr</code> and now, even more bigger numbers. Easy it was..isn&rsquo;t it?</p>
+</div>
+<footer class=post-footer>
+<ul class=post-tags>
+<li><a href=https://zkhan.in/tags/c/>c</a></li>
+<li><a href=https://zkhan.in/tags/factorial/>factorial</a></li>
+</ul>
+</footer>
+</article>
+</main>
+<footer class=footer>
+<span>&copy; 2021 <a href=https://zkhan.in/>Zeeshan Khan</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a>
+<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+</body>
+</html>

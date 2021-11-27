@@ -1,0 +1,200 @@
+<!doctype html><html lang=en dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>Bitwise operations in C | Zeeshan Khan</title>
+<meta name=keywords content="c,bitwise operators">
+<meta name=description content="Bitwise operators in C are
+ & AND Operator | OR Operator ~ NOT Operator ^ XOR Operator  The code below demonstrate common bitwise operations in c {% highlight c linenos %}
+include<stdio.h> int main(){ int a, b, option, res; printf(&ldquo;Enter a and b\n&rdquo;); scanf(&#34;%d %d&#34;, &a, &b); do{ printf(&ldquo;MENU\n 1.AND\n 2.OR\n 3.NOT \n 4.XOR\n 0.Exit\n&rdquo;); printf(&ldquo;Enter choice: &ldquo;); scanf(&#34;%d&rdquo;, &option); switch(option){ case 1: res = a & b; printf(&#34;%d AND %d = %d\n&rdquo;, a, b, res); break; case 2: res = a | b; printf(&#34;%d OR %d = %d\n&#34;, a, b, res); break; case 3: res = ~a; printf(&ldquo;NOT of %d = %d\n&rdquo;, a, res); res = ~b; printf(&ldquo;NOT of %d = %d\n&rdquo;, b, res); break; case 4: res = a ^ b; printf(&#34;%d XOR %d = %d\n&#34;, a, b, res); break; default: break; } printf(&#34;\n&#34;); }while(option); return 0; } {% endhighlight %}">
+<meta name=author content="Zeeshan Khan">
+<link rel=canonical href=https://zkhan.in/posts/c/bitwise-operator-in-c/>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
+<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://zkhan.in/favicon.ico>
+<link rel=icon type=image/png sizes=16x16 href=https://zkhan.in/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=https://zkhan.in/favicon-32x32.png>
+<link rel=apple-touch-icon href=https://zkhan.in/apple-touch-icon.png>
+<link rel=mask-icon href=https://zkhan.in/safari-pinned-tab.svg>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<meta name=generator content="Hugo 0.89.4">
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript><meta property="og:title" content="Bitwise operations in C">
+<meta property="og:description" content="Bitwise operators in C are
+ & AND Operator | OR Operator ~ NOT Operator ^ XOR Operator  The code below demonstrate common bitwise operations in c {% highlight c linenos %}
+include<stdio.h> int main(){ int a, b, option, res; printf(&ldquo;Enter a and b\n&rdquo;); scanf(&#34;%d %d&#34;, &a, &b); do{ printf(&ldquo;MENU\n 1.AND\n 2.OR\n 3.NOT \n 4.XOR\n 0.Exit\n&rdquo;); printf(&ldquo;Enter choice: &ldquo;); scanf(&#34;%d&rdquo;, &option); switch(option){ case 1: res = a & b; printf(&#34;%d AND %d = %d\n&rdquo;, a, b, res); break; case 2: res = a | b; printf(&#34;%d OR %d = %d\n&#34;, a, b, res); break; case 3: res = ~a; printf(&ldquo;NOT of %d = %d\n&rdquo;, a, res); res = ~b; printf(&ldquo;NOT of %d = %d\n&rdquo;, b, res); break; case 4: res = a ^ b; printf(&#34;%d XOR %d = %d\n&#34;, a, b, res); break; default: break; } printf(&#34;\n&#34;); }while(option); return 0; } {% endhighlight %}">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zkhan.in/posts/c/bitwise-operator-in-c/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2015-01-01T04:26:00+00:00">
+<meta property="article:modified_time" content="2015-01-01T04:26:00+00:00"><meta property="og:site_name" content="Zeeshan Khan">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Bitwise operations in C">
+<meta name=twitter:description content="Bitwise operators in C are
+ & AND Operator | OR Operator ~ NOT Operator ^ XOR Operator  The code below demonstrate common bitwise operations in c {% highlight c linenos %}
+include<stdio.h> int main(){ int a, b, option, res; printf(&ldquo;Enter a and b\n&rdquo;); scanf(&#34;%d %d&#34;, &a, &b); do{ printf(&ldquo;MENU\n 1.AND\n 2.OR\n 3.NOT \n 4.XOR\n 0.Exit\n&rdquo;); printf(&ldquo;Enter choice: &ldquo;); scanf(&#34;%d&rdquo;, &option); switch(option){ case 1: res = a & b; printf(&#34;%d AND %d = %d\n&rdquo;, a, b, res); break; case 2: res = a | b; printf(&#34;%d OR %d = %d\n&#34;, a, b, res); break; case 3: res = ~a; printf(&ldquo;NOT of %d = %d\n&rdquo;, a, res); res = ~b; printf(&ldquo;NOT of %d = %d\n&rdquo;, b, res); break; case 4: res = a ^ b; printf(&#34;%d XOR %d = %d\n&#34;, a, b, res); break; default: break; } printf(&#34;\n&#34;); }while(option); return 0; } {% endhighlight %}">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://zkhan.in/posts/"},{"@type":"ListItem","position":2,"name":"Bitwise operations in C","item":"https://zkhan.in/posts/c/bitwise-operator-in-c/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Bitwise operations in C","name":"Bitwise operations in C","description":"Bitwise operators in C are\n \u0026amp; AND Operator | OR Operator ~ NOT Operator ^ XOR Operator  The code below demonstrate common bitwise operations in c {% highlight c linenos %}\ninclude\u0026lt;stdio.h\u0026gt; int main(){ int a, b, option, res; printf(\u0026ldquo;Enter a and b\\n\u0026rdquo;); scanf(\u0026quot;%d %d\u0026quot;, \u0026amp;a, \u0026amp;b); do{ printf(\u0026ldquo;MENU\\n 1.AND\\n 2.OR\\n 3.NOT \\n 4.XOR\\n 0.Exit\\n\u0026rdquo;); printf(\u0026ldquo;Enter choice: \u0026ldquo;); scanf(\u0026quot;%d\u0026rdquo;, \u0026amp;option); switch(option){ case 1: res = a \u0026amp; b; printf(\u0026quot;%d AND %d = %d\\n\u0026rdquo;, a, b, res); break; case 2: res = a | b; printf(\u0026quot;%d OR %d = %d\\n\u0026quot;, a, b, res); break; case 3: res = ~a; printf(\u0026ldquo;NOT of %d = %d\\n\u0026rdquo;, a, res); res = ~b; printf(\u0026ldquo;NOT of %d = %d\\n\u0026rdquo;, b, res); break; case 4: res = a ^ b; printf(\u0026quot;%d XOR %d = %d\\n\u0026quot;, a, b, res); break; default: break; } printf(\u0026quot;\\n\u0026quot;); }while(option); return 0; } {% endhighlight %}","keywords":["c","bitwise operators"],"articleBody":"Bitwise operators in C are\n \u0026 AND Operator | OR Operator ~ NOT Operator ^ XOR Operator  The code below demonstrate common bitwise operations in c {% highlight c linenos %}\ninclude int main(){ int a, b, option, res; printf(“Enter a and b\\n”); scanf(\"%d %d\", \u0026a, \u0026b); do{ printf(“MENU\\n 1.AND\\n 2.OR\\n 3.NOT \\n 4.XOR\\n 0.Exit\\n”); printf(“Enter choice: “); scanf(\"%d”, \u0026option); switch(option){ case 1: res = a \u0026 b; printf(\"%d AND %d = %d\\n”, a, b, res); break; case 2: res = a | b; printf(\"%d OR %d = %d\\n\", a, b, res); break; case 3: res = ~a; printf(“NOT of %d = %d\\n”, a, res); res = ~b; printf(“NOT of %d = %d\\n”, b, res); break; case 4: res = a ^ b; printf(\"%d XOR %d = %d\\n\", a, b, res); break; default: break; } printf(\"\\n\"); }while(option); return 0; } {% endhighlight %}\nOutput: {% highlight c %} Enter a and b 2 3 MENU 1.AND 2.OR 3.NOT 4.XOR 0.Exit Enter choice: 1 2 AND 3 = 2\nMENU 1.AND 2.OR 3.NOT 4.XOR 0.Exit Enter choice: 2 2 OR 3 = 3\nMENU 1.AND 2.OR 3.NOT 4.XOR 0.Exit Enter choice: 3 NOT of 2 = -3 NOT of 3 = -4\nMENU 1.AND 2.OR 3.NOT 4.XOR 0.Exit Enter choice: 4 2 XOR 3 = 1\nMENU 1.AND 2.OR 3.NOT 4.XOR 0.Exit Enter choice: 0 {% endhighlight %}\n","wordCount":"227","inLanguage":"en","datePublished":"2015-01-01T04:26:00Z","dateModified":"2015-01-01T04:26:00Z","author":{"@type":"Person","name":"Zeeshan Khan"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://zkhan.in/posts/c/bitwise-operator-in-c/"},"publisher":{"@type":"Organization","name":"Zeeshan Khan","logo":{"@type":"ImageObject","url":"https://zkhan.in/favicon.ico"}}}</script>
+</head>
+<body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://zkhan.in/ accesskey=h title="Zeeshan Khan (Alt + H)">Zeeshan Khan</a>
+<span class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</span>
+</div>
+<ul id=menu>
+<li>
+<a href=https://zkhan.in/posts/ title=Blog>
+<span>Blog</span>
+</a>
+</li>
+<li>
+<a href=https://zkhan.in/categories/ title=Categories>
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a href=https://zkhan.in/archives/ title=Archive>
+<span>Archive</span>
+</a>
+</li>
+<li>
+<a href=https://zkhan.in/search/ title="Search (Alt + /)" accesskey=/>
+<span>Search</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<article class=post-single>
+<header class=post-header>
+<div class=breadcrumbs><a href=https://zkhan.in/>Home</a>&nbsp;»&nbsp;<a href=https://zkhan.in/posts/>Posts</a></div>
+<h1 class=post-title>
+Bitwise operations in C
+</h1>
+<div class=post-meta><span title="2015-01-01 04:26:00 +0000 UTC">January 1, 2015</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Zeeshan Khan
+</div>
+</header>
+<div class=post-content><p>Bitwise operators in C are</p>
+<ul>
+<li><code>&</code> AND Operator</li>
+<li><code>|</code> OR Operator</li>
+<li><code>~</code> NOT Operator</li>
+<li><code>^</code> XOR Operator</li>
+</ul>
+<p>The code below demonstrate common bitwise operations in c
+{% highlight c linenos %}</p>
+<h1 id=includestdioh>include&lt;stdio.h><a hidden class=anchor aria-hidden=true href=#includestdioh>#</a></h1>
+<p>int main(){
+int a, b, option, res;
+printf(&ldquo;Enter a and b\n&rdquo;);
+scanf("%d %d", &a, &b);
+do{
+printf(&ldquo;MENU\n 1.AND\n 2.OR\n 3.NOT \n 4.XOR\n 0.Exit\n&rdquo;);
+printf(&ldquo;Enter choice: &ldquo;);
+scanf("%d&rdquo;, &option);
+switch(option){
+case 1:
+res = a & b;
+printf("%d AND %d = %d\n&rdquo;, a, b, res);
+break;
+case 2:
+res = a | b;
+printf("%d OR %d = %d\n", a, b, res);
+break;
+case 3:
+res = ~a;
+printf(&ldquo;NOT of %d = %d\n&rdquo;, a, res);
+res = ~b;
+printf(&ldquo;NOT of %d = %d\n&rdquo;, b, res);
+break;
+case 4:
+res = a ^ b;
+printf("%d XOR %d = %d\n", a, b, res);
+break;
+default:
+break;
+}
+printf("\n");
+}while(option);
+return 0;
+}
+{% endhighlight %}</p>
+<p>Output:
+{% highlight c %}
+Enter a and b
+2 3
+MENU
+1.AND
+2.OR
+3.NOT
+4.XOR
+0.Exit
+Enter choice: 1
+2 AND 3 = 2</p>
+<p>MENU
+1.AND
+2.OR
+3.NOT
+4.XOR
+0.Exit
+Enter choice: 2
+2 OR 3 = 3</p>
+<p>MENU
+1.AND
+2.OR
+3.NOT
+4.XOR
+0.Exit
+Enter choice: 3
+NOT of 2 = -3
+NOT of 3 = -4</p>
+<p>MENU
+1.AND
+2.OR
+3.NOT
+4.XOR
+0.Exit
+Enter choice: 4
+2 XOR 3 = 1</p>
+<p>MENU
+1.AND
+2.OR
+3.NOT
+4.XOR
+0.Exit
+Enter choice: 0
+{% endhighlight %}</p>
+</div>
+<footer class=post-footer>
+<ul class=post-tags>
+<li><a href=https://zkhan.in/tags/c/>c</a></li>
+<li><a href=https://zkhan.in/tags/bitwise-operators/>bitwise operators</a></li>
+</ul>
+</footer>
+</article>
+</main>
+<footer class=footer>
+<span>&copy; 2021 <a href=https://zkhan.in/>Zeeshan Khan</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a>
+<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+</body>
+</html>
