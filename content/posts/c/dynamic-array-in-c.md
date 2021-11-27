@@ -7,7 +7,7 @@ tags: [c,dynamic array]
 Dynamic array is a array that has a fixed number of items on it, but the space required for data storage is alloted at runtime on data input.
 
 The code below will demonstrate how we can use dynamic array in C
-{% highlight c linenos %}
+```c
 # include<stdio.h>
 # include<stdlib.h>
 
@@ -28,11 +28,11 @@ int main() {
 	printf("\n");
 	return 0;
 }
-{% endhighlight %}
+```
 
 The above code will produce the following output
 
-{% highlight c %}
+```
 Enter 10 numbers
 1
 2
@@ -46,4 +46,4 @@ Enter 10 numbers
 10
 the array you entered is
 1 2 3 4 5 6 7 8 9 10 
-{% endhighlight %}
+```

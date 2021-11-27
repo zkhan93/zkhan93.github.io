@@ -28,7 +28,7 @@ Here comes the problem, in languages like C we need to keep an eye on the size o
 So what's the solution? Think,think...<br/>
 Well , it's to use a character array. Let me show you how to do it, check out the code below:
 
-{% highlight c linenos%}
+```c
 # include<stdio.h>
 
 int factorial(int number){
@@ -77,13 +77,13 @@ int main(){
     factorial(num);
     return 0;
 }
-{% endhighlight%}
+```
 
 The output wil be as :
-{% highlight c%}
+```text
 Enter a number : 21
 Factorial of 21 is : 51090942171709440000
-{% endhighlight%} 
+```
 
 Let me explain you the working of the `factorial(int)`. As discussed earlier I have used character array `arr[]` for calculating the factorial, one digit at each index in reverse order.
 

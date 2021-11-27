@@ -16,7 +16,7 @@ First let's get familiar with some basic terminologies used in linked list.
 
 Now let's look at the code below, although the code is self explanatory we will explain each portion separately.
 
-{% highlight c linenos %}
+```c
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -219,7 +219,7 @@ int main(){
     
     return 0;
 }
-{% endhighlight %}
+```
 
 So, we have 7 functions excluding `main()` let's have a breif introduction,
 
@@ -251,13 +251,13 @@ Function `addNodeToStart()`
 `addNodeToStart()` takes two arguments, first argument is a pointer to root node and second is pointer to new node,
 looking at the definition of `addNodeToEnd()` (63-73) we see that we first check `head` for `null`, if so then we simple make the the new node as the root node by `head=newNode`, otherwise `newNode` should point to root node i.e., `newNode->next=head` now `newNode` can be treated as the root node so `head=newNode`, finally returning the root node,
 we can also skip the `null` check part so that our function look like
-{% highlight c linenos %}
+```c
 node* addNodeToStart(node* head, node* newNode){
     newNode->next=head;
     head=newNode;
     return head;
 }
-{% endhighlight %}
+```
 either version of the function will do the job.
 
 Function `addNodeAfterValue()`

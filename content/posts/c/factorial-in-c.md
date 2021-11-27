@@ -9,7 +9,7 @@ tags: [c,factorial]
 Hey! Today i am gonna show you how to calculate factorial of a number.
 The code below depicts the basic methodology of how to calculate factorial of a number.
 
-{% highlight c linenos %}
+```c
 # include<stdio.h>
 
 void factorial(int number){
@@ -32,13 +32,13 @@ int main(){
     	factorial(num);
     	return 0;
 }
-{% endhighlight %}
+```
 
 output of above code will be 
-{% highlight c %}
+```
 Enter a number : 5
 Factorial of 5 = 120
-{% endhighlight %}
+```
 
 So, as you have seen the code simply takes up a integer and passes it to the `factorial()` function which in turns prints up the factorial of that number.
 

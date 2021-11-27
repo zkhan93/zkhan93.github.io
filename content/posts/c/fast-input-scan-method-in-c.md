@@ -14,7 +14,7 @@ code below scans 100000 integers and has two different methods one is `scan_norm
  one is `scan_fast()` this scan integers using `getchar_unlocked` function, we will execute the program twice one for each 
  method mark the time taken for execution to evaluate the performance.
   
-{% highlight c linenos%}
+```c
 #include<stdio.h>
 #define gc getchar_unlocked // gc for saving for getchar_unlocked
 int scan_fast(){
@@ -45,25 +45,25 @@ int main(){
 	return 0;
 }
 
-{% endhighlight%}
+```
 for checking i am using linux `time` command to check the execution time and a file `text-file.txt` containing 100000 integers from 0 to 99999
 
 command is as follows
 
-{% highlight sh%}
+```bash
 time ./scan_methods < text-file.txt
-{% endhighlight%} 
+```
 
 output using `scan_normal`
-{% highlight c%}
+```text
 real	0m0.112s
 user	0m0.101s
 sys	0m0.012s
-{% endhighlight%} 
+```
 
 output using `scan_fast`
-{% highlight c%}
+```bash
 real	0m0.040s
 user	0m0.033s
 sys	0m0.008s
-{% endhighlight%} 
+```

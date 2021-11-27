@@ -6,7 +6,7 @@ tags: [c,addition]
 ---
 To add two numeric values in C
 
-{% highlight c linenos %}
+```c
 #include<stdio.h>
 
 int main(){
@@ -16,11 +16,11 @@ int main(){
 	printf("sum of %f and %f is %f",a,b,a+b);
 	return 0; 
 }
-{% endhighlight %}
+```
 
 Output:
-{% highlight text %}
+```text
 Enter two numbers
 12 34
 sum of 12.000000 and 34.000000 is 46.000000
-{% endhighlight %}
+```

@@ -54,7 +54,7 @@ This function releases memory allocated for stack items, it uses recursive funct
 This function calls all the other method to demonstrate the working of stack implementation.
 
 ###Code
-{% highlight c linenos %}
+```c
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -180,4 +180,4 @@ int main(){
     }
     return 0;
 }
-{% endhighlight %}
+```

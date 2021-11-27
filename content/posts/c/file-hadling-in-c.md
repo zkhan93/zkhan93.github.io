@@ -10,7 +10,7 @@ The following program demonstrate how we to perform read and write operations on
 We can create and open a file `w+` (write plus) mode, this will open a file if it exists otherwise create a new file and open it in write mode
 <!--more-->
 
-{% highlight c linenos %}
+```c
 # include<stdio.h>
 int main(void){
 	FILE *fp;
@@ -27,11 +27,11 @@ int main(void){
 	fclose(fp);
 	return 0;
 }
-{% endhighlight %}
+```
 
 Output:
-{% highlight c %}
+```
 file contain:
 hello world!!..this is a text
 
-{% endhighlight %}
+```

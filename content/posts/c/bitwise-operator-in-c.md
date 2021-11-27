@@ -12,7 +12,7 @@ Bitwise operators in C are
 * `^` XOR Operator
 	
 The code below demonstrate common bitwise operations in c
-{% highlight c linenos %}
+```c
 # include<stdio.h>
 int main(){
 	int a, b, option, res;
@@ -48,10 +48,10 @@ int main(){
 	}while(option);
     return 0;
 }
-{% endhighlight %}
+```
 
 Output:
-{% highlight c %}
+```
 Enter a and b
 2 3
 MENU
@@ -98,4 +98,4 @@ MENU
  4.XOR
  0.Exit
 Enter choice: 0
-{% endhighlight %}
+```

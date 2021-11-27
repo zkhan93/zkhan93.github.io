@@ -6,7 +6,7 @@ tags: [c, swapping]
 ---
 
 Code below swaps two numbers without using a third variable
-{% highlight c linenos %}
+```c
 # include<stdio.h>
 int swap(int* a, int *b){
     // swapping values using match trick
@@ -24,13 +24,13 @@ int main(){
     printf("a=%d, b=%d", a, b);
     return 0;
 }
-{% endhighlight %}
+```
 
 Output:
-{% highlight text %}
+```text
 Enter two numbers
 10 34
 before swapping a=10, b=34
 After swapping a=34, b=10
-{% endhighlight %}
+```
 
