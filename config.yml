@@ -22,10 +22,14 @@ menu:
       name: Archive
       url: /archives/
       weight: 40
+    - identifier: projects
+      name: Projects
+      url: /projects/
+      weight: 50
     - identifier: search
       name: Search
       url: /search/
-      weight: 50
+      weight: 60
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
