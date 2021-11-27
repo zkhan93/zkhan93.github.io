@@ -1,9 +1,9 @@
 ---
 title:  "Vuejs SEO without ssr using nginx"
 date:   2020-01-02 12:00:00
-categories: vuejs
-author: "Zeeshan Khan"
-tags: [vuejs nginx seo ssr]
+categories: [programming]
+tags: [vuejs, nginx, seo, ssr]
+draft: true
 ---
 
 Vuejs was easy to get started with, so I picked it up for my new project

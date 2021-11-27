@@ -1,9 +1,9 @@
 ---
 title:  "5 Years in IT sector (India)"
 date:   2020-01-11 12:00:00
-categories: lessons
-author: "Zeeshan Khan"
+categories: [random]
 tags: [life, lessons, IT, UPTU]
+draft: true
 ---
 
 

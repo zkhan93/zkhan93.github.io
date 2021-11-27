@@ -1,10 +1,9 @@
 ---
 title:  "Stack Implementation in C"
 date:   2015-12-22 9:00:00
-categories: c update
-author: "Zeeshan Khan"
-tags: [c stack simple pointers]
-source_file: /c/dynamic-stack.c
+categories: [programming]
+tags: [stack, pointers, C]
+draft: true
 ---
 Typically stacks are like arrays, the difference is in a stack addition and deletion operations are performed from one end,
 this end is called `top`.

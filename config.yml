@@ -2,6 +2,7 @@ baseURL: https://zkhan.in/
 languageCode: en-us
 title: Zeeshan Khan
 theme: PaperMod
+defaultTheme: dark
 
 enableRobotsTXT: true
 buildDrafts: false
@@ -34,9 +35,9 @@ params:
   keywords: [Blog, Linux, Android, Python, Java, C]
   ShowReadingTime: true
   ShowBreadCrumbs: true
-  disableScrollToTop: true
   comments: true
   author: Zeeshan Khan
+  image: "/me.jpg"
 
   homeInfoParams:
     title: Hi there wave
@@ -52,17 +53,11 @@ params:
 
   profileMode:
     enabled: true
-    title: "Zeeshan Khan" # optional default will be site title
     subtitle: "Python | Web "
-    imageUrl: "/zeeshan.jpg" # optional
-    imageTitle: "Zeeshan Khan" # optional
-    imageWidth: 120 # custom size
-    imageHeight: 120 # custom size
-    buttons:
-      - name: LinkedIn
-        url: "/archive"
-      - name: Github
-        url: "https://github.com/"
+    imageUrl: "/me.jpg"
+    imageTitle: "Zeeshan Khan"
+    imageWidth: 120
+    imageHeight: 120
 
 outputs:
   home:
@@ -80,3 +75,5 @@ fuseOpts:
   threshold: 0.4
   minMatchCharLength: 0
   keys: ["title", "permalink", "summary", "content"]
+
+disqusShortname: coderzkhan
