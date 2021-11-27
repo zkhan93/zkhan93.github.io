@@ -2,7 +2,6 @@ baseURL: https://zkhan.in/
 languageCode: en-us
 title: Zeeshan Khan
 theme: PaperMod
-defaultTheme: dark
 
 enableRobotsTXT: true
 buildDrafts: false
@@ -15,10 +14,6 @@ menu:
       name: Blog
       url: /posts/
       weight: 10
-    - identifier: projects
-      name: Projects
-      url: /projects/
-      weight: 20
     - identifier: tags
       name: Tags
       url: /tags/
@@ -38,6 +33,7 @@ params:
   image: "/me.jpg"
   description: "A place for my thoughts"
   keywords: [Blog, Linux, Android, Python, Java, C]
+  defaultTheme: dark
   ShowReadingTime: true
   ShowBreadCrumbs: true
   hideFooter: true

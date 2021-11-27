@@ -5,6 +5,7 @@ url: "/projects/"
 summary: Projects
 comments: false
 draft: true
+disableShare: true
 ---
 
 ## Android Projects
