@@ -31,3 +31,7 @@ I have 3 conky configs
  - parcel tracking
 
 link to configs is here [zkhan93/conky](https://github.com/zkhan93/conky)
+
+#### Important links
+- [conky variables](http://conky.sourceforge.net/variables.html)
+- [conky wiki](https://github.com/brndnmtthws/conky/wiki)
