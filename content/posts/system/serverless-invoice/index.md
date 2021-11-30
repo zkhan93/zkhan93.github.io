@@ -4,8 +4,9 @@ date: 2021-11-28T18:53:55+05:30
 categories: [programming]
 tags: [vuejs, invoice, billing]
 cover:
+    relative: true
     alt: "A Man Invoicing"
-    image: cover.jpg
+    image: ./cover.jpg
     alt: Conky Desktop
 ---
 
