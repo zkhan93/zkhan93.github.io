@@ -47,8 +47,8 @@ params:
   ShowPostNavLinks: true
   homeInfoParams:
     imageUrl: "/me.jpg"
-    title: Hello!
-    Content: This is where I dump my work so that I can find it later ;)
+    title: "O_o"
+    Content: This is where I dump my work so that I can find it later
 
   socialIcons:
     - name: twitter
