@@ -3,6 +3,10 @@ title: "Serverless Invoice Generation"
 date: 2021-11-28T18:53:55+05:30
 categories: [programming]
 tags: [vuejs, invoice, billing]
+cover:
+    alt: "A Man Invoicing"
+    image: cover.jpg
+    alt: Conky Desktop
 ---
 
 One of my non-techie friends was starting a new business and he wanted an Invoicing System. he reached out to me hoping that I can help him with a small  website or app
