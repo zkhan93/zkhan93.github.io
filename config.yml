@@ -2,7 +2,8 @@ baseURL: https://zkhan.in/
 languageCode: en-us
 title: Zeeshan Khan
 theme: PaperMod
-
+googleAnalytics: UA-58099786-1
+disqusShortname: coderzkhan
 enableRobotsTXT: true
 buildDrafts: false
 buildFuture: false
