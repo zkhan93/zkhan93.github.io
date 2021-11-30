@@ -6,8 +6,7 @@ tags: [vuejs, invoice, billing]
 cover:
     relative: true
     alt: "A Man Invoicing"
-    image: ./cover.jpg
-    alt: Conky Desktop
+    image: cover.jpg
 ---
 
 One of my non-techie friends was starting a new business and he wanted an Invoicing System. he reached out to me hoping that I can help him with a small  website or app
