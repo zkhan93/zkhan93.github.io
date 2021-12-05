@@ -39,7 +39,7 @@ A conky script that shows a quote from a JSON file on disk.
 for this I used startup apps in gnome to trigger a python script that downloads a Github gist which contains a bunch of my favorite quotes and pick one randomly. 
 I had to use little bit of Lua since the quote can be arbitrarily long so Lua function takes care of multi line and alignment of text based on the font in use and its size.
 
-content of gist file have the following structure 
+
 ```json
 [
   {
@@ -48,18 +48,30 @@ content of gist file have the following structure
   }
 ]
 ```
+*content of gist file have the following structure*
 
 configs and scripts used are [zkhan93/conky/quotes](https://github.com/zkhan93/conky/tree/master/quotes)
 
 #### 3. parcel tracking
-I want to stay updated on the location of my parcels, so invested some time to make this so the latest update on parcel is directly on my screen.
-this conky config reads a special file, each line of this file contains tracking information, a bash script then make query to [tracktry](https://www.tracktry.com/) who provides free API query credits per month for people like me, the result of the query is then parsed to show the latest information.
+I want to stay updated on the location of my parcels, so invested some time to set this up so that the latest update on parcel is displayed on my screen.
+It is a combination of a couple of shell and lua scripts, 
 
-source text file
+ - `bin/count.sh` - counts the number of items to track
+ - `bin/parcel_track.sh` - Given the tracking number and courier service name it uses [tracktry](https://www.tracktry.com/) to get latest updates.
+ - `bin/get_updates.sh` - Uses `count.sh` to loop through each items and call `parcel_track.sh` for each item
+ - `draw_status.lua` - Uses `count.sh` and `get_updates.sh` to get the status and draw the status on screen
+ - `.conkyrc` - calls the `draw_status.lua`
+ 
+[Tracktry](https://www.tracktry.com/) provides free API query credits per month for hobbyist
+
+
 ```text
 Raspberry Pi 4,bluedart,8931267875
 Aeroplane,bluedart,893114466875
 ```
+*text file contains tracking information*
+
+
 configs and scripts used are [zkhan93/conky/parcel](https://github.com/zkhan93/conky/tree/master/parcel)
 
 

@@ -27,7 +27,7 @@ This was built using [Vue.js]() and the result was a static website with some Ja
 
 In the past I have built a [website](https://moviepediafilms.com) using [Vue.js]() it was a good experience, after playing with the demo app I felt that it was only missing one major feature that can be added in a day and some layout related changes, so I decided to start with this as the base.
 
-{{< figure src="before.png" title="Before" caption="Invoice that the app already generates" >}}
+{{< figure src="before.png" caption="Invoice that the app already generates" >}}
 
 ## Missing Feature
 The feature that I think was important and is missing was the ability to have custom columns in invoice and a couple of adjustments addition/removal of static sections, I created a form of the project and started tweaking the project to add the feature, I wanted to make the user specify the columns so that the layout of the invoice is also customizable.
