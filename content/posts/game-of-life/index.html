@@ -1,0 +1,251 @@
+---
+title: "Game of Life"
+date: 2021-12-09T13:46:58+05:30
+categories: [game]
+tags: [vuejs, javascript]
+cover:
+    relative: true
+    alt: "Game of life"
+    image: game-of-life.png
+---
+
+<p>The Game of Life, also known simply as Life, is a cellular automaton devised by the British mathematician John Horton Conway in 1970.
+for more detail check <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Wikipedia</a>
+</p>
+<p>
+    The game is a 2D grid that has the following rules
+</p>
+<h2>Game Rules</h2>
+<ul>
+    <li>Any live cell with fewer than two live neighbours dies, as if by underpopulation.</li>
+    <li>Any live cell with two or three live neighbours lives on to the next generation.</li>
+    <li>Any live cell with more than three live neighbours dies, as if by overpopulation.</li>
+    <li>Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.</li>
+</ul>
+
+<div id="app" class="container">
+    <p>I just wanted to implement this game for fun :blush: <br/>Below is an implementation of the game, the marking of initial live cells is little tricky on touchscreen devices.</p>
+    <div>
+        Live cell color: <input type="text" v-model="alive_color" style="color: white;"/><br/>
+        Preview: <div class="cell" style="width: 10px; height: 10px;" :style="{'background-color': alive_color}"></div>
+    </div>
+    <div>
+        <button type="button" v-on:click="toggle_mark" :class="{active: mark}" class="btn">Mark cells</button>
+        <button type="button" v-on:click="toggle_mark" :class="{active: !mark}" class="btn">Unmark cells</button>
+        <button type="button" v-on:click="start" :class="{green: !running, red:running}" class="btn">{{start_stop_btn_txt}}</button>
+        <button type="button" v-on:click="reset" class="btn">reset</button>
+    </div>
+    <div>Iteration: {{iteration}}</div>
+    <div >
+        <div class="box" ref="box">
+            <div class="row" v-for="i in row" :key="`row_` + i" :style="row_style">
+                <div
+                v-on:mousedown="mousedown = true"
+                v-on:mouseup="mousedown = false"
+                v-on:mouseover="mark_cell(i, j)"
+                v-on:touchend="mousedown = true"
+                v-on:touchstart="mousedown = false"
+                v-on:touchmove="mark_cell(i, j)"
+                class="cell"
+                :style="cell_style(i,j)"
+                v-for="j in column"
+                :key="`cell_${i}_${j}`">
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            alive_color: '#FFFFFF',
+            iteration: 0,
+            running: false,
+            mark: false,
+            mousedown: false,
+            grid: [],
+            cell_size: 10,
+            column: 40,
+        },
+        computed: {
+            row(){
+                return 40
+            },
+            row_style() {
+                return {'height': this.cell_size + 'px'}
+            },
+            mark_btn_color() {
+                return this.mark ? 'green' : 'white'
+            },
+            unmark_btn_color() {
+                return this.mark ? 'white' : 'green'
+            },
+            start_stop_btn_txt(){
+                return this.running ? "Stop" : "Start";
+            }
+        },
+        created(){
+            this.init_grid()
+            window.addEventListener("resize", this.calculate_columns);
+        },
+        destroyed() {
+            window.removeEventListener("resize", this.myEventHandler);
+        },
+        mounted(){
+            this.calculate_columns()
+        },
+        methods: {
+            calculate_columns(){
+                this.column = parseInt((this.$refs.box.clientWidth/this.cell_size) - 1)
+                console.log(this.column)
+            },
+            init_grid(){
+                this.grid = [];
+                for (var i = 0; i < this.row; i++){
+                    Vue.set(this.grid, i, [])
+                    for (var j = 0; j < this.column; j++){
+                        Vue.set(this.grid[i], j, false)
+                    }
+                } 
+            },
+            reset(){
+                this.running = false
+                this.mark = false
+                this.init_grid()
+                this.iteration = 0
+            },
+            toggle_mark(){
+                this.mark = !this.mark;
+                this.mousedown = false
+            },
+            cell_style(i, j) {
+                
+                var style = {
+                    width: this.cell_size + 'px',
+                    height: this.cell_size + 'px',
+                }
+                if (this.grid[i-1][j-1] == 1){
+                    style["background-color"] = this.alive_color
+                }
+                return style
+            },
+            mark_cell(i,j) {
+                if(this.mousedown){
+                    Vue.set(this.grid[i-1], j-1, this.mark)
+                }
+            },
+            start(){
+                this.running = !this.running;
+                console.log("running", this.running)
+                if(this.running) requestAnimationFrame(this.game_loop);
+            },
+            stop(){
+                this.running = false;
+            },
+            game_loop(){
+                if(this.running){
+                    this.iteration += 1
+                    var grid_changed = this.update_cells()
+                    if (grid_changed) requestAnimationFrame(this.game_loop);
+                    else this.running = false
+                }
+            },
+            update_cells(){
+                var state_changed = false;
+                for(var i=0; i < this.row; i++){
+                    for(var j=0; j < this.column; j++){
+                        var curr_val = this.grid[i][j];
+                        var val = this.should_live(i, j)
+                        Vue.set(this.grid[i], j, val)
+                        if (curr_val != val){
+                            state_changed = true
+                        }
+                    }
+                }
+                return state_changed
+            },
+            should_live(i, j) {
+                var curr_val = this.grid[i][j];
+                var neighbours = this.get_neighbours(i, j)
+                var alive_neighbours = 0
+                neighbours.forEach(val => {if (val) alive_neighbours += 1})
+                if(curr_val){
+                    if (alive_neighbours < 2)
+                        return false
+                    if (alive_neighbours > 3)
+                        return false
+                    return true
+                }
+                else{
+                    if (alive_neighbours == 3)
+                        return true
+                    return false
+                }
+            },
+            get_neighbours(i, j){
+                var values = []
+                var rowi = [i, i+1, i-1]
+                var colj = [j, j+1, j-1]
+                rowi.forEach(a => {
+                    colj.forEach( b=>{
+                        if ((a < this.row && a >= 0) &&
+                            (b < this.column && b >= 0) &&
+                            !(a == i && b == j)
+                            ){values.push(this.grid[a][b])}
+                    })
+                })
+                return values
+            }
+        }
+    })
+</script>
+<style>
+    .cell{
+        border: 1px solid grey;
+        display: inline-block;
+    }
+    .cell:hover {
+        background-color: grey;
+    }
+    .box{
+        height: 403px;
+        width: 100%;
+        margin: auto;
+    }
+    .row{
+        width: 100%;
+        display: flex;
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+    }
+    .container{
+        align-items: center;
+    }
+    .btn{
+        padding: 3px 5px;
+        border-radius: 5px;
+        margin: 5px;
+        font-size: 0.7em;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: white;
+        background-color: grey;
+    }
+    .btn.active{
+        background-color: royalblue;
+    }
+    .btn:hover{
+        background-color: lightskyblue !important;
+        color: white;
+    }
+    .green{
+        background-color: seagreen;
+    }
+    .red{
+        background-color: red;
+    }
+</style>
