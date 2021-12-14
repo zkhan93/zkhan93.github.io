@@ -1,0 +1,29 @@
+---
+title: "Snake Game"
+date: 2021-12-13T22:24:49+05:30
+categories: [game]
+tags: [vuejs, javascript]
+---
+<p>In one of the online coding interviews I was given a problem to create a snake game we all played in old days.
+The problem statement was something like this given the moves you have to determine after how many moves the snake will eat himself.
+I was able to solve the problem, but as I was solving it I was thinking "can I can give this code a little more life with javascript".
+</p>
+<p>
+So here I am, this post is an attempt to give life to that algo :blush:
+</p>
+<div id="app" class="container">
+    <div>
+        <button class="btn" @click="running = !running">{{game_state}}</button>
+        <br>
+        Score: {{points - 1}}
+    </div>
+    <div :style="box_style" class="box" ref="box" @keydown.native="console.log($event)">
+        <div v-for="i in rows" class="row">
+            <div v-for="j in columns" class="cell" :style="cell_style(i, j)"></div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+<script language="javascript" type="text/javascript"  src="./main.js"></script>
+<link href="./style.css" rel="preload stylesheet" as="style"/>

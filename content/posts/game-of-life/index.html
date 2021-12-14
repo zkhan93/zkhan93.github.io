@@ -91,7 +91,7 @@ for more detail check <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_
             window.addEventListener("resize", this.calculate_columns);
         },
         destroyed() {
-            window.removeEventListener("resize", this.myEventHandler);
+            window.removeEventListener("resize", this.calculate_columns);
         },
         mounted(){
             this.calculate_columns()
