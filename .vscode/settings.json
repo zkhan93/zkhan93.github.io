@@ -1,0 +1,21 @@
+{
+    "grammarly.overrides": [
+        {
+            "files": [
+                "**/content/posts/ip-based-throttling.md"
+            ],
+            "config": {
+                "audience": "general",
+                "dialect": "british",
+                "domain": "technical",
+                "emotions": [
+                    "neutral",
+                    "confident"
+                ],
+                "goals": [
+                    "describe"
+                ]
+            }
+        }
+    ]
+}

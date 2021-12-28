@@ -13,7 +13,7 @@ Load average is those three numbers. It gives an idea about how busy the system 
 
 It shows load for last 1, 5 and 15 mins,
 A common misconception is that it just shows how business of the CPU. It also considers other IO operations.
-Read the linked page that explains when and how it is the way it is.
 
-#### [This](https://www.brendangregg.com/blog/2017-08-08/linux-load-averages.html) blog post explains it beautifully what those three numbers mean
+Read the post below that explains when and how it is the way it is.
+#### [This](https://www.brendangregg.com/blog/2017-08-08/linux-load-averages.html)
 

@@ -2,7 +2,6 @@
 title: "Serializing & Deserializing Binary Tree"
 date: 2021-12-09T13:46:58+05:30
 tags: [binary-tree]
-# draft: true
 ---
 
 We are going to serialize a binary tree to an array,
