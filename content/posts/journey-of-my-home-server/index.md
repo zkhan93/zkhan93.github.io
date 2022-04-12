@@ -18,11 +18,15 @@ So the project of building a NAS or Home Server was a good fit for my home.
  - 1 Laptop Charger to power the hub and raspberry pi 
  - 2 Buck converters to convert drop laptop charger voltage 
  - power button
- - 3D printer case to host all the above
+ - 3D printed case to host all the above
+
+# The Case
+I designed a 3D model in Fusion 360
+After printing, sanding and painting, it looked like this
 
 ## Operating System
 There are a ton of OS to choose from, and you can build a server using any of these
-some were general-purpose OS, others were tuned to a specific use case, for building a Home server that majorly serves as file storage, 
+some are general-purpose OS, others are tuned for specific use cases, for building a Home server that majorly serves as file storage, 
 I went with OpenMediaVault. 
 The Web interface is not the best in class, however, it works and provides all the features I needed. 
 OMV also had good community support.
