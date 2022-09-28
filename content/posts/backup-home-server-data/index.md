@@ -1,6 +1,6 @@
 ---
-title: "Backing Up Your Server"
-date: 2022-08-24T18:08:17-05:00
+title: "Backup Home Server Data"
+date: 2022-09-27T23:33:23-05:00
 draft: true
 ---
 
