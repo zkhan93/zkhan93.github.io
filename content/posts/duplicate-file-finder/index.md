@@ -58,7 +58,7 @@ but I did not find them appealing for a headless home server.
 So I wrote a webapp [rdfind-web](https://github.com/zkhan93/rdfind-web) that will present the result file of `rdfind` on a modern web page. I can sort the result by file size and select the files I want to delete.
 
 here is how it works
-![](rdfind-web-sample.mp4)
+{{< video src="rdfind-web-sample.mp4" >}}
 
 with that I can now host it on my home serve and cleanup duplicate files.
 
