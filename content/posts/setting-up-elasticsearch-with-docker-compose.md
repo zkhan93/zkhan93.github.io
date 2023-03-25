@@ -1,31 +1,25 @@
 ---
-title: "Elasticsearch Kibana Setup"
+title: "Setting up Elasticsearch with Docker Compose for Indexing Files on NAS"
 date: 2023-03-21T15:32:23-05:00
 draft: false
-tags: ["elasticsearch", "kibana", "docker", "compose", "traefik", "self-hosted"]
+tags: ["elasticsearch", "docker", "compose", "self-hosting", "traefik", "SSL", "Kibana", "indexing", "NAS", "Samba"]
 ---
+If you have a NAS (Samba) and want to index files, Elasticsearch is an excellent solution. However, setting up Elasticsearch with Docker Compose can be a bit challenging. In this post, we will outline the necessary steps to set up Elasticsearch with Docker Compose.
 
-I was trying to setup a elasticsearch with docker compose to index files on my NAS(Samba) and I had to struggle a bit to get that up and running, 
-this post outlines the steps needed to setup elasticsearch with docker compose
+The desired state is Elasticsearch and Kibana to get a web interface to manage users/roles/indexes.
 
+In Elasticsearch version 7.x, you need to take the following steps:
 
-All my self-hosted services are behind traefik proxy to manage SSL certificates and I have chosen to keep communication between traefik and elasticsearch to HTTP only,
-so I have disabled SSL security in elasticsearch.
+- Start Elasticsearch instance
+- Run elasticsearch-setup-passwords auto inside the container to generate passwords
+- Set that password for kibana_system in the docker-compose.yml file
+- Rebuild Kibana to pick up the password
 
-Desired State
-- ElasticSearch
-- Kibana to get a web interface to manage users/roles/indexes
+Assuming you are inside the es7 folder, below are the steps:
 
-In elasticsearch version 7.x, I had to take the following steps
- - start elasticsearch instance
- - run `elasticsearch-setup-passwords auto` inside the container to generate passwords
- - set that password for kibana_system in docker-compose.yml file
- - rebuild kibana to pickup the password
+### 1. Start Elasticsearch and Kibana containers
+Create a compose file es7/docker-compose.yml
 
-I'm assuming we are inside a folder es7, this will be used in below command, change it accordingly
-
-### 1. Start elasticsearch and kibana containers
-create a compose file es7/docker-compose.yml
 ```yml
 
 version: "3"
@@ -77,14 +71,16 @@ create a .env file
 ```bash
 STACK_VERSION=7.17.9
 ```
-to start the containers run
+To start the containers, run the following command:
+
 ```bash
 docker compose up --build -d
 ``` 
 
 ### 2. Generate Passwords for users
+Run the command 
 `docker exec -it es7-elasticsearch-1 elasticsearch-setup-passwords auto`
-you will get something like this 
+to generate passwords for users. Once you run the command, you will see the following output:
 
 ```bash
 Changed password for user apm_system
@@ -108,23 +104,13 @@ PASSWORD remote_monitoring_user = <secret>
 Changed password for user elastic
 PASSWORD elastic = <secret>
 ```
+To set up Kibana, copy the password for kibana_system and set the environment variable ELASTICSEARCH_PASSWORD under the kibana service in the docker-compose.yml file. Then, rebuild and restart Kibana by running the following command:
 
-to setup kibana we need the password for kibana_system
-copy that and set the environment variable ELASTICSEARCH_PASSWORD under kibana service in docker-compose.yml
-
-rebuild and restart kibana
 ```bash
 docker compose up --build -d kibana
 ```
 
-visit kibana UI on 5601 and login using `elastic` user credentials from the above step 
-
-from here you can navigate to stack management and create indexes, roles and users to suit your needs.
-
-
-since both the services were behind traefik proxy, I was able to access them securely over HTTPS! 
-
-I use rules.toml to define my services, so here is how you would configure it in traefik
+Visit Kibana UI on port 5601 and log in using the elastic user credentials obtained in the previous step. From there, you can navigate to stack management and create indexes, roles, and users according to your needs.
 
 
 Note: This is obviously not how you would want to setup your production EKL stack 
