@@ -2,7 +2,7 @@ baseURL: https://zkhan.in/
 languageCode: en-us
 title: Zeeshan Khan
 theme: ["hugo-video", "PaperMod"]
-googleAnalytics: UA-58099786-1
+googleAnalytics: G-CRSPPCQRYL
 disqusShortname: coderzkhan
 enableRobotsTXT: true
 buildDrafts: false
