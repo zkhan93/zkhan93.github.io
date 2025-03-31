@@ -1,7 +1,7 @@
 ---
 title: "Extracting Structured Content from PDFs Using OCR and LLM"
 date: 2024-08-30T21:14:30-05:00
-tags: ["python", "ocr", "llm", "content-extraction", "openai", "langchain"]
+tags: ["python", "ocr", "LLM", "content-extraction", "openai", "langchain"]
 ---
 
 ## Introduction
