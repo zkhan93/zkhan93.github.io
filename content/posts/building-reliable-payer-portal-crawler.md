@@ -1,3 +1,10 @@
+---
+title: "Building a Reliable Payer Portal Crawler: handling 2FA, email automation, and adapter patterns"
+date: 2026-02-22
+tags: []
+description: "Payer/provider portals are among the nastiest web scraping targets I’ve worked with: flaky JS, inconsistent HTML across providers, PDFs masquerading as primary content, email-based 2FA, and aggressive rate limits. Over time I built a crawler that copes with these realities in production: adapter-based payer integrations, a hybrid browser/http fetch model, disk caching for reproducible runs, and an async pipeline that favors idempotent re-runs over brittle request-level retries."
+---
+
 # Building a Reliable Payer Portal Crawler: handling 2FA, email automation, and adapter patterns
 
 Payer/provider portals are among the nastiest web scraping targets I’ve worked with: flaky JS, inconsistent HTML across providers, PDFs masquerading as primary content, email-based 2FA, and aggressive rate limits. Over time I built a crawler that copes with these realities in production: adapter-based payer integrations, a hybrid browser/http fetch model, disk caching for reproducible runs, and an async pipeline that favors idempotent re-runs over brittle request-level retries.
@@ -209,15 +216,5 @@ Operational notes:
 ## Closing notes
 
 The combination of adapter patterns, a hybrid fetch model, disk caching, and a pipeline that tolerates partial failures makes scraping real-world payer portals practical and maintainable. It’s not glamorous: a lot of the work is in engineering predictable failure modes and the operational playbook for re-running and seeding data. But once in place, it scales: new payers are added as small adapters, and the pipeline stays stable.
-
-If you want the key files to inspect, start with these paths in the codebase:
-- src/payer_policy_repo/pipeline.py (orchestrator)
-- src/payer_policy_repo/cache.py (disk cache)
-- src/payer_policy_repo/payers/blueshieldca/login.py (Playwright login + 2FA)
-- src/payer_policy_repo/payers/blueshieldca/adapter.py (fetch + cache logic)
-- src/payer_policy_repo/payers/blueshieldca/scraper.py (seed discovery)
-- tools/payer-policy-repo/gen-seed.py (seed runner)
-
-Author: Zeeshan (zkhan1093@gmail.com)
 
 If you try this approach and hit a tricky payer, ping me — I’m happy to share debugging heuristics and the snags I hit while stabilizing 2FA and browser-driven downloads.
