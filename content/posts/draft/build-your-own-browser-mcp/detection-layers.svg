@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" width="900" height="470" role="img" aria-labelledby="t2 d2" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <title id="t2">The four layers a stealth script has to cover</title>
+  <desc id="d2">Detection signals sit at four layers: page JavaScript, the DevTools Protocol, the browser build, and network identity. Only the first is reachable from an injected stealth script, and even there the patch itself is detectable.</desc>
+
+  <rect x="0" y="0" width="900" height="470" rx="10" fill="#12161d"/>
+  <text x="24" y="34" font-size="17" font-weight="600" fill="#e6e9ef">What a stealth script can actually reach</text>
+
+  <!-- column headers -->
+  <g font-size="11" fill="#5f6875" letter-spacing="0.08em">
+    <text x="24" y="56">LAYER</text>
+    <text x="248" y="56">WHAT GIVES YOU AWAY</text>
+    <text x="694" y="56">CAN YOU PATCH IT?</text>
+  </g>
+
+  <!-- ===== row 1: page JS (reachable) ===== -->
+  <rect x="24" y="64" width="852" height="76" rx="7" fill="#1c2230" stroke="#4a5568"/>
+  <rect x="24" y="64" width="4" height="76" fill="#fbbf24"/>
+  <text x="44" y="96" font-size="13.5" fill="#e6e9ef">Page JavaScript</text>
+  <text x="44" y="116" font-size="10.5" fill="#8b95a5">navigator, window, WebGL</text>
+  <g font-size="11" fill="#c3cad4" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+    <text x="248" y="94">navigator.webdriver &#183; navigator.plugins &#183; window.chrome</text>
+    <text x="248" y="118">WebGL renderer string &#183; outerHeight &#183; canPlayType</text>
+  </g>
+  <text x="694" y="96" font-size="12" font-weight="700" fill="#fbbf24">YES &#8212; BUT</text>
+  <text x="694" y="118" font-size="10.5" fill="#8b95a5">the patch is itself detectable</text>
+
+  <!-- ===== the line ===== -->
+  <text x="876" y="166" text-anchor="end" font-size="11" font-style="italic" fill="#f87171">below this line your JavaScript has no reach</text>
+  <line x1="24" y1="176" x2="876" y2="176" stroke="#7f2d2f" stroke-width="1.4" stroke-dasharray="6 5"/>
+
+  <!-- ===== row 2: CDP ===== -->
+  <rect x="24" y="192" width="852" height="76" rx="7" fill="#181c25" stroke="#333c4a"/>
+  <rect x="24" y="192" width="4" height="76" fill="#f87171"/>
+  <text x="44" y="224" font-size="13.5" fill="#e6e9ef">DevTools Protocol</text>
+  <text x="44" y="244" font-size="10.5" fill="#8b95a5">how Playwright drives Chromium</text>
+  <g font-size="11" fill="#c3cad4" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+    <text x="248" y="222">Runtime domain enabled &#183; console and stack side channels</text>
+    <text x="248" y="246">traces left by the CDP attach itself</text>
+  </g>
+  <text x="694" y="224" font-size="12" font-weight="700" fill="#f87171">NO</text>
+  <text x="694" y="246" font-size="10.5" fill="#8b95a5">it happens below your JS</text>
+
+  <!-- ===== row 3: browser build ===== -->
+  <rect x="24" y="284" width="852" height="76" rx="7" fill="#181c25" stroke="#333c4a"/>
+  <rect x="24" y="284" width="4" height="76" fill="#f87171"/>
+  <text x="44" y="316" font-size="13.5" fill="#e6e9ef">Browser build</text>
+  <text x="44" y="336" font-size="10.5" fill="#8b95a5">which binary you shipped</text>
+  <g font-size="11" fill="#c3cad4" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+    <text x="248" y="314">Chromium ships no H.264 / AAC &#183; headless GPU is SwiftShader</text>
+    <text x="248" y="338">while your user-agent claims Chrome on Windows</text>
+  </g>
+  <text x="694" y="316" font-size="12" font-weight="700" fill="#f87171">WRONG BINARY</text>
+  <text x="694" y="338" font-size="10.5" fill="#8b95a5">you can only lie about it</text>
+
+  <!-- ===== row 4: network ===== -->
+  <rect x="24" y="376" width="852" height="76" rx="7" fill="#181c25" stroke="#333c4a"/>
+  <rect x="24" y="376" width="4" height="76" fill="#f87171"/>
+  <text x="44" y="408" font-size="13.5" fill="#e6e9ef">Network identity</text>
+  <text x="44" y="428" font-size="10.5" fill="#8b95a5">before a byte of JS runs</text>
+  <g font-size="11" fill="#c3cad4" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+    <text x="248" y="406">datacenter ASN &#183; IP reputation &#183; TLS fingerprint</text>
+    <text x="248" y="430">scored before the page is even served</text>
+  </g>
+  <text x="694" y="408" font-size="12" font-weight="700" fill="#f87171">NO JS INVOLVED</text>
+  <text x="694" y="430" font-size="10.5" fill="#8b95a5">nothing to inject into</text>
+</svg>

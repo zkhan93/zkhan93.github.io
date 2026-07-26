@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" width="900" height="430" role="img" aria-labelledby="t1 d1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <title id="t1">Automated browser versus real browser</title>
+  <desc id="d1">Two pipelines. The first drives a fresh headless Chromium over the DevTools Protocol from a datacenter IP and gets blocked. The second routes an agent through a broker into the user's own Chrome via an extension, on a residential IP, and succeeds.</desc>
+
+  <defs>
+    <marker id="aRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#f87171"/>
+    </marker>
+    <marker id="aGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4ade80"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="900" height="430" rx="10" fill="#12161d"/>
+  <text x="24" y="34" font-size="17" font-weight="600" fill="#e6e9ef">Two ways to give an agent a browser</text>
+
+  <!-- ============ row 1: automated ============ -->
+  <text x="24" y="68" font-size="12" font-weight="700" fill="#f87171" letter-spacing="0.06em">AUTOMATED BROWSER &#8212; THE VERSION THAT GETS BLOCKED</text>
+
+  <g stroke="#3a4453" fill="#1c2230">
+    <rect x="24"  y="84" width="112" height="64" rx="7"/>
+    <rect x="176" y="84" width="152" height="64" rx="7"/>
+    <rect x="376" y="84" width="176" height="64" rx="7"/>
+    <rect x="600" y="84" width="140" height="64" rx="7"/>
+  </g>
+  <rect x="788" y="84" width="88" height="64" rx="7" fill="#2b1618" stroke="#7f2d2f"/>
+
+  <g text-anchor="middle" font-size="13.5" fill="#e6e9ef">
+    <text x="80"  y="111">Agent</text>
+    <text x="252" y="111">Playwright</text>
+    <text x="464" y="111">fresh Chromium</text>
+    <text x="670" y="111">datacenter</text>
+  </g>
+  <g text-anchor="middle" font-size="10.5" fill="#8b95a5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+    <text x="80"  y="130">MCP client</text>
+    <text x="252" y="130">over CDP</text>
+    <text x="464" y="130">headless, in a container</text>
+    <text x="670" y="130">IP</text>
+  </g>
+  <text x="832" y="121" text-anchor="middle" font-size="13" font-weight="700" fill="#f87171">BLOCKED</text>
+
+  <g stroke="#f87171" stroke-width="1.6" marker-end="url(#aRed)">
+    <line x1="140" y1="116" x2="171" y2="116"/>
+    <line x1="332" y1="116" x2="371" y2="116"/>
+    <line x1="556" y1="116" x2="595" y2="116"/>
+    <line x1="744" y1="116" x2="783" y2="116"/>
+  </g>
+
+  <text x="24" y="181" font-size="10.5" fill="#6b7480" letter-spacing="0.05em">LEAKS</text>
+  <g font-size="10.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+    <g fill="#241a1c" stroke="#5e2a2c">
+      <rect x="70"  y="164" width="136" height="24" rx="5"/>
+      <rect x="216" y="164" width="98"  height="24" rx="5"/>
+      <rect x="324" y="164" width="128" height="24" rx="5"/>
+      <rect x="462" y="164" width="124" height="24" rx="5"/>
+      <rect x="596" y="164" width="172" height="24" rx="5"/>
+    </g>
+    <g fill="#f0a5a5" text-anchor="middle">
+      <text x="138" y="180">navigator.webdriver</text>
+      <text x="265" y="180">CDP handshake</text>
+      <text x="388" y="180">SwiftShader WebGL</text>
+      <text x="524" y="180">empty plugin list</text>
+      <text x="682" y="180">datacenter ASN reputation</text>
+    </g>
+  </g>
+
+  <text x="24" y="212" font-size="12" fill="#8b95a5">Each one is a separate lie to maintain &#8212; and to keep consistent with the other four.</text>
+
+  <line x1="24" y1="238" x2="876" y2="238" stroke="#242b36"/>
+
+  <!-- ============ row 2: real ============ -->
+  <text x="24" y="272" font-size="12" font-weight="700" fill="#4ade80" letter-spacing="0.06em">YOUR REAL BROWSER &#8212; WHAT THIS MCP SERVER DOES</text>
+
+  <g stroke="#3a4453" fill="#1c2230">
+    <rect x="24"  y="288" width="112" height="64" rx="7"/>
+    <rect x="176" y="288" width="152" height="64" rx="7"/>
+    <rect x="600" y="288" width="140" height="64" rx="7"/>
+  </g>
+  <rect x="376" y="288" width="176" height="64" rx="7" fill="#16241c" stroke="#2f6b45"/>
+  <rect x="788" y="288" width="88" height="64" rx="7" fill="#16241c" stroke="#2f6b45"/>
+
+  <g text-anchor="middle" font-size="13.5" fill="#e6e9ef">
+    <text x="80"  y="315">Agent</text>
+    <text x="252" y="315">broker</text>
+    <text x="464" y="315">your daily Chrome</text>
+    <text x="670" y="315">residential</text>
+  </g>
+  <g text-anchor="middle" font-size="10.5" fill="#8b95a5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+    <text x="80"  y="334">MCP client</text>
+    <text x="252" y="334">FastAPI, no browser</text>
+    <text x="670" y="334">IP</text>
+  </g>
+  <text x="464" y="334" text-anchor="middle" font-size="10.5" fill="#7fcfa0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">MV3 extension</text>
+  <text x="832" y="325" text-anchor="middle" font-size="13" font-weight="700" fill="#4ade80">200 OK</text>
+
+  <g stroke="#4ade80" stroke-width="1.6" marker-end="url(#aGreen)">
+    <line x1="140" y1="320" x2="171" y2="320"/>
+    <line x1="332" y1="320" x2="371" y2="320"/>
+    <line x1="556" y1="320" x2="595" y2="320"/>
+    <line x1="744" y1="320" x2="783" y2="320"/>
+  </g>
+
+  <text x="24" y="385" font-size="10.5" fill="#6b7480" letter-spacing="0.05em">REAL</text>
+  <g font-size="10.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+    <g fill="#15221b" stroke="#2c5c3f">
+      <rect x="70"  y="368" width="118" height="24" rx="5"/>
+      <rect x="198" y="368" width="130" height="24" rx="5"/>
+      <rect x="338" y="368" width="98"  height="24" rx="5"/>
+      <rect x="446" y="368" width="62"  height="24" rx="5"/>
+      <rect x="518" y="368" width="116" height="24" rx="5"/>
+    </g>
+    <g fill="#8fd8a8" text-anchor="middle">
+      <text x="129" y="384">real fingerprint</text>
+      <text x="263" y="384">real GPU + codecs</text>
+      <text x="387" y="384">your cookies</text>
+      <text x="477" y="384">your IP</text>
+      <text x="576" y="384">nothing to fake</text>
+    </g>
+  </g>
+
+  <text x="24" y="416" font-size="12" fill="#8b95a5">Nothing is spoofed, so there is nothing to catch out. The browser is genuinely a browser.</text>
+</svg>
