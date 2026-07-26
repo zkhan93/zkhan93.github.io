@@ -3,7 +3,6 @@ title: "Building My Own Browser MCP: why I stopped faking a browser and started 
 date: 2026-07-25
 tags: ["mcp", "llm", "agents", "chrome-extension", "playwright", "bot-detection", "python", "fastapi"]
 description: "I wanted my coding agent to read the web the way I do — logged in, past the Cloudflare interstitial, on my own IP. I spent a weekend making Playwright lie about being a real browser, lost that fight, and then realised I was solving the wrong problem. This is the story of that pivot, and the MV3-extension-plus-WebSocket-bridge MCP server I ended up with."
-draft: true
 ---
 
 The thing that started this was small and stupid. I asked my agent to read a Reddit thread for me, and it came back with a page that said *"Whoa there, pardner."*
